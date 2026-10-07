@@ -82,15 +82,6 @@ cd panda-6519-web-radio
 # 双击 Internet radio.html 即可
 ```
 
-**方式二：本地 HTTP 服务（推荐）**
-
-```bash
-python3 -m http.server 8000
-# 浏览器打开 http://localhost:8000
-```
-
-> 建议用方式二。`file://` 协议下，浏览器会限制跨域请求与地理定位，
-> 自动搜台与 FM 城市定位可能不可用；用 HTTP 打开则全部正常。
 
 **方式三：部署到 GitHub Pages**
 
