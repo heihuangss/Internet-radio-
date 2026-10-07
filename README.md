@@ -79,7 +79,7 @@
 ```bash
 git clone https://github.com/<your-username>/panda-6519-web-radio.git
 cd panda-6519-web-radio
-# 双击 index.html 即可
+# 双击 Internet radio.html 即可
 ```
 
 **方式二：本地 HTTP 服务（推荐）**
