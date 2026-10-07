@@ -89,18 +89,9 @@ Frequency range is 87.0 – 108.0 MHz; the pointer stays locked inside the 20% �
 ```bash
 git clone https://github.com/<your-username>/panda-6519-web-radio.git
 cd panda-6519-web-radio
-# double-click index.html
+# double-click Internet radio.html
 ```
 
-**Option 2 — local HTTP server (recommended)**
-
-```bash
-python3 -m http.server 8000
-# open http://localhost:8000
-```
-
-> Option 2 is preferred. Under `file://`, browsers restrict cross-origin requests and geolocation,
-> so Auto Scan and FM city detection may not work. Serving over HTTP keeps everything functional.
 
 **Option 3 — GitHub Pages**
 
