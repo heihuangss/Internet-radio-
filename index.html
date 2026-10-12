@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--
   PANDA 6519 · 复古在线收音机
-  https://github.com/[你的用户名]/panda-6519-web-radio
 
   一个用纯 HTML/CSS/JavaScript 打造的复古风格在线收音机，单文件、零构建。
 
@@ -36,7 +35,7 @@
     --dial: #e8e5dc; --accent-orange: #e67e22; --btn-shadow: #c4c0b3;
     --panel-bg:#f4f0e6; --panel-line:#e6e2d6; --panel-item-hover:#e8e5dc;
     --text-strong:#333; --text-mid:#555; --text-soft:#888;
-    --handle: #c9c2b2;
+    --handle: #4b494a;
     /* 背景环境 */
     --bg-grad: linear-gradient(135deg,#d2b48c,#b89b6e);
     --bg-floor: radial-gradient(ellipse 80% 60% at 50% 92%,rgba(0,0,0,.22),transparent 70%);
@@ -53,7 +52,7 @@
     --dial:#3e424a; --accent-orange:#ff8c42; --btn-shadow:#15171b;
     --panel-bg:#2c3036; --panel-line:#40444c; --panel-item-hover:#3a3e46;
     --text-strong:#f2f0ec; --text-mid:#c4c2be; --text-soft:#8a8e96;
-    --handle:#555960;
+    --handle:#949daa;
     --bg-grad:linear-gradient(135deg,#32363d,#16191d);
     --bg-floor:radial-gradient(ellipse 80% 60% at 50% 92%,rgba(0,0,0,.55),transparent 70%);
     --env-light:rgba(255,255,255,.04);
@@ -68,7 +67,7 @@
     --dial:#dfebe4; --accent-orange:#3f9d7c; --btn-shadow:#b4c6bc;
     --panel-bg:#e8f2ec; --panel-line:#cfe0d6; --panel-item-hover:#dcebe2;
     --text-strong:#234a3d; --text-mid:#4f7565; --text-soft:#7fa593;
-    --handle:#c6d6cc;
+    --handle:#3d6b55;
     --bg-grad:linear-gradient(135deg,#d7e4d9,#b6c8ba);
     --bg-floor:radial-gradient(ellipse 80% 60% at 50% 92%,rgba(40,70,55,.20),transparent 70%);
     --env-light:rgba(255,255,255,.45);
@@ -82,7 +81,7 @@
     --dial:#e8ddce; --accent-orange:#e0ac20; --btn-shadow:#4a2c1a;
     --panel-bg:#f2e8d8; --panel-line:#e2d4c0; --panel-item-hover:#eadfcc;
     --text-strong:#3a2518; --text-mid:#6a4a32; --text-soft:#9a7a5a;
-    --handle:#73412a;
+    --handle:#c9a66b;
     --bg-grad:linear-gradient(135deg,#7a4a32,#4a2c1a);
     --bg-floor:radial-gradient(ellipse 80% 60% at 50% 92%,rgba(0,0,0,.40),transparent 70%);
     --env-light:rgba(255,210,170,.08);
@@ -98,7 +97,7 @@
     --dial:#5a2a8a; --accent-orange:#ff4db2; --btn-shadow:#0a0414;
     --panel-bg:#2e164f; --panel-line:#5a3a82; --panel-item-hover:#4a2a72;
     --text-strong:#fff0ff; --text-mid:#d6b8f0; --text-soft:#9a7ac0;
-    --handle:#5a3a82;
+    --handle:#9b6ad6;
     --bg-grad:linear-gradient(135deg,#3a1c60,#0d0519 60%,#1a0830);
     --bg-floor:radial-gradient(ellipse 80% 60% at 50% 92%,rgba(255,77,178,.18),transparent 70%);
     --env-light:rgba(180,120,255,.08);
@@ -570,9 +569,31 @@
   body.panel-open .toolbar { opacity:0 !important; transform:translateY(-12px) !important; pointer-events:none !important; }
   .panel-header { padding:20px; border-bottom:1px solid var(--panel-line); display:flex; justify-content:space-between; align-items:center; }
   .panel-header h3 { font-size:14px; color:var(--text-strong); letter-spacing:1px; }
+  /* 面包屑态：进二级菜单后标题本身也能点回去 —— 上头一个返回、正文一个返回，单手都够得着 */
+  .panel-header h3.crumb { cursor:pointer; display:flex; align-items:center; gap:7px;
+    overflow:hidden; white-space:nowrap; text-overflow:ellipsis; transition:color var(--dur-2); }
+  .panel-header h3.crumb::before { content:"‹"; font-size:19px; line-height:1; color:var(--accent-orange); font-weight:bold; flex-shrink:0; }
+  .panel-header h3.crumb:hover { color:var(--accent-orange); }
   .panel-header .close-btn { background:none; border:none; font-size:20px; color:var(--text-soft); cursor:pointer; }
   .panel-view { flex:1; overflow-y:auto; padding:10px 0; display:none; }
   .panel-view.active { display:block; }
+  /* ═══ 二级菜单：返回条常驻顶部 ═══
+     以前「← 返回」是滚动内容的第一行，往下翻台就跟着翻出屏幕，
+     得把列表拉回顶部才点得到。现在把它提出来做成不参与滚动的固定条，
+     列表只在下面这块区域里滚 —— 翻多远都回得去。 */
+  .panel-view#resultView { display:none; flex-direction:column; overflow:hidden; padding:0; }
+  .panel-view#resultView.active { display:flex; }
+  .res-bar { flex-shrink:0; display:flex; align-items:center; gap:10px; padding:12px 16px;
+    border-bottom:1px solid var(--panel-line); background:var(--panel-bg); box-shadow:0 2px 6px rgba(0,0,0,.05); }
+  .res-bar .back-btn { flex-shrink:0; background:none; border:none; padding:0; cursor:pointer;
+    font-size:12px; font-family:inherit; color:var(--text-mid); transition:color var(--dur-2); }
+  .res-bar .back-btn:hover { color:var(--accent-orange); }
+  .res-bar-title { flex:1; min-width:0; font-size:12.5px; font-weight:bold; color:var(--text-strong);
+    overflow:hidden; white-space:nowrap; text-overflow:ellipsis; text-align:right; }
+  .res-body { flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:10px 0 16px; }
+  .res-body .result-query { padding:0 20px 10px; }
+  /* 二级菜单里已经用组名做了标题，组头不再重复；缩进也跟着收回正常值 */
+  .res-body .group-body .station-item { padding-left:20px; }
   .station-item { padding:12px 20px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; transition:background var(--dur-2); font-size:13px; color:var(--text-mid); border-bottom:1px solid var(--panel-line); }
   .station-item:hover { background:var(--panel-item-hover); }
   .station-item.active { background:var(--panel-item-hover); font-weight:bold; color:var(--accent-orange); }
@@ -866,11 +887,14 @@
       <div id="stationListContainer"></div>
     </div>
 
-    <!-- 二级菜单：检索结果 -->
+    <!-- 二级菜单：分组内的台 / 检索结果（返回条常驻顶部） -->
     <div class="panel-view" id="resultView">
-      <div class="add-form">
-        <button class="back-btn" id="backToMainBtn">← 返回搜索</button>
-        <div class="result-query">「<span id="resultQuery"></span>」的可用源</div>
+      <div class="res-bar">
+        <button class="back-btn" id="backToMainBtn">‹ 返回搜索</button>
+        <span class="res-bar-title" id="resultQuery">检索结果</span>
+      </div>
+      <div class="res-body">
+        <div class="result-query" id="resultQueryText"></div>
         <div id="resultList"></div>
       </div>
     </div>
@@ -1023,34 +1047,41 @@ try{ bestUrl=JSON.parse(localStorage.getItem(PACK_BEST)||"{}"); }catch(e){ bestU
 
    所有判定只活在内存里 —— 刷新页面即全部重测，不写 localStorage。
    ════════════════════════════════════════════════════════════════════════════ */
+/* ═══ 源清单版本号 ═══
+   applyPack() 会把 urlState / stState 整个换成新对象，但已经在飞的探测
+   Promise 不受 scanToken 约束，跑完照样往 urlState 里写 —— 新载入的电台簿
+   会被上一轮的陈旧判定污染（绿点错位、甚至误判失效）。
+   每次 applyPack 递增，探测在写结果前校验自己是不是"上一代"的。 */
+let packEpoch=0;
+
 let PLAY_FLAT=[];            // 播放列表：BOOK_FLAT 里未失效的台
 let stState={};              // {台key: "ok"|"bad"|""}   "" = 还没定性
 let urlOwners={};            // {源: [台key,...]}  一条源挂了要回查它属于哪些台
 let deadOpen=false;          // 列表底部「已失效」是否展开
 let probeInflight=new Map(); // {源: Promise}     双线去重：同一次探测两条线共用
-function stKey(s){ return JSON.stringify([s&&s.group?s.group:"", s&&s.name?s.name:""]); }
-function stKeyOf(name,group){ return JSON.stringify([group||"", name||""]); }
+/* ★ 原来用 JSON.stringify 拼键：rebuildPlayList / renderCategoryMenu /
+   playStation 会对每个台调一次，电台多时是条明显偏慢的热路径。
+   改用字符串拼接，\u0000 作分隔符（组名里出现空格/冒号也不会撞）。 */
+function stKey(s){ return (s&&s.group?s.group:"")+"\u0000"+(s&&s.name?s.name:""); }
+function stKeyOf(name,group){ return (group||"")+"\u0000"+(name||""); }
 function stationDead(s){ return !!s && stState[stKey(s)]==="bad"; }
 // 分组结构里的台没有 group 字段，按（分组名 + 台名）查同一份状态
 function stationDeadByName(name,group){ return stState[stKeyOf(name,group)]==="bad"; }
 function rebuildPlayList(){
   PLAY_FLAT=BOOK_FLAT.filter(s=>!stationDead(s));
-  rebuildStations();
 }
+/* 注：原先还有 OFFICIAL_FLAT / STATIONS / customStations 三个别名变量，
+   全都只是指向 PLAY_FLAT 的空壳（历史遗留），已删除。 */
 
-// 兼容旧代码里的名字：这三兄弟现在一律指向播放列表（能听的台）
-let OFFICIAL_FLAT=[];
-let STATIONS=[];
-let customStations=[];
-function rebuildStations(){ STATIONS=PLAY_FLAT; OFFICIAL_FLAT=PLAY_FLAT; customStations=PLAY_FLAT; }
 
 function applyPack(text,save){
   const groups=parsePack(text);
   BOOK=groups; BOOK_FLAT=[]; urlState={}; stState={}; urlOwners={}; deadOpen=false;
+  packEpoch++;               // ★ 作废所有在飞的探测结果（见 probeUrl）
   groups.forEach((g,gi)=>{
     g.stations.forEach((s,si)=>{
       if(!s.urls.length) return;
-      const b=bestUrl[s.name];
+      const b=bestUrl[stKeyOf(s.name,g.name)]||bestUrl[s.name];   // 后者兼容旧版存档
       const urls=(b&&s.urls.indexOf(b)>=0)?[b,...s.urls.filter(u=>u!==b)]:s.urls.slice();
       BOOK_FLAT.push({name:s.name,tag:s.name,fm:s.fm,aliases:s.aliases||[],
         urls:urls,group:g.name,gidx:gi,idx:si,_official:true,_group:g.name,_idx:si});
@@ -1061,6 +1092,7 @@ function applyPack(text,save){
     const k=stKey(s);
     s.urls.forEach(u=>{ (urlOwners[u]=urlOwners[u]||[]).push(k); });
   });
+  primeProbeCache();              // 上次测得通的源先补进内存，列表立刻有绿点
   rebuildPlayList();
   if(save!==false){ try{ localStorage.setItem(PACK_KEY,text); }catch(e){} }
   renderCategoryMenu(); renderStationList();
@@ -1121,6 +1153,7 @@ const categoryList=document.getElementById("categoryList");
 const customCount=document.getElementById("customCount");
 const resultList=document.getElementById("resultList");
 const resultQuery=document.getElementById("resultQuery");
+const resultQueryText=document.getElementById("resultQueryText");
 const backToMainBtn=document.getElementById("backToMainBtn");
 const confirmMask=document.getElementById("confirmMask");
 const confirmMsg=document.getElementById("confirmMsg");
@@ -1129,6 +1162,7 @@ const confirmOk=document.getElementById("confirmOk");
 
 let currentStation=null,currentUrlIdx=0,isPlaying=false;
 let hls=null,switchTimer=null,currentStationIndex=0,isCleaningUp=false,playToken=0;
+let blobObjectUrl=null;   // 代理拉流（fetch→blob→Hls）产生的 objectURL，切台时统一回收
 let userVolume=0.8,isMuted=false,lastVolCache=0.8;
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -1302,10 +1336,12 @@ async function detectUserCity(){
   // 正在定位中 → 复用同一次结果，避免并发换台重复调用 getCurrentPosition
   if(cityDetecting) return cityDetecting;
 
-  cityDetecting=new Promise((resolve)=>{
+  // ★ 原写法在 executor 里同步 `cityDetecting=null`，再 `return cityDetecting`
+  //   返回的就是 null —— 调用方 warmupCity() 里 `detectUserCity().catch()` 直接
+  //   TypeError。改为先接住 Promise 再返回，null 分支也永远是 Promise。
+  const p=new Promise((resolve)=>{
     if(!navigator.geolocation){
       userCity="北京";
-      cityDetecting=null;
       resolve(userCity);
       return;
     }
@@ -1332,23 +1368,32 @@ async function detectUserCity(){
       resolve(userCity);
     },{timeout:5000});
   });
+  cityDetecting=p;
   return cityDetecting;
 }
 
 // 更新拨号指针到对应 FM 位置
 // ★ 统一入口：返回 {fm, exact}，exact=false 表示是估算值
+/* ★ fmCache 原来无上限也不失效：改过频谱表里的频率，旧缓存照样命中。
+   加个简单的 FIFO 上限（200 条），超出就丢最早的一条。 */
+function fmCacheSet(k,v){
+  const keys=Object.keys(fmCache);
+  if(keys.length>200) delete fmCache[keys[0]];
+  fmCache[k]=v;
+  return v;
+}
 async function resolveFM(stationName,station){
   if(fmCache[stationName]!==undefined) return fmCache[stationName];
   let r=null;
   // 0) 频谱表里写的「频率：」优先，精确到小数点后一位
-  if(station&&station.fm) return (fmCache[stationName]={fm:station.fm,exact:true});
+  if(station&&station.fm) return fmCacheSet(stationName,{fm:station.fm,exact:true});
   let f=parseFMFromText(stationName,true);                          // 1) 台名自带频率（最可信）
   if(f) r={fm:f,exact:true};
   if(!r){f=lookupLocalFM(stationName); if(f) r={fm:f,exact:true};}  // 2) 内置对照表
   if(!r){f=parseFMFromText(stationName,false); if(f) r={fm:f,exact:true};} // 3) 裸数字
   if(!r){f=await fetchFMFromNet(stationName); if(f) r={fm:f,exact:true};}  // 4) 联网兜底
   if(!r) r={fm:estimateFM(stationName),exact:false};                // 5) 估算兜底，保证指针一定动
-  fmCache[stationName]=r;
+  fmCacheSet(stationName,r);
   return r;
 }
 
@@ -1356,9 +1401,12 @@ async function resolveFM(stationName,station){
 async function updateDialToFM(station){
   if(!fmMode||!station) return;
   displayStatus.textContent="🔍 搜索FM频率...";
+  const tk=playToken;                  // ★ 等网络这一趟可能要好几秒
   if(!userCity) await detectUserCity();
   const {fm,exact}=await resolveFM(station.name,station);
-  if(!isPlaying) return;
+  // ★ 原判断只有 `!isPlaying`：期间若已换台/停播，旧结果仍会把指针和状态文案
+  //   写回去（串台）。补上 token 与目标台两道校验。
+  if(tk!==playToken||!isPlaying||currentStation!==station) return;
   // 与关闭 FM 时同一套映射（20%~80%），指针不会跑出刻度盘
   dialPointer.style.left=`${fmToDialLeft(fm).toFixed(2)}%`;
   displayStatus.textContent=exact?`FM ${fm.toFixed(1)} MHz`:`FM ${fm.toFixed(1)} MHz ≈估算`;
@@ -1375,11 +1423,10 @@ async function toggleFMMode(){
   }else{
     displayStatus.textContent=isPlaying?"PLAYING":"READY";
     // 恢复正常指针位置
-    if(currentStation){
-      const st=currentStation;
-      const pct=st._url?(hashCode(st._url)%100):(STATIONS.length>1?(currentStationIndex/(STATIONS.length-1))*100:50);
-      dialPointer.style.left=`${20+pct*0.6}%`;
-    }
+    // ★ 原写法有两个错：① st._url 这个字段在 BOOK_FLAT 里根本不存在，恒为 undefined；
+    //   ② currentStationIndex 声明后从没被赋过值，恒为 0 —— 于是只要关掉 FM，
+    //   指针就被固定打到最左端 20%，而不是回到当前台的位置。
+    moveDialToStation(currentStation);
   }
 }
 
@@ -1509,11 +1556,11 @@ buildVUDial();
 // ════════════════════════════════════════════════════════════════════════════
 // VU 指针物理
 // ════════════════════════════════════════════════════════════════════════════
-const VU_ATTACK=0.10,VU_RELEASE=0.32,RMS_WINDOW=0.30;
+const VU_ATTACK=0.10,VU_RELEASE=0.32;
 const VU_REF_RMS=0.25;
 const VU_FLOOR_DB=-20,VU_CEIL_DB=5;   // 表盘量程（与刻度 -20 ~ +5 对齐）
 const VU_SPAN_DB=VU_CEIL_DB-VU_FLOOR_DB;   // 25dB
-let rmsHistory=[],ballistics=0,needleAngle=VU_MIN_ANGLE,needleVel=0,lastFrameTs=0;
+let ballistics=0,needleAngle=VU_MIN_ANGLE,needleVel=0,lastFrameTs=0;
 let peakHold=0,peakHoldTimer=0;
 // ★ PEAK 灯只在真正进入红区（0 VU 以上）时才点，不再"一播放就常亮"
 const PEAK_HOLD_THRESHOLD=0.5;
@@ -1538,8 +1585,6 @@ const NEEDLE_STOP_OVER=3.0;        // 越过零位止钉的余量(deg)，撞钉�
 let vuFalling=false;               // 是否处于回零过程
 let fallT=0,fallFrom=VU_MIN_ANGLE; // 回零计时 / 起步时记下的电平位置
 
-function pushRMS(v){const now=performance.now()/1000;rmsHistory.push({t:now,v});const cut=now-RMS_WINDOW;while(rmsHistory.length>1&&rmsHistory[0].t<cut)rmsHistory.shift();}
-function avgRMS(){if(!rmsHistory.length)return 0;let s=0;for(const x of rmsHistory)s+=x.v;return s/rmsHistory.length;}
 function rmsToVUdb(rms){ return 20*Math.log10(Math.max(rms,1e-7)/VU_REF_RMS); }
 
 // ── 模拟电平：拿不到真实音频数据时用它驱动指针 ──────────────────────
@@ -1612,8 +1657,19 @@ function vuFallStep(dt){
   ballistics+=((bFrom<0?0:bFrom>1?1:bFrom)-ballistics)*(1-Math.exp(-dt/(NEEDLE_FALL_PERIOD*0.6)));
   return { angle: needleAngle, db: ballistics*VU_SPAN_DB+VU_FLOOR_DB };
 }
-function startVULoop(){
-  const loop=(ts)=>{
+/* ═══ VU 主循环：按需唤醒，静止即休眠 ═══
+   原来一旦 startVULoop() 就永远 rAF 下去 —— 哪怕没在播放、指针早停在最左端，
+   每帧照样算一遍回零弹簧、照写一次 transform。这是本页待机 CPU 的最大来源。
+   改法：连续若干帧"指针已静止且 PEAK 灯已灭"就停掉 rAF；
+   任何可能让指针动起来的地方（换台 / 暂停 / 音量 / 静音）调 wakeVU() 唤醒。 */
+let vuLoopId=null,vuIdleFrames=0;
+function wakeVU(){
+  vuIdleFrames=0;
+  if(vuLoopId!==null) return;
+  lastFrameTs=0;                       // 重新计时，避免首帧 dt 巨大
+  vuLoopId=requestAnimationFrame(vuLoop);
+}
+function vuLoop(ts){
     const dt=lastFrameTs?Math.min(0.05,(ts-lastFrameTs)/1000):0.016;lastFrameTs=ts;
     if(isPlaying&&!isMuted&&userVolume>0){
       vuFalling=false;                 // 有信号 → 退出回零，指针从当前位置继续走
@@ -1633,12 +1689,14 @@ function startVULoop(){
       peakHoldTimer=0;
       peakHold=Math.max(0,peakHold-dt/PEAK_FALL_SEC);
       if(peakHold<0.08){vuPeak.classList.remove("on");}
+      // 指针已归位、速度归零、PEAK 余辉也散了 → 连续 20 帧如此就休眠
+      if(Math.abs(needleAngle-VU_MIN_ANGLE)<0.2&&Math.abs(needleVel)<0.5&&peakHold<=0.08) vuIdleFrames++;
+      else vuIdleFrames=0;
+      if(vuIdleFrames>20){ vuLoopId=null; return; }     // ★ 休眠，等 wakeVU() 叫醒
     }
-    requestAnimationFrame(loop);
-  };
-  requestAnimationFrame(loop);
+    vuLoopId=requestAnimationFrame(vuLoop);
 }
-startVULoop();
+wakeVU();                                    // 页面一起动就先跑一轮
 
 // ════════════════════════════════════════════════════════════════════════════
 // 音频总线（Audio Bus）
@@ -1691,7 +1749,7 @@ let busWatch=null;          // 静音监测计时器
 let specLevel=0;            // 当前节目电平（时域 RMS，未乘音量）
 let specPeak=AGC_FLOOR;     // AGC 跟踪到的近期峰值（同样未乘音量）
 let agcLocked=false,agcLockT=0;
-let specLoopId=null,specLoopActive=false,lastSpecTs=0;
+let specLoopActive=false;   // 采样开关（采样已并入 specVisualLoop）
 
 // ── 音源安全性判定 ────────────────────────────────────────────
 // 判定依据：本页的 audio 元素带 crossorigin="anonymous" ——
@@ -1960,35 +2018,24 @@ function specToDb(){
   return comp*SPEC_GAIN+volDb+SPEC_TRIM_DB;
 }
 
-function specLoop(){
-  if(!analyser){specLoopActive=false;specLoopId=null;return;}
-  lastSpecTs=0;
-  const tick=(ts)=>{
-    if(!specLoopActive){specLoopId=null;return;}
-    const dt=lastSpecTs?Math.min(0.05,(ts-lastSpecTs)/1000):0.016;lastSpecTs=ts;
-    lastSpecDt=dt;
-    specLevel=readProgramLevel();
-    pushRMS(specLevel);
-    // 连续采到能量才算"真实电平可用"；偶发的静音片段不会立刻降级
-    if(specLevel>0.0008){ silentFrames=0; meterLive=true; }
-    else if(++silentFrames>150){ meterLive=false; }
-    specLoopId=requestAnimationFrame(tick);
-  };
-  tick();
+/* ═══ 采样与绘制合并为一个 rAF ═══
+   原来 specLoop(采样) 和 specVisualLoop(绘制) 是两个独立 rAF，各算一次 dt、
+   各跑一次回调调度。采样逻辑搬进 specVisualLoop 开头，少一条循环。
+   startSpecLoop / stopSpecLoop 的对外调用点不变，只改为切换采样开关。 */
+function specSample(dt){
+  if(!specLoopActive||!analyser){ specLevel=0; return; }
+  specLevel=readProgramLevel();
+  // 连续采到能量才算"真实电平可用"；偶发的静音片段不会立刻降级
+  if(specLevel>0.0008){ silentFrames=0; meterLive=true; }
+  else if(++silentFrames>150){ meterLive=false; }
 }
-function stopSpecLoop(){specLoopActive=false;if(specLoopId){cancelAnimationFrame(specLoopId);specLoopId=null;}rmsHistory.length=0;specLevel=0;lastSpecTs=0;}
+function stopSpecLoop(){
+  specLoopActive=false;
+  specLevel=0;specLastTs=0;specAgcPeak=SPEC_AGC_FLOOR;
+}
 function startSpecLoop(){
   initAudioGraph();
-  if(busAttached){ if(specLoopActive)return; specLoopActive=true; specLoop(); }
-}
-// 停播后的收尾：只负责清掉历史采样，指针位置交给 rAF 主循环的机械回零处理，
-// 不再在这里强行衰减 ballistics / needleVel（否则会和弹簧模型打架，回摆被截断）
-function startIdleReturn(){
-  const idle=setInterval(()=>{
-    if(!isPlaying||isMuted||userVolume===0){rmsHistory.length=0;}
-    else{clearInterval(idle);return;}
-    if(Math.abs(needleAngle-VU_MIN_ANGLE)<0.3&&Math.abs(needleVel)<0.5){clearInterval(idle);}
-  },60);
+  if(busAttached) specLoopActive=true;
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -2184,8 +2231,11 @@ function drawSpectrum(live){
 // 独立于指针的 rAF：
 //   · 有真实采集 → 读频域；否则走程序化频谱；停播 → 目标归零，柱子按 release 回落
 //   · 柱子上冲快、回落慢，与指针的 attack/release 同一节奏
+let specIdleFrame=0;
 function specVisualLoop(ts){
   const dt=specLastTs?Math.min(0.05,(ts-specLastTs)/1000):0.016;specLastTs=ts;
+  lastSpecDt=dt;                       // ★ 供指针 AGC 与频谱 AGC 共用
+  specSample(dt);                      // ★ 采样（原 specLoop 的职责，已合并进来）
   const playing=!!(isPlaying&&!isMuted&&userVolume>0);
   let live=false;
   if(playing&&busAttached&&specAnalyser&&meterLive) live=readSpectrumBars();
@@ -2193,29 +2243,55 @@ function specVisualLoop(ts){
     if(playing&&!isMuted&&userVolume>0) simSpectrumBars();
     else for(let i=0;i<SPEC_BARS;i++) specTarget[i]=0;
   }
+  let allZero=true;
   for(let i=0;i<SPEC_BARS;i++){
     const t=specTarget[i];
     const tau=(t>specBar[i])?SPEC_ATTACK:SPEC_RELEASE;
     specBar[i]+=(t-specBar[i])*(1-Math.exp(-dt/tau));
     specCap[i]=Math.max(specBar[i],specCap[i]-SPEC_CAP_FALL*dt);
     if(specCap[i]<0) specCap[i]=0;
+    if(specBar[i]>0.012||specCap[i]>0.012) allZero=false;
   }
+  // ★ 停播且柱子已落尽 → 降到 ~10fps，别再满帧空画一整块画布
+  if(!playing&&allZero&&(++specIdleFrame%6)!==0){ requestAnimationFrame(specVisualLoop); return; }
+  specIdleFrame=0;
   drawSpectrum(live);
   requestAnimationFrame(specVisualLoop);
 }
 
+let specRO=null;
 function startSpectrumLoop(){
   resizeSpecCanvas();
   requestAnimationFrame(specVisualLoop);
-  // 全屏切换 / 窗口缩放后重建位图（View Transitions 动画结束后再量一次）
-  window.addEventListener("resize",()=>{setTimeout(resizeSpecCanvas,650);});
-  setInterval(resizeSpecCanvas,900);
+  // ★ 原来是 setInterval(resizeSpecCanvas, 900)：每 900ms 无条件调一次
+  //   getBoundingClientRect()，不管页面在不在前台、有没有在播，都在强制一次同步布局。
+  //   换成 ResizeObserver —— 只在表盘真实尺寸变化时触发，零轮询、零布局抖动。
+  //   老浏览器没有 RO 时退回原来的 resize 监听。
+  if(vuMeter&&typeof ResizeObserver!=="undefined"){
+    specRO=new ResizeObserver(()=>resizeSpecCanvas());
+    specRO.observe(vuMeter);
+  }else{
+    // 全屏切换 / 窗口缩放后重建位图（View Transitions 动画结束后再量一次）
+    window.addEventListener("resize",()=>{setTimeout(resizeSpecCanvas,650);});
+  }
 }
 
 // ════════════════════════════════════════════════════════════════════════════
 // 时钟
 // ════════════════════════════════════════════════════════════════════════════
-function updateClock(){const n=new Date();einkTime.textContent=`${String(n.getHours()).padStart(2,"0")}:${String(n.getMinutes()).padStart(2,"0")}`;const w=["日","一","二","三","四","五","六"];einkDate.textContent=`${n.getFullYear()}年${n.getMonth()+1}月${n.getDate()}日 星期${w[n.getDay()]}`;}
+/* ★ 原来每秒都重写一次 textContent，可分钟没变时内容完全相同。
+   加一层缓存：只在"时:分"真的变了才动 DOM。 */
+const WEEK_CN=["日","一","二","三","四","五","六"];
+let lastClockKey="";
+function updateClock(){
+  const n=new Date();
+  const hh=String(n.getHours()).padStart(2,"0"), mm=String(n.getMinutes()).padStart(2,"0");
+  const key=hh+":"+mm+"/"+n.getDate();
+  if(key===lastClockKey) return;
+  lastClockKey=key;
+  einkTime.textContent=hh+":"+mm;
+  einkDate.textContent=`${n.getFullYear()}年${n.getMonth()+1}月${n.getDate()}日 星期${WEEK_CN[n.getDay()]}`;
+}
 updateClock();setInterval(updateClock,1000);
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -2232,6 +2308,7 @@ function setVolumeVisual(vol,smooth){
   volumeThumb.style.left=`${vol*100}%`;
   volumeValue.textContent=isMuted?"MUTE":Math.round(vol*100);
   volumeKnob.style.opacity=isMuted?"0.55":"1";
+  wakeVU();                  // ★ 指针摆幅随音量变化 → 循环可能已休眠，叫醒它
 }
 function setVolumeFromSlider(vol){vol=Math.max(0,Math.min(1,vol));userVolume=vol;isMuted=false;if(vol>0)lastVolCache=vol;applyOutputVolume();setVolumeVisual(vol,false);}
 let sliderDragging=false;
@@ -2243,16 +2320,44 @@ volumeSlider.addEventListener("touchstart",e=>{sliderDragging=true;volumeSlider.
 document.addEventListener("touchmove",e=>{if(sliderDragging){e.preventDefault();setVolumeFromSlider(getVolFromPointer(e.touches[0].clientX));}},{passive:false});
 document.addEventListener("touchend",()=>{if(sliderDragging){sliderDragging=false;volumeSlider.classList.remove("dragging");}});
 volumeKnob.addEventListener("click",()=>{if(isMuted){isMuted=false;userVolume=lastVolCache;}else{lastVolCache=userVolume;isMuted=true;}applyOutputVolume();setVolumeVisual(isMuted?0:userVolume,true);});
-tuningKnob.addEventListener("click",()=>{openPanel();});
+/* ═══ 拨号指针定位：统一入口 ═══════════════════════════════════════
+   原来这段"按索引算百分比"的公式在 startPlayback / selectStation /
+   toggleFMMode 里各写了一遍，三处还不一致（其中一处用了根本不存在的
+   st._url）。统一到这里，任何地方要挪指针都调它。 */
+function moveDialToStation(st,overrideIdx){
+  if(!st) return;
+  const list=PLAY_FLAT;
+  let i=(typeof overrideIdx==="number"&&overrideIdx>=0)?overrideIdx:list.indexOf(st);
+  if(i<0) i=list.findIndex(s=>s&&s.name===st.name&&(s.group||"")===(st.group||""));
+  const pct=(i>=0&&list.length>1)?(i/(list.length-1))*100:(Math.abs(hashCode(st.name))%100);
+  try{ dialPointer.style.left=`${(20+pct*0.6).toFixed(2)}%`; }catch(_){}
+}
+
+/* ═══ TUNING 旋钮 = 频道列表开关键 ══════════════════════════════════
+   原来只绑了 openPanel()，点第二下毫无反应（列表永远关不掉）。
+   这里做成真正的开关键：开 → 关 → 开，并把状态同步到 aria / 提示文案。 */
+function togglePanel(){
+  if(sidePanel.classList.contains("open")) closePanel();
+  else openPanel();
+}
+function syncTuningKnob(){
+  const on=sidePanel.classList.contains("open");
+  try{
+    tuningKnob.setAttribute("aria-expanded",on?"true":"false");
+    tuningKnob.title=on?"收起频道列表":"打开频道列表";
+  }catch(_){}
+}
+tuningKnob.addEventListener("click",()=>{ togglePanel(); syncTuningKnob(); });
 
 
 // ════════════════════════════════════════════════════════════════════════════
 // 列表
 // ════════════════════════════════════════════════════════════════════════════
+// ★ 原写法每次调用都新建一次映射对象字面量。渲染一个几百台的列表就是上千次
+//   临时对象分配 —— 提到模块级常量，行为完全不变。
+const HTML_ESC={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
 function escapeHtml(str) {
-  return String(str).replace(/[&<>"']/g, m => ({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-  }[m]));
+  return String(str).replace(/[&<>"']/g, m => HTML_ESC[m]);
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
@@ -2266,14 +2371,29 @@ function switchView(view){
 function showMainView(){
   switchView(mainView);
   panelTitle.textContent="📻 搜索电台";
+  panelTitle.classList.remove("crumb");
   toggleAddViewBtn.textContent="📋 打开频谱表";
 }
 function showListView(){
   showMainView();
 }
-function showResultView(){
+// 二级菜单的返回条/标题：两处都能退回主页
+//   back   —— 返回条按钮文案（"‹ 返回搜索" / "‹ 返回分组"）
+//   title  —— 返回条右侧的当前层级名（组名 / 检索词）
+//   crumb  —— 传了就把面板标题也变成可点的面包屑，点标题同样退回主页
+function showResultView(back,title,crumb,sub){
   switchView(resultView);
-  panelTitle.textContent="🎯 检索结果";
+  backToMainBtn.textContent=back||"‹ 返回";
+  resultQuery.textContent=title||"";
+  resultQueryText.textContent=sub||"";
+  resultQueryText.style.display=sub?"":"none";
+  if(crumb){
+    panelTitle.textContent=crumb;
+    panelTitle.classList.add("crumb");
+  }else{
+    panelTitle.textContent="🎯 检索结果";
+    panelTitle.classList.remove("crumb");
+  }
   toggleAddViewBtn.textContent="";
 }
 function openPanel(){
@@ -2284,11 +2404,13 @@ function openPanel(){
   // 面板打开时收起皮肤弹层并隐藏工具栏，防止遮挡 ✕ 关闭按钮
   try{setSkinPop(false);clearTimeout(skinCloseTimer);}catch(_){}
   try{hideToolbar();}catch(_){}
+  syncTuningKnob();          // ★ 旋钮的开/关态跟着面板走（TUNING 点第二下要能关）
 }
 function closePanel(){
   sidePanel.classList.remove("open");
   document.body.classList.remove("panel-open");
   const rb=document.getElementById("radioBox"); if(rb){rb.scrollLeft=0;rb.scrollTop=0;}
+  syncTuningKnob();
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
@@ -2353,16 +2475,29 @@ ${dotHtml(s)}
   }
   stationListContainer.innerHTML=html;
   customCount.textContent=`(${PLAY_FLAT.length}${dead.length?" · 失效 "+dead.length:""})`;
-  stationListContainer.querySelectorAll(".station-item[data-index]").forEach(it=>{
-    it.addEventListener("click",()=>{
-      const st=PLAY_FLAT[+it.dataset.index];
-      if(!st||stationDead(st))return;
-      playStation(st,0);
-      closePanel();
-    });
-  });
-  const dt=document.getElementById("deadToggle");
-  if(dt) dt.addEventListener("click",()=>{ deadOpen=!deadOpen; renderStationList(); });
+  // ★ 原来每次渲染都重新 innerHTML 一遍再逐个 addEventListener：
+  //   扫描期间每 600ms 一次，几百个台就是几百次绑定 + 全量重建。
+  //   改成容器级事件委托（只绑一次，见下），这里只管画。
+}
+
+/* ═══ 播放列表：事件委托 ═══
+   绑定一次，之后无论重绘多少次都不用再绑；点击时按 data-index 现取台。 */
+stationListContainer.addEventListener("click",(e)=>{
+  // 「已失效 N 个台」的展开条
+  if(e.target.closest("#deadToggle")){ deadOpen=!deadOpen; renderStationList(); return; }
+  const it=e.target.closest(".station-item[data-index]");
+  if(!it) return;
+  const st=PLAY_FLAT[+it.dataset.index];
+  if(!st||stationDead(st)) return;
+  playStation(st,0);
+  closePanel();
+});
+
+/* 高频重绘按帧合并：同一帧内多次调用只画最后一次 */
+let _stationListRaf=0;
+function requestRenderStationList(){
+  if(_stationListRaf) return;
+  _stationListRaf=requestAnimationFrame(()=>{ _stationListRaf=0; renderStationList(); });
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
@@ -2382,39 +2517,41 @@ function renderCategoryMenu(){
       </div>
       <span class="cat-arrow">›</span>
     </div>`).join("");
-  categoryList.querySelectorAll(".cat-item").forEach(it=>{
-    it.addEventListener("click",()=>{ showGroupMenu(+it.dataset.gidx); });
-  });
+  // ★ 同样是每次渲染重新绑定 → 改为容器级委托（见下）
 }
+
+/* ═══ 分组入口：事件委托 ═══ */
+categoryList.addEventListener("click",(e)=>{
+  const it=e.target.closest(".cat-item");
+  if(!it) return;
+  showGroupMenu(+it.dataset.gidx);
+});
 
 /* ════════════════════════════════════════════════════════════════════════════
    分组二级菜单：点台即播
    ════════════════════════════════════════════════════════════════════════════ */
 function showGroupMenu(gidx){
-  showResultView();
-  resultQuery.textContent="电台簿 · 分组";
-  resultList.innerHTML=BOOK.map((g,gi)=>{
-    const list=g.stations.filter(s=>s.urls.length&&!stationDeadByName(s.name,g.name));
-    return `<div class="group-item" data-gidx="${gi}">
-      <div class="group-head">
-        <span class="group-name">${escapeHtml(g.name)}</span>
-        <span class="group-count">${list.length}</span>
-      </div>
+  const g=BOOK[gidx]; if(!g) return;
+  const gname=g.name;
+  // 只渲染这一组 —— 以前是把所有分组连同各组的台一次性塞进同一个长列表，
+  // 滚动条跳到你点的那组，于是"往下翻"其实是翻进了别的组，返回按钮早被推出屏幕。
+  const list=g.stations.filter(s=>s.urls.length&&!stationDeadByName(s.name,gname));
+  showResultView("‹ 返回分组", `${list.length} 个台`, gname);
+  resultList.innerHTML=`<div class="group-item" data-gidx="${gidx}">
       <div class="group-body">
-        ${list.map((s,idx)=>{
-          const playing=currentStation&&currentStation.name===s.name&&currentStation._group===g.name;
-          const flat=BOOK_FLAT.find(x=>x.name===s.name&&x.group===g.name);
-          return `<div class="station-item${playing?' active':''}" data-gidx="${gi}" data-idx="${idx}">
+        ${list.length?list.map((s,idx)=>{
+          const playing=currentStation&&currentStation.name===s.name&&currentStation._group===gname;
+          const flat=BOOK_FLAT.find(x=>x.name===s.name&&x.group===gname);
+          return `<div class="station-item${playing?' active':''}" data-gidx="${gidx}" data-idx="${idx}">
 <div class="item-left">
 ${dotHtml(flat||s)}
 <span class="item-name">${escapeHtml(s.name)}</span>
 </div>
 <span class="src-n">${s.fm?s.fm.toFixed(1):""}</span>
 </div>`;
-        }).join("")}
+        }).join(""):`<div class="result-empty">这一组暂时没有能听的台<br><small>源都探不通 · 改好后点右上角「自动搜台」重测</small></div>`}
       </div>
     </div>`;
-  }).join("");
   resultList.querySelectorAll(".station-item").forEach(it=>{
     it.addEventListener("click",()=>{
       const gi=+it.dataset.gidx, idx=parseInt(it.dataset.idx,10);
@@ -2426,26 +2563,19 @@ ${dotHtml(flat||s)}
       closePanel();
     });
   });
-  // 定位到指定分组
-  if(typeof gidx==="number"){
-    const el=resultList.querySelector(`.group-item[data-gidx="${gidx}"]`);
-    if(el) el.scrollIntoView({block:"start"});
-  }
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
    在本机电台簿里找台（不联网）
    台名 / 别名 / 分组 / 频率 都能搜
    ════════════════════════════════════════════════════════════════════════════ */
-let lastQuery="";
 let searchToken=0;
 
 function searchRadio(query){
   const q=String(query||"").trim();
   if(!q) return;
-  lastQuery=q; searchToken++;
-  showResultView();
-  resultQuery.textContent=q;
+  searchToken++;
+  showResultView("‹ 返回搜索", `「${q}」`, "", "找到的可用台 · 点台即播");
   if(!BOOK_FLAT.length){
     resultList.innerHTML=`<div class="result-empty">电台簿是空的<br>
       <small>先点右上角「📋 频谱表」录入电台源</small></div>`;
@@ -2471,12 +2601,6 @@ function searchRadio(query){
     return;
   }
   renderResult(hit,searchToken);
-}
-
-function findBuiltinSource(q){
-  const key=String(q||"").replace(/\s+/g,"").toLowerCase();
-  return PLAY_FLAT.find(s=>s.name.replace(/\s+/g,"").toLowerCase()===key)||
-         PLAY_FLAT.find(s=>s.name.replace(/\s+/g,"").toLowerCase().indexOf(key)>=0)||null;
 }
 
 function renderResult(list,tk){
@@ -2514,20 +2638,19 @@ function startPlayback(st,index){
   if(!st)return;
   // ★ 已失效的台（源全部探不通）：不解码、不出声，直接停在这里
   if(stationDead(st)){playBtn.classList.remove("loading");isPlaying=false;displayStatus.textContent="NO SIGNAL";updatePlayIcon();try{cassetteDeck.classList.remove("playing");counterDigits.textContent="OFF";}catch(_){}return;}
-  cleanup();retryCount=0;stallTicks=0;vuWarmup=0;agcLocked=false;agcLockT=0;specPeak=AGC_FLOOR;playToken++;const tk=playToken;currentStation=st;currentUrlIdx=0;displayName.textContent=st.name;displayStatus.textContent="TUNING...";playBtn.classList.add("loading");
-  // 更新指针位置：官方源按组内索引，其他源用名称哈希做稳定偏移
-  // 修复：index 无效(-1/undefined)时按名称解析；刻度长度按当前来源取，避免错位
-  const navList=PLAY_FLAT;
-  const t=navList.length;
-  let pct;
-  let idx=(typeof index==="number"&&index>=0)?index:findStationIndex(navList);
-  if(idx>=0&&t>1){pct=(idx/(t-1))*100;}
-  else{pct=(Math.abs(hashCode(st.name))%100);}
-  dialPointer.style.left=`${20+pct*0.6}%`;
+  cleanup();retryCount=0;stallTicks=0;vuWarmup=0;agcLocked=false;agcLockT=0;specPeak=AGC_FLOOR;playToken++;const tk=playToken;currentStation=st;wakeVU();displayName.textContent=st.name;displayStatus.textContent="TUNING...";playBtn.classList.add("loading");
+  // 起点：跳过开头那些已经探死的源，别一上来就在坏源上干等 8 秒
+  currentUrlIdx=0;
+  while(currentUrlIdx<st.urls.length&&(deadUrls.has(st.urls[currentUrlIdx])||urlState[st.urls[currentUrlIdx]]==="bad")) currentUrlIdx++;
+  // 更新指针位置：传入的 index 优先，否则按名称在播放列表里定位（统一走 moveDialToStation）
+  let idx=(typeof index==="number"&&index>=0)?index:findStationIndex(PLAY_FLAT);
+  moveDialToStation(st,idx);
   cassetteDeck.classList.remove("playing");counterDigits.textContent="OFF";renderStationList();tryNextUrl(tk);}
 function hashCode(str){let h=0;for(let i=0;i<str.length;i++){h=((h<<5)-h+str.charCodeAt(i))|0;}return h;}
 function tryNextUrl(tk){
   const st=currentStation;if(!st){return;}
+  // 后台探测已经判死的源，播放时就别再花 8 秒等它一遍了 —— 直接跳过去
+  while(currentUrlIdx<st.urls.length&&(deadUrls.has(st.urls[currentUrlIdx])||urlState[st.urls[currentUrlIdx]]==="bad")) currentUrlIdx++;
   if(currentUrlIdx>=st.urls.length){
     // 所有源都试过了，全挂 → 判这个台失效，从播放列表下架（频谱表里的源不动）
     markStationDead(st);
@@ -2570,6 +2693,16 @@ function tryNextUrl(tk){
     markDead(url);currentUrlIdx++;tryNextUrl(tk);
   }
 }
+// ── objectURL 回收 ──────────────────────────────────────────────
+// 代理拉流（fetch → blob → Hls）每成功一次就会留下一个 objectURL，
+// hls.destroy() 不会释放它。统一在这里回收：传 url 就回收指定的，不传就回收当前持有的。
+function releaseBlobUrl(url){
+  const u=url||blobObjectUrl;
+  if(!u) return;
+  try{ URL.revokeObjectURL(u); }catch(_){}
+  if(blobObjectUrl===u) blobObjectUrl=null;
+}
+
 // 当 CDN 因 CORS 拒绝 Hls.js 的带凭据请求时，用不带 Origin 的 fetch 拉到内存后解封装重播。
 // 代价是失去自适应码率与 seek，但能绕过"名单正确却播不了"的死结。
 async function tryFetchAndPlay(url,tk){
@@ -2598,9 +2731,13 @@ async function tryFetchAndPlay(url,tk){
       try{return new URL(t,base).href;}catch(_){return line;}
     }).join("\n"):text;
     const blob=new Blob([fixedText],{type:"application/vnd.apple.mpegurl"});
+    // ★ 原代码只在失败路径 revoke：一旦这条源播成功了，objectURL 就再也没人回收，
+    //   换台时 hls.destroy() 也不会释放它 —— 每次走代理拉流的换台都漏一个 blob。
     const objectUrl=URL.createObjectURL(blob);
+    releaseBlobUrl();                 // 先把上一条源留下的回收掉
+    blobObjectUrl=objectUrl;
     if(hls){try{hls.destroy();}catch(_){}hls=null;}
-    const cleanupBlob=()=>{try{URL.revokeObjectURL(objectUrl);}catch(_){}};
+    const cleanupBlob=()=>{ releaseBlobUrl(objectUrl); };
     if(window.Hls&&window.Hls.isSupported()){
       try{
         hls=new window.Hls({maxBufferLength:10,manifestLoadingTimeOut:8000,manifestLoadingMaxRetry:2,levelLoadingTimeOut:8000,levelLoadingMaxRetry:2});
@@ -2626,15 +2763,14 @@ async function tryFetchAndPlay(url,tk){
 //   指针因此会先站住、再被游丝缓慢拉回零位（符合机械表头的物理特性）。
 function releaseVU(){
   stopSpecLoop();
-  rmsHistory.length=0;
   specLevel=0;specPeak=AGC_FLOOR;agcLocked=false;agcLockT=0;vuWarmup=0;
   enterFall(true);                 // 从"当前位置"重新起步回零
+  wakeVU();                        // ★ 回零动画要跑，循环必须活着
   try{vuMeter.classList.remove("active");}catch(_){}
 }
 // 硬归零：只在需要彻底复位的场合使用（页面中未调用，保留备用）
 function resetVU(){
   stopSpecLoop();
-  rmsHistory.length=0;
   ballistics=0;needleVel=0;needleAngle=VU_MIN_ANGLE;
   specLevel=0;specPeak=AGC_FLOOR;agcLocked=false;agcLockT=0;vuWarmup=0;
   peakHold=0;peakHoldTimer=0;vuFalling=false;fallT=0;fallFrom=VU_MIN_ANGLE;
@@ -2647,6 +2783,7 @@ function cleanup(){
   isPlaying=false;                 // ★ 修复：切台时必须先置为未播放，否则指针会照旧摆动
   clearTimeout(switchTimer);switchTimer=null;
   if(hls){try{hls.destroy();}catch(_){}hls=null;}
+  releaseBlobUrl();                // ★ 代理拉流留下的 objectURL 一并回收
   releaseVU();                     // ★ 指针保留当前位置，缓慢摇回零位
   try{audio.pause();}catch(_){}
   if(audio.src&&audio.src!==window.location.href){
@@ -2682,6 +2819,8 @@ nextBtn.addEventListener("click",()=>navStation(1));
 closePanelBtn.addEventListener("click",closePanel);
 toggleAddViewBtn.addEventListener("click",()=>{ openPackPanel(); });
 backToMainBtn.addEventListener("click",showMainView);
+// 标题变面包屑后，点标题也能退回主页（和返回条同一个动作）
+panelTitle.addEventListener("click",()=>{ if(panelTitle.classList.contains("crumb")) showMainView(); });
 
 // ═══ 搜索触发 ═══
 function triggerSearch(){const q=searchInput.value.trim();if(!q){searchHint.textContent="请输入电台名称";return;}searchHint.textContent="";searchRadio(q);}
@@ -2697,10 +2836,13 @@ audio.addEventListener("playing",()=>{clearTimeout(switchTimer);isPlaying=true;p
   }else{
     displayStatus.textContent="PLAYING";
   }
-  updatePlayIcon();cassetteDeck.classList.add("playing");renderStationList();initAudioGraph();resumeAudioCtx();attachAudioBus();startSpecLoop();vuMeter.classList.add("active");startHealthWatch();
+  updatePlayIcon();cassetteDeck.classList.add("playing");initAudioGraph();resumeAudioCtx();attachAudioBus();startSpecLoop();vuMeter.classList.add("active");startHealthWatch();
   counterDigits.textContent="NO";
-  if(currentStation){ markGood(currentStation.urls[currentUrlIdx]||audio.src,currentStation.name); renderStationList(); }});
-audio.addEventListener("pause",()=>{if(isCleaningUp)return;isPlaying=false;stopHealthWatch();displayStatus.textContent=fmMode?"FM追踪模式 · 已开启":"PAUSED";updatePlayIcon();cassetteDeck.classList.remove("playing");vuMeter.classList.remove("active");stopSpecLoop();startIdleReturn();renderStationList();
+  // ★ 原来这里 renderStationList() 一次，markGood 之后又 renderStationList() 一次，
+  //   同一帧内全量重建两遍。合并成帧末一次。
+  if(currentStation) markGood(currentStation.urls[currentUrlIdx]||audio.src,currentStation.name,currentStation.group);
+  requestRenderStationList();});
+audio.addEventListener("pause",()=>{if(isCleaningUp)return;isPlaying=false;stopHealthWatch();displayStatus.textContent=fmMode?"FM追踪模式 · 已开启":"PAUSED";updatePlayIcon();cassetteDeck.classList.remove("playing");vuMeter.classList.remove("active");stopSpecLoop();renderStationList();
   counterDigits.textContent="OFF";});
 audio.addEventListener("waiting",()=>{if(isPlaying){playBtn.classList.add("loading");displayStatus.textContent="BUFFERING...";}});
 audio.addEventListener("error",()=>{if(isCleaningUp||hls)return;if(currentStation&&currentUrlIdx<currentStation.urls.length-1){currentUrlIdx++;tryNextUrl(playToken);}else{playBtn.classList.remove("loading");displayStatus.textContent="NO SIGNAL";updatePlayIcon();cassetteDeck.classList.remove("playing");counterDigits.textContent="OFF";}});
@@ -2819,9 +2961,12 @@ function calcFSScale(){
 
   radioBox.style.setProperty("--fs-scale",String(scale));
 
-  // 动态调整机身圆角，大屏时圆角更自然
-  const scaledRadius=Math.round(24*scale);
-  radioBox.style.borderRadius=scaledRadius+"px";
+  // ★ 原代码在这里又写了一次 `borderRadius = 24*scale`：
+  //   ① 与 CSS 注释「border-radius 不再手动乘 scale」直接矛盾 —— transform 已经
+  //      把 24px 圆角等比放大，再乘一次等于 24·S²，机体会被拉成过度圆润的形状；
+  //   ② 更糟的是退出全屏时 applyFSState(false) 只清了 --fs-scale，没还原圆角，
+  //      于是退出后机身永久顶着一个放大过的圆角。
+  //   正确做法：圆角完全交给 CSS + transform，这里什么都不做。
 
   return scale;
 }
@@ -3094,13 +3239,26 @@ window.addEventListener("resize",()=>{
 // ── DPR 变化监听 ──
 // 当用户把窗口从普通屏拖到 4K 屏（或反之）时，自动重新计算缩放
 // 确保在任何 DPI 下都能保持最佳清晰度
+/* ★ 原来只用"首次读到的 DPR"注册一次监听：把窗口从 4K 屏拖回普通屏后，
+   那个 media query 就再也不匹配了，第二次搬家彻底没反应。
+   改成每次触发后按新的 DPR 重新注册。 */
 let lastDPR=window.devicePixelRatio||1;
-window.matchMedia(`(resolution: ${lastDPR}dppx)`).addEventListener?.("change",()=>{
+let dprMQ=null;
+function onDPRChange(){
   lastDPR=window.devicePixelRatio||1;
   // DPR 变化（窗口拖到 4K 屏）→ 位图也要跟着重建，否则仍按旧 DPR 栅格化
   try{ if(typeof resizeSpecCanvas==="function") resizeSpecCanvas(); }catch(_){}
   if(isFS) calcFSScale();
-});
+  watchDPR();                      // ★ 按新 DPR 重新挂监听
+}
+function watchDPR(){
+  try{
+    if(dprMQ&&dprMQ.removeEventListener) dprMQ.removeEventListener("change",onDPRChange);
+    dprMQ=window.matchMedia(`(resolution: ${lastDPR}dppx)`);
+    if(dprMQ.addEventListener) dprMQ.addEventListener("change",onDPRChange);
+  }catch(_){}
+}
+watchDPR();
 // 兼容方案：监听 screen 变化
 window.addEventListener("orientationchange",()=>{
   if(isFS) setTimeout(calcFSScale,200);
@@ -3133,9 +3291,82 @@ const KNOWN_DEAD = [
 
 const SCAN_CACHE_KEY="panda6519_laststation_v1";
 const SCAN_CACHE_TTL=7*24*3600*1000;   // 缓存有效期 7 天
-const SCAN_CONCURRENCY=6;              // 并行探测数
-const SCAN_TIMEOUT=5000;               // 单个源超时（毫秒）
 const SCAN_DEADLINE=25000;             // 整轮扫描总时限，超时就停，避免一直转圈
+
+/* ═══ 探测并发模型 ═══
+   原来一个 worker 拿到一个台，用 for-await 一条一条串行试它的源：
+   一个台 4 条源、前 3 条全坏 = 3×(5s fetch + 6s play) ≈ 33 秒独占一个 worker，
+   撞上两三个僵尸台整轮就卡死了。现在拆成两级：
+     · 台级 worker  —— SCAN_CONCURRENCY 个，同时处理多个台
+     · 台内批次     —— 一个台的源按 PROBE_BATCH 个一批并发，谁先通谁赢
+   play 探测要单独限流：它是真的在开解码器，开多了会跟正在播的那条抢，
+   浏览器反而更慢甚至报错。所以 fetch 放开、play 收紧。 */
+const SCAN_CONCURRENCY   = 6;          // 同时处理多少个台
+const PROBE_BATCH        = 3;          // 一个台同时测几条源
+const PLAY_SLOTS_IDLE    = 3;          // 没人听时，最多几个静音实播并行
+const PLAY_SLOTS_PLAYING = 1;          // 正在出声时，实播探测几乎让路
+
+/* ═══ 探测结果持久化 ═══
+   判定原本只活在内存里，刷新即全部重来 —— 每次打开都要把几十条源再测一遍，
+   这才是"每次都慢"的体感来源。现在把每条源的通/断记下来：
+     · 通：记 3 天  —— 下次打开直接放行，秒有台能播
+     · 断：记 6 小时 —— 只用来排到队尾慢慢测，不直接判死（源可能已修好）
+   缓存只做"优先 + 快速放行"，不做"免检"：真坏了点一下播放线就会自愈。 */
+const PROBE_CACHE_KEY="panda6519_probecache_v1";
+const PROBE_OK_TTL =3*24*3600*1000;
+const PROBE_BAD_TTL=6*3600*1000;
+let probeCache={};
+try{ probeCache=JSON.parse(localStorage.getItem(PROBE_CACHE_KEY)||"{}"); }catch(e){ probeCache={}; }
+function probeCacheGet(url){
+  const c=probeCache[url]; if(!c) return null;
+  if(Date.now()-c.ts > (c.ok?PROBE_OK_TTL:PROBE_BAD_TTL)) return null;
+  return c;
+}
+// 落盘做防抖：源多的时候逐条写会频繁碰 localStorage
+let probeCacheTimer=0;
+function probeCacheSet(url,ok){
+  probeCache[url]={ok:!!ok,ts:Date.now()};
+  clearTimeout(probeCacheTimer);
+  probeCacheTimer=setTimeout(()=>{
+    try{
+      // ★ probeCache 原来只增不减，长期用会一路顶到 localStorage 配额，
+      //   而 setItem 抛错被 try/catch 静默吞掉 —— 表面无恙，实际新结果再也存不进去。
+      //   落盘前顺手清掉过期条目。
+      const now=Date.now();
+      for(const u in probeCache){
+        const c=probeCache[u];
+        if(!c||now-c.ts>(c.ok?PROBE_OK_TTL:PROBE_BAD_TTL)) delete probeCache[u];
+      }
+      localStorage.setItem(PROBE_CACHE_KEY,JSON.stringify(probeCache));
+    }catch(_){}
+  },800);
+}
+// 台内源的探测顺序：已通的 → 缓存通的 → 没测过的 → 缓存断的/已判死的
+function probeOrderUrls(st){
+  const rank=u=>{
+    if(urlState[u]==="ok") return 0;
+    const c=probeCacheGet(u);
+    if(c&&c.ok) return 1;
+    if(c&&!c.ok) return 3;
+    if(urlState[u]==="bad"||deadUrls.has(u)) return 3;
+    return 2;
+  };
+  return (st.urls||[]).slice().sort((a,b)=>rank(a)-rank(b));
+}
+// 开页面先把上次测得通的源补进内存状态：列表立刻有绿点、台立刻能播
+function primeProbeCache(){
+  BOOK_FLAT.forEach(s=>{
+    if(!s.urls||!s.urls.length) return;
+    const k=stKey(s);
+    for(const u of s.urls){
+      const c=probeCacheGet(u);
+      if(c&&c.ok){
+        urlState[u]="ok";
+        if(stState[k]!=="bad") stState[k]="ok";
+      }
+    }
+  });
+}
 
 let scanToken=0,scanRunning=false;setScanSpin(false);
 // 扫描态：给搜台按钮上旋转扫针 + 脉冲环，状态一眼可见
@@ -3147,8 +3378,14 @@ function setScanSpin(on){
    源探测：一级 fetch 抓取，二级静音实播兜底
    ★ 全程 muted，只判定能不能出声，绝不真出声
    ════════════════════════════════════════════════════════════════════════════ */
-const PROBE_FETCH_TIMEOUT=5000;
-const PROBE_PLAY_TIMEOUT=6000;
+// 单条源最坏耗时 = fetch + play，坏源必然吃满，所以两边都往下压：
+// 5s→3.5s、6s→4.5s，最坏 11 秒 → 8 秒。
+const PROBE_FETCH_TIMEOUT=3500;
+const PROBE_PLAY_TIMEOUT=4500;
+
+// 这些状态码是"服务器明确拒绝了"，再去开解码器实播纯属浪费 4.5 秒。
+// 反过来 416/406/400 之类（多半只是不接受 Range 头）仍然走实播兜底，别误杀。
+const HARD_FAIL_STATUS=new Set([401,403,404,410,451,500,501,502,503,504]);
 
 async function probeFetch(url){
   const ctl=new AbortController();
@@ -3161,14 +3398,14 @@ async function probeFetch(url){
       signal:ctl.signal,credentials:"omit",cache:"no-store",mode:"cors"
     });
     clearTimeout(timer);
-    if(!res.ok) return {ok:false,reason:"HTTP "+res.status};
+    if(!res.ok) return {ok:false,hard:HARD_FAIL_STATUS.has(res.status),reason:"HTTP "+res.status};
     if(isM3u){
       const txt=(await res.text()||"").slice(0,4096);
-      if(!/#EXTM3U/i.test(txt)) return {ok:false,reason:"非HLS"};
+      if(!/#EXTM3U/i.test(txt)) return {ok:false,hard:true,reason:"非HLS"};
       return {ok:true};
     }
     const ct=(res.headers.get("content-type")||"").toLowerCase();
-    if(ct.indexOf("text/html")>=0) return {ok:false,reason:"返回网页"};
+    if(ct.indexOf("text/html")>=0) return {ok:false,hard:true,reason:"返回网页"};
     return {ok:true};
   }catch(e){
     clearTimeout(timer);
@@ -3177,14 +3414,37 @@ async function probeFetch(url){
   }
 }
 
+/* ═══ play 探测限量 ═══
+   实播探测是真的在开一个 Audio 解码器，跟 fetch 那种纯网络请求不是一回事。
+   开多了会跟正在播放的那条抢解码器，浏览器反而更慢甚至直接报错。
+   所以 fetch 放开跑，play 严格按槽位排队。 */
+function makeSemaphore(n){
+  let avail=n; const waiters=[];
+  const rel=()=>{ const w=waiters.shift(); if(w) w(); else avail++; };
+  return { acquire(){
+    if(avail>0){ avail--; return Promise.resolve(rel); }
+    return new Promise(res=>waiters.push(()=>res(rel)));
+  }};
+}
+let playSem=null;
+function resetPlaySem(){ playSem=makeSemaphore(isPlaying?PLAY_SLOTS_PLAYING:PLAY_SLOTS_IDLE); }
+function getPlaySem(){ if(!playSem) resetPlaySem(); return playSem; }
+
 // 二级兜底：很多源其实能放，只是不允许跨域 fetch。
 // 用静音 audio 真正解码几帧来判定 —— muted=true，全程不出声。
-function probePlay(url){
+async function probePlay(url){
+  const rel=await getPlaySem().acquire();
+  try{ return await probePlayRaw(url); } finally{ try{rel();}catch(_){} }
+}
+function probePlayRaw(url){
   return new Promise(resolve=>{
     let done=false,a=null;
     const fin=(ok,reason)=>{
       if(done)return; done=true; clearTimeout(timer);
-      if(a){ try{a.pause();a.removeAttribute("src");a.src="";a.load();}catch(_){} }
+      // ★ 原来在 removeAttribute("src") 之后又写了一句 a.src=""：
+      //   空字符串会被解析成「当前页面 URL」，紧随其后的 load() 于是真的去请求了一次
+      //   本页面（并试图当音频解码）。每条探测都白搭一个请求。
+      if(a){ try{a.pause();a.removeAttribute("src");a.load();}catch(_){} }
       resolve({ok,reason});
     };
     const timer=setTimeout(()=>fin(false,"超时"),PROBE_PLAY_TIMEOUT);
@@ -3211,13 +3471,24 @@ async function probeUrl(url,opt){
   if(urlState[url]==="ok") return {ok:true};
   if(probeInflight.has(url)) return probeInflight.get(url);   // 两条线共用同一次探测
   const job=(async()=>{
+    const ep=packEpoch;              // ★ 记住自己是第几代源清单
     urlState[url]="testing";
     const r1=await probeFetch(url);
-    if(r1.ok){ urlState[url]="ok"; return r1; }
+    // 等网络这一趟期间源清单被换掉了 → 结果作废，一个字都不写（也不判死）
+    if(ep!==packEpoch) return {ok:false,soft:true,reason:"源清单已变更"};
+    if(r1.ok){ urlState[url]="ok"; probeCacheSet(url,true); return r1; }
+    // 服务器明确拒绝（404/403/5xx…）→ 不用再花 4.5 秒去实播，直接判死。
+    // 正在出声时不这么干（skipPlay），宁可让它留在播放列表里。
+    if(r1.hard&&!opt.skipPlay){
+      urlState[url]="bad"; deadUrls.add(url); probeCacheSet(url,false);
+      reevalOwners(url);
+      return r1;
+    }
     if(opt.skipPlay){ urlState[url]=""; return {ok:false,soft:true,reason:r1.reason}; }
     const r2=await probePlay(url);
-    if(r2.ok){ urlState[url]="ok"; return r2; }
-    urlState[url]="bad"; deadUrls.add(url);
+    if(ep!==packEpoch) return {ok:false,soft:true,reason:"源清单已变更"};
+    if(r2.ok){ urlState[url]="ok"; probeCacheSet(url,true); return r2; }
+    urlState[url]="bad"; deadUrls.add(url); probeCacheSet(url,false);
     reevalOwners(url);
     return {ok:false,reason:r2.reason||r1.reason};
   })();
@@ -3270,27 +3541,37 @@ function markDead(url){
   reevalOwners(url);
 }
 // 判定成功的源 → 提到该台队首并记住，下次点它直接命中
-function markGood(url,name){
+/* ★ 原来按"台名"查：不同分组下若有两个同名台（比如「央广」和「地方」都有
+   「音乐之声」），A 组播通了会把 B 组的 bestUrl 和源顺序一起改掉。
+   改成"分组 + 台名"复合键；bestUrl 读的时候兼容旧版纯台名键。 */
+function markGood(url,name,group){
   if(!url)return;
   urlState[url]="ok"; deadUrls.delete(url);
   if(!name)return;
-  const it=BOOK_FLAT.find(x=>x.name===name);
+  const key=stKeyOf(name,group);
+  const it=BOOK_FLAT.find(x=>stKey(x)===key);
+  const save=()=>{ try{ localStorage.setItem(PACK_BEST,JSON.stringify(bestUrl)); }catch(_){} };
   if(it){
-    stState[stKey(it)]="ok";               // 有源通 → 这个台回到播放列表
+    stState[key]="ok";                     // 有源通 → 这个台回到播放列表
     rebuildPlayList();
-    bestUrl[name]=url;
-    try{ localStorage.setItem(PACK_BEST,JSON.stringify(bestUrl)); }catch(_){}
+    bestUrl[key]=url; save();
     if(it.urls.indexOf(url)>0) it.urls=[url,...it.urls.filter(u=>u!==url)];
   }else{
-    bestUrl[name]=url;
-    try{ localStorage.setItem(PACK_BEST,JSON.stringify(bestUrl)); }catch(_){}
+    bestUrl[key]=url; save();
   }
 }
 
 // 扫描顺序：上次连通的 → 本地台 → 国家级 → 其余
 function buildScanList(){
   const out=[];
-  const push=(st,idx)=>{ if(st&&st.urls&&st.urls.length) out.push({st,idx}); };
+  // ★ KNOWN_DEAD 原本定义了却从未使用（停播名单形同虚设）。在 push 这一层过滤，
+  //   四条入队路径（上次连通 / 本地 / 国家级 / 其余）都自动生效。
+  const isDead=n=>KNOWN_DEAD.some(d=>n===d||n.indexOf(d)>=0);
+  const push=(st,idx)=>{
+    if(!st||!st.urls||!st.urls.length) return;
+    if(isDead(st.name)) return;
+    out.push({st,idx});
+  };
   try{
     const last=JSON.parse(localStorage.getItem(SCAN_CACHE_KEY)||"null");
     if(last&&last.name&&Date.now()-last.ts<SCAN_CACHE_TTL){
@@ -3311,12 +3592,7 @@ function selectStation(st,idx){
   if(!st)return;
   currentStation=st;
   displayName.textContent=st.name;
-  let i=PLAY_FLAT.indexOf(st);
-  if(i<0) i=(typeof idx==="number"&&idx>=0)?idx:-1;
-  let pct;
-  if(i>=0&&PLAY_FLAT.length>1) pct=(i/(PLAY_FLAT.length-1))*100;
-  else pct=Math.abs(hashCode(st.name))%100;
-  try{ dialPointer.style.left=`${20+pct*0.6}%`; }catch(_){}
+  moveDialToStation(st,PLAY_FLAT.indexOf(st));
   renderStationList();
 }
 
@@ -3335,13 +3611,45 @@ async function autoScan(){
     return;
   }
   scanRunning=true;setScanSpin(true);
+  resetPlaySem();                 // 按当前是否在出声，定下实播探测的槽位
   const myToken=++scanToken;
+  let lastPaint=0;
   const list=buildScanList();
   const queue=list.slice();
   const total=list.length;
   let okN=0,badN=0,firstGood=null;
   const deadlineAt=Date.now()+SCAN_DEADLINE;
   if(!isPlaying) displayStatus.textContent=`静默测源… 0/${total} · 通 0`;
+
+  /* ═══ 台内探测：一批几条源并发，谁先通谁赢 ═══
+     注意这里不"取消"输家 —— 已经在跑的探测让它跑完，
+     反正结论会写进 urlState，对共用这条源的其他台也是白捡的信息，
+     强行取消反而会引入竞态。批次大小限住，就不会堵死 play 的槽位。 */
+  async function probeStation(st){
+    const urls=probeOrderUrls(st);
+    for(let i=0;i<urls.length;i+=PROBE_BATCH){
+      if(myToken!==scanToken) return {aborted:true};
+      const batch=urls.slice(i,i+PROBE_BATCH);
+      // 已经定性过的——通的直接用，断的直接跳过，不必再花时间
+      const knownOk=batch.find(u=>urlState[u]==="ok");
+      if(knownOk) return {goodUrl:knownOk};
+      const batch2=batch.filter(u=>urlState[u]!=="bad"&&!deadUrls.has(u));
+      if(!batch2.length) continue;
+      const winner=await new Promise(resolve=>{
+        let pending=batch2.length, settled=false;
+        batch2.forEach(u=>{
+          probeUrl(u,{skipPlay:isPlaying}).then(r=>{
+            if(r.ok&&!settled){ settled=true; resolve({goodUrl:u}); return; }
+            if(--pending<=0&&!settled) resolve({goodUrl:null});
+          }).catch(()=>{
+            if(--pending<=0&&!settled) resolve({goodUrl:null});
+          });
+        });
+      });
+      if(winner.goodUrl) return winner;
+    }
+    return {goodUrl:null};
+  }
 
   const worker=async()=>{
     while(queue.length){
@@ -3352,37 +3660,35 @@ async function autoScan(){
       if(!st||!st.urls.length) continue;
       const k=stKey(st);
       if(stState[k]==="bad") continue;                // 本轮已判死，不再浪费时间
-      let goodUrl=null, allBad=true;
-      for(const u of st.urls){
-        if(myToken!==scanToken) return;
-        if(urlState[u]==="ok"){ goodUrl=u; allBad=false; break; }
-        if(urlState[u]==="bad") continue;
-        const r=await probeUrl(u,{skipPlay:isPlaying});
-        if(r.ok){ goodUrl=u; allBad=false; break; }
-        if(r.soft) allBad=false;                      // 只是 fetch 不通，不作数，宁可不判死
-      }
-      if(goodUrl){
+      const r=await probeStation(st);
+      if(myToken!==scanToken) return;
+      if(r.aborted) return;
+      if(r.goodUrl){
         okN++;
         if(stState[k]!=="ok"){ stState[k]="ok"; }
-        if(!firstGood) firstGood={st,idx:item.idx,url:goodUrl};
-      }else if(allBad){
+        if(!firstGood) firstGood={st,idx:item.idx,url:r.goodUrl};
+      }else if(st.urls.every(u=>urlState[u]==="bad")){
+        // 全挂才下架；只要有任一条是"没定性"（比如 skipPlay 下的软失败）就不判死
         badN++;
         stState[k]="bad";
-        onPlayListChanged();                          // 下架：换台/搜索/列表全部跳过
+        onPlayListChanged();
       }
       if(!isPlaying) displayStatus.textContent=`静默测源… ${Math.max(0,total-queue.length)}/${total} · 通 ${okN}`;
-      if((total-queue.length)%3===0) renderStationList();
+      if(Date.now()-lastPaint>600){ lastPaint=Date.now(); requestRenderStationList(); }
       if(isPlaying) await sleep(180);                 // 播放中放慢脚步，让路给正在听的那条
     }
   };
   const conc=isPlaying?Math.min(2,SCAN_CONCURRENCY):SCAN_CONCURRENCY;
   await Promise.all(Array.from({length:Math.max(1,Math.min(conc,total))},()=>worker()));
 
-  scanRunning=false;setScanSpin(false);
+  // ★ 原来这里无条件 `scanRunning=false`：被 cancelScan 取消的旧轮次跑完后，
+  //   会把已经启动的新一轮 scan 的运行标志清掉（按钮转着圈、状态却已丢失）。
+  //   改成"只有我还是最新一轮才收尾"；旧轮次直接退出，什么都别碰。
   if(myToken!==scanToken) return;
+  scanRunning=false;setScanSpin(false);
 
   if(firstGood){
-    markGood(firstGood.url,firstGood.st.name);
+    markGood(firstGood.url,firstGood.st.name,firstGood.st.group);
     try{ localStorage.setItem(SCAN_CACHE_KEY,JSON.stringify({name:firstGood.st.name,ts:Date.now()})); }catch(_){}
     if(!currentStation&&!isPlaying){
       selectStation(firstGood.st,firstGood.idx);
@@ -3416,7 +3722,12 @@ startSpectrumLoop();
 const scanBtn=document.getElementById("scanBtn");
 if(scanBtn){
   scanBtn.addEventListener("click",()=>{
-    cancelScan(); stState={}; rebuildPlayList(); renderCategoryMenu(); renderStationList(); autoScan();
+    // 全量重探：连探测缓存一起清掉，否则上次"通"的记录会把结果又填回来，
+    // 等于没重测。日常打开页面不清缓存（那样才快），只有手动按这个键才清。
+    cancelScan();
+    probeCache={}; try{ localStorage.removeItem(PROBE_CACHE_KEY); }catch(_){}
+    stState={}; urlState={}; deadUrls.clear();
+    rebuildPlayList(); renderCategoryMenu(); renderStationList(); autoScan();
   });
 }
 // ★ 双线运行：不再因为你按了播放/换台就掐掉后台探测。
