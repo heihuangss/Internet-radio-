@@ -1692,7 +1692,12 @@ function vuLoop(ts){
       // 指针已归位、速度归零、PEAK 余辉也散了 → 连续 20 帧如此就休眠
       if(Math.abs(needleAngle-VU_MIN_ANGLE)<0.2&&Math.abs(needleVel)<0.5&&peakHold<=0.08) vuIdleFrames++;
       else vuIdleFrames=0;
-      if(vuIdleFrames>20){ vuLoopId=null; return; }     // ★ 休眠，等 wakeVU() 叫醒
+      if(vuIdleFrames>20){
+        // ★ 休眠前再确认一次真的"无信号"：万一这一帧刚好收到 playing / 取消静音，
+        //   就不要睡下去 —— 睡下去若没有 wakeVU()，指针会一直定格在零位。
+        if(isPlaying&&!isMuted&&userVolume>0){ vuIdleFrames=0; }
+        else { vuLoopId=null; return; }                 // ★ 休眠，等 wakeVU() 叫醒
+      }
     }
     vuLoopId=requestAnimationFrame(vuLoop);
 }
@@ -1885,6 +1890,7 @@ function applyOutputVolume(){
   try{ audio.muted=false; }catch(_){}
   try{ audio.volume=v; }catch(_){}
   if(busAttached&&volGain&&audioCtx){ try{ volGain.gain.value=1; }catch(_){} }
+  wakeVU();      // ★ 兜底：音量/静音是让指针动起来的入口，循环若已休眠就一并叫醒
 }
 
 // ═══ 播放健康守护 ═══════════════════════════════════════════════
@@ -2829,7 +2835,10 @@ searchInput.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault(
 // 输入变化时实时提示
 searchInput.addEventListener("input",()=>{searchHint.textContent="";});
 
-audio.addEventListener("playing",()=>{clearTimeout(switchTimer);isPlaying=true;playBtn.classList.remove("loading");
+// ★ 唤醒 VU 循环：换台时 cleanup() 已把 isPlaying 置 false 并让指针机械回零，
+//   回零结束（约 2~3s）后 vuLoop 会自行休眠。若新台连上的时间晚于休眠时刻，
+//   没有这一句，指针就会永远定格在零位 —— 直到下次换台或动音量才复活。
+audio.addEventListener("playing",()=>{clearTimeout(switchTimer);isPlaying=true;wakeVU();playBtn.classList.remove("loading");
   // FM 模式下更新频率显示
   if(fmMode&&currentStation){
     updateDialToFM(currentStation);
@@ -2842,7 +2851,7 @@ audio.addEventListener("playing",()=>{clearTimeout(switchTimer);isPlaying=true;p
   //   同一帧内全量重建两遍。合并成帧末一次。
   if(currentStation) markGood(currentStation.urls[currentUrlIdx]||audio.src,currentStation.name,currentStation.group);
   requestRenderStationList();});
-audio.addEventListener("pause",()=>{if(isCleaningUp)return;isPlaying=false;stopHealthWatch();displayStatus.textContent=fmMode?"FM追踪模式 · 已开启":"PAUSED";updatePlayIcon();cassetteDeck.classList.remove("playing");vuMeter.classList.remove("active");stopSpecLoop();renderStationList();
+audio.addEventListener("pause",()=>{if(isCleaningUp)return;isPlaying=false;wakeVU();stopHealthWatch();displayStatus.textContent=fmMode?"FM追踪模式 · 已开启":"PAUSED";updatePlayIcon();cassetteDeck.classList.remove("playing");vuMeter.classList.remove("active");stopSpecLoop();renderStationList();
   counterDigits.textContent="OFF";});
 audio.addEventListener("waiting",()=>{if(isPlaying){playBtn.classList.add("loading");displayStatus.textContent="BUFFERING...";}});
 audio.addEventListener("error",()=>{if(isCleaningUp||hls)return;if(currentStation&&currentUrlIdx<currentStation.urls.length-1){currentUrlIdx++;tryNextUrl(playToken);}else{playBtn.classList.remove("loading");displayStatus.textContent="NO SIGNAL";updatePlayIcon();cassetteDeck.classList.remove("playing");counterDigits.textContent="OFF";}});
