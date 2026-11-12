@@ -1,0 +1,3471 @@
+频谱表 v1
+
+// PANDA 6519 网络收音机 · 电台源清单
+// 收录：国内 838 台 + 国际/音乐 510 台，共 1348 台
+//
+// 来源与时效（全部为近两个月内公开验证过的清单，无超过两年的旧源）：
+//   国内 · xiangjianan/fm            2026-09-10 逐流验证（播放列表+分片可达+CORS），带 FM 频率
+//   国内 · DELIX0805/LX04-Radio      2026-09-22 真机实测（HTTP 200 + 实播校验播放位置推进）
+//   国内 · BI8SYN/esp32-radio-os     2026-09-06 探测通过 542 条流
+//   国际 · AlonDrilich/radio-playlists 2026-10-05 生成（Radio Browser，仅取近期校验通过的台）
+//
+// 每条源按「https 音频直链 > https m3u8 > http」排序，第一条最稳
+// 少数仅 http 的源，由播放器自动升级为 https 重试
+// 失效源会被暂时屏蔽，刷新页面自动解禁
+// 流地址版权归各广播机构所有，仅供个人收听与技术演示
+
+分组：央广
+中国之声
+  https://satellitepull.cnr.cn/live/wxzgzs/playlist.m3u8
+  https://ngcdn001.cnr.cn/live/zgzs/index.m3u8
+  频率：106.1
+经济之声
+  https://satellitepull.cnr.cn/live/wxjjzs/playlist.m3u8
+  https://ngcdn002.cnr.cn/live/jjzs/index.m3u8
+  频率：96.6
+音乐之声
+  https://satellitepull.cnr.cn/live/wxyyzs/playlist.m3u8
+  https://ngcdn001.cnr.cn/live/yyzs/index.m3u8
+  频率：90.0
+文艺之声
+  https://satellitepull.cnr.cn/live/wxwyzs/playlist.m3u8
+  频率：106.6
+经典音乐广播
+  https://satellitepull.cnr.cn/live/wxdszs/playlist.m3u8
+  频率：101.8
+中国乡村之声
+  https://satellitepull.cnr.cn/live/wxxczs/playlist.m3u8
+  频率：99.0
+  别名：乡村之声
+老年之声
+  https://satellitepull.cnr.cn/live/wxlnzs/playlist.m3u8
+民族之声
+  https://satellitepull.cnr.cn/live/wxmzzs/playlist.m3u8
+环球资讯广播
+  https://sk.cri.cn/905.m3u8
+  https://satellitepull.cnr.cn/live/wxhqzx01/playlist.m3u8
+  频率：90.5
+  别名：环球资讯
+华语环球
+  https://sk.cri.cn/hyhq.m3u8
+世界华声广播
+  https://sk.cri.cn/hxfh.m3u8
+  别名：世界华声
+南海之声
+  https://sk.cri.cn/nhzs.m3u8
+  https://satellitepull.cnr.cn/live/wxnhzs/playlist.m3u8
+HIT FM 劲曲调频
+  https://satellitepull.cnr.cn/live/wxhitfm/playlist.m3u8
+  频率：88.7
+  别名：HIT FM
+China Plus
+  https://sk.cri.cn/am846.m3u8
+轻松调频 Easy FM
+  https://live.xmcdn.com/live/1042/64.m3u8
+  频率：91.5
+中国交通广播
+  https://ngcdn002.cnr.cn/live/gsgljtgb/index.m3u8
+中文环球广播·CRI chinese service
+  https://sk.cri.cn/hyhq.m3u8
+
+分组：全国
+卷卷猫电台
+  https://lhttp.qtfm.cn/live/20500038/64k.mp3
+  别名：卷卷猫
+AsiaFM 亚洲天空台
+  https://lhttp.qtfm.cn/live/20071/64k.mp3
+AsiaFM 亚洲经典台
+  https://lhttp.qtfm.cn/live/5021912/64k.mp3
+AsiaFM 亚洲音乐台
+  https://lhttp.qtfm.cn/live/5022405/64k.mp3
+动听音乐台
+  https://lhttp.qtfm.cn/live/5022107/64k.mp3
+听梦想FM
+  https://lhttp.qtfm.cn/live/4917/64k.mp3
+怀集音乐之声
+  https://lhttp.qtfm.cn/live/4804/64k.mp3
+星河音乐
+  https://lhttp.qtfm.cn/live/20210755/64k.mp3
+清晨音乐台
+  https://lhttp.qtfm.cn/live/4915/64k.mp3
+
+分组：北京
+北京新闻广播
+  https://lhttp.qtfm.cn/live/339/64k.mp3
+  https://brtv-radiolive.rbc.cn/alive/fm945.m3u8
+  https://satellitepull.cnr.cn/live/wxbjxwgb/playlist.m3u8
+  频率：94.5
+北京交通广播
+  https://lhttp.qtfm.cn/live/336/64k.mp3
+  https://brtv-radiolive.rbc.cn/alive/fm1039.m3u8
+  频率：103.9
+北京音乐广播
+  https://lhttp.qtfm.cn/live/332/64k.mp3
+  https://brtv-radiolive.rbc.cn/alive/fm974.m3u8
+  频率：97.4
+北京文艺广播
+  https://lhttp.qtfm.cn/live/333/64k.mp3
+  https://brtv-radiolive.rbc.cn/alive/fm876.m3u8
+  频率：87.6
+京津冀之声
+  https://brtv-radiolive.rbc.cn/alive/fm1006.m3u8
+  频率：100.6
+北京城市广播
+  https://lhttp.qtfm.cn/live/345/64k.mp3
+  https://satellitepull.cnr.cn/live/wxbjcsfwgl/playlist.m3u8
+北京好音乐
+  https://live.xmcdn.com/live/964/64.m3u8
+  频率：95.9
+北京延庆之声
+  https://videoplaynew.yanqingrmzx.com/yq/gb.m3u8
+北京经典969
+  https://satellitepull.cnr.cn/live/wxsdyygb/playlist.m3u8
+北京顺义区广播
+  https://livesy.chinamcache.com/live/gb01.m3u8
+  频率：92.9
+北京大兴人民广播电台
+  https://lhttp.qtfm.cn/live/5021739/64k.mp3
+  别名：北京大兴
+1079音乐有话说
+  https://lhttp.qtfm.cn/live/20211619/64k.mp3
+959年代音乐怀旧好声音
+  https://lhttp.qtfm.cn/live/5021381/64k.mp3
+
+分组：上海
+上海新闻广播
+  https://lhttp.qtfm.cn/live/270/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32shrmgb/playlist.m3u8
+  频率：93.4
+上海第一财经广播
+  https://lhttp.qtfm.cn/live/276/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8
+  频率：97.7
+  别名：第一财经广播
+Love Radio
+  https://live.xmcdn.com/live/55/64.m3u8
+  频率：103.7
+上海长三角之声
+  https://satellitepull.cnr.cn/live/wx32dfgbdt/playlist.m3u8
+东上海之声
+  https://lhttp.qtfm.cn/live/21355/64k.mp3
+  频率：106.5
+上海沸点100音乐广播
+  https://lhttp.qtfm.cn/live/5022341/64k.mp3
+上海动感101
+  https://lhttp.qtfm.cn/live/274/64k.mp3
+上海流行音乐LoveRadio
+  https://lhttp.qtfm.cn/live/273/64k.mp3
+上海经典947
+  https://lhttp.qtfm.cn/live/267/64k.mp3
+金山区广播电视台综合广播
+  https://lhttp.qtfm.cn/live/4022/64k.mp3
+长三角之声
+  https://lhttp.qtfm.cn/live/275/64k.mp3
+上海交通广播电台
+  https://lhttp.qtfm.cn/live/266/64k.mp3
+  别名：上海交通
+
+分组：天津
+天津音乐广播
+  https://lhttp.qingting.fm/live/20003/64k.mp3
+  频率：100.5
+滨海文艺广播
+  http://traffic.jbh.tjbh.com/live/FM101.7/playlist.m3u8
+滨海综合广播 100.1
+  http://traffic.jbh.tjbh.com/live/FM100.1/playlist.m3u8
+滨海音乐广播
+  http://traffic.jbh.tjbh.com/live/FM100.5/playlist.m3u8
+经典
+  https://lhttp.qtfm.cn/live/20212227/64k.mp3
+
+分组：重庆
+重庆新闻广播
+  https://satellitepull.cnr.cn/live/wxcqxwgb/playlist.m3u8
+  频率：96.8
+重庆经济广播
+  https://satellitepull.cnr.cn/live/wxcqjjgb/playlist.m3u8
+  频率：101.5
+重庆文艺广播
+  https://satellitepull.cnr.cn/live/wxcqwygb/playlist.m3u8
+  频率：103.5
+重庆都市广播
+  https://satellitepull.cnr.cn/live/wxcqdsgb/playlist.m3u8
+重庆音乐广播
+  https://lhttp.qtfm.cn/live/647/64k.mp3
+  https://satellitepull.cnr.cn/live/wxcqyygb/playlist.m3u8
+  https://live.xmcdn.com/live/131/64.m3u8
+  频率：88.1
+重庆交通广播
+  https://lhttp.qtfm.cn/live/1500/64k.mp3
+  https://live.xmcdn.com/live/130/64.m3u8
+  频率：95.5
+巴渝之声
+  https://live.xmcdn.com/live/1154/64.m3u8
+  频率：104.5
+万州交通广播
+  https://live.xmcdn.com/live/1679/64.m3u8
+万州综合广播
+  https://live.xmcdn.com/live/1678/64.m3u8
+大足人民广播电台
+  https://lhttp.qtfm.cn/live/20211676/64k.mp3
+  别名：大足
+重庆巴渝之声
+  https://lhttp.qtfm.cn/live/5022385/64k.mp3
+938重庆私家车广播
+  https://lhttp.qtfm.cn/live/1502/64k.mp3
+重庆之声
+  https://lhttp.qtfm.cn/live/1498/64k.mp3
+重庆嘉陵之声
+  https://lhttp.qtfm.cn/live/20211692/64k.mp3
+  频率：88.7
+
+分组：广东
+广东新闻广播
+  https://lhttp.qtfm.cn/live/1254/64k.mp3
+  https://satellitepull.cnr.cn/live/wxgdxwgb/playlist.m3u8
+  频率：91.4
+羊城交通广播
+  https://satellitepull.cnr.cn/live/wxgdycjtt/playlist.m3u8
+  频率：105.2
+珠江经济广播
+  https://satellitepull.cnr.cn/live/wxgdzjjjt/playlist.m3u8
+  频率：97.4
+  别名：珠江经济台
+广东城市之声
+  https://lhttp.qtfm.cn/live/469/64k.mp3
+  https://satellitepull.cnr.cn/live/wxgdcszs/playlist.m3u8
+  频率：103.6
+深圳音乐广播飞扬971
+  https://lhttp.qtfm.cn/live/1271/64k.mp3
+  https://satellitepull.cnr.cn/live/wxszfy971/playlist.m3u8
+  频率：97.1
+  别名：深圳飞扬971
+广东股市广播
+  https://satellitepull.cnr.cn/live/wxgdgsgb/playlist.m3u8
+南方生活广播
+  https://satellitepull.cnr.cn/live/wxgdnfshgb/playlist.m3u8
+广东文体广播
+  https://satellitepull.cnr.cn/live/wxgdwtgb/playlist.m3u8
+深圳交通频率
+  https://lhttp.qtfm.cn/live/1272/64k.mp3
+  https://satellitepull.cnr.cn/live/wxszjjpl/playlist.m3u8
+广东音乐之声
+  https://lhttp.qtfm.cn/live/1260/64k.mp3
+  https://satellitepull.cnr.cn/live/wxgdyyzs/playlist.m3u8
+  https://live.xmcdn.com/live/74/64.m3u8
+  频率：99.3
+广州汽车音乐电台
+  https://live.xmcdn.com/live/257/64.m3u8
+  频率：102.7
+  别名：广州汽车音乐
+广州新闻电台
+  https://lhttp.qtfm.cn/live/4848/64k.mp3
+  https://live.xmcdn.com/live/256/64.m3u8
+  频率：96.2
+  别名：广州新闻
+佛山真爱 946
+  https://radiopull.radiofoshan.com.cn/live/1400389414_BSID_46_audio.m3u8
+佛山电台FM94.6真爱946
+  https://radiopull.radiofoshan.com.cn/live/1400389414_BSID_42_audio.m3u8
+  频率：94.6
+佛山综合广播
+  https://radiopull.radiofoshan.com.cn/live/1400820947_BSID_46_audio.m3u8
+佛山顺德广播
+  https://radiopull.radiofoshan.com.cn/live/1400820947_BSID_44_audio.m3u8
+广通-廉江广播
+  https://lhttp.qingting.fm/live/20211578/64k.mp3
+江门新会电台
+  https://live.ximalaya.com/radio-first-page-app/live/2916/64.m3u8?transcode=ts
+  别名：江门新会
+肇庆综合广播
+  https://live.ximalaya.com/radio-first-page-app/live/2892/64.m3u8?transcode=ts
+肇庆高要综合广播
+  https://live.ximalaya.com/radio-first-page-app/live/2870/64.m3u8?transcode=ts
+深圳宝安湾区之声
+  https://live.ximalaya.com/radio-first-page-app/live/2912/64.m3u8?transcode=ts
+深圳生活942
+  https://satellitepull.cnr.cn/live/wxszsjcgb/playlist.m3u8
+广东珠江经济电台
+  https://lhttp.qtfm.cn/live/1259/64k.mp3
+  别名：广东珠江经济
+投资传媒（股市广播）
+  https://lhttp.qtfm.cn/live/4847/64k.mp3
+中山电台快乐888
+  https://lhttp.qtfm.cn/live/1278/64k.mp3
+中山电台新锐967
+  https://lhttp.qtfm.cn/live/1277/64k.mp3
+云浮电台综合广播
+  https://lhttp.qtfm.cn/live/5022442/64k.mp3
+从化广播电视台综合广播
+  https://lhttp.qtfm.cn/live/15318698/64k.mp3
+佛冈电台
+  https://lhttp.qtfm.cn/live/15318379/64k.mp3
+  别名：佛冈
+化州人民广播电台
+  https://lhttp.qtfm.cn/live/15318689/64k.mp3
+  别名：化州
+增城电台
+  https://lhttp.qtfm.cn/live/20211702/64k.mp3
+  频率：89.0
+  别名：增城
+广州GZ
+  https://lhttp.qtfm.cn/live/20194/64k.mp3
+  频率：88.0
+廉江人民广播电台
+  https://lhttp.qtfm.cn/live/20211578/64k.mp3
+  别名：廉江
+普宁人民广播电台
+  https://lhttp.qtfm.cn/live/5022527/64k.mp3
+  别名：普宁
+澄海人民广播电台
+  https://lhttp.qtfm.cn/live/5022439/64k.mp3
+  别名：澄海
+珠海斗门电台
+  https://lhttp.qtfm.cn/live/15318432/64k.mp3
+  别名：珠海斗门
+花都广播电台
+  https://lhttp.qtfm.cn/live/1263/64k.mp3
+  别名：花都
+英德电台
+  https://lhttp.qtfm.cn/live/5022392/64k.mp3
+  别名：英德
+鹤山电台
+  https://lhttp.qtfm.cn/live/1286/64k.mp3
+  别名：鹤山
+龙岗广播
+  https://lhttp.qtfm.cn/live/20160/64k.mp3
+  频率：99.1
+客都之声
+  https://lhttp.qtfm.cn/live/5021942/64k.mp3
+  频率：103.9
+广东南方生活广播
+  https://lhttp.qtfm.cn/live/468/64k.mp3
+深圳生活广播
+  https://lhttp.qtfm.cn/live/1273/64k.mp3
+FM95.9清远交通音乐广播
+  https://lhttp.qtfm.cn/live/20500067/64k.mp3
+  频率：95.9
+广东广播电视台珠江之声
+  https://lhttp.qtfm.cn/live/470/64k.mp3
+惠州音乐广播
+  https://lhttp.qtfm.cn/live/5021523/64k.mp3
+FM88.7 清远综合广播
+  https://lhttp.qtfm.cn/live/15318668/64k.mp3
+  频率：88.7
+惠州综合广播
+  https://lhttp.qtfm.cn/live/5016/64k.mp3
+  频率：100.0
+梅州广播电视台综合广播
+  https://lhttp.qtfm.cn/live/1257/64k.mp3
+深圳先锋898
+  https://lhttp.qtfm.cn/live/1270/64k.mp3
+湛江广播电视台综合广播
+  https://lhttp.qtfm.cn/live/20617/64k.mp3
+珠海电台先锋951
+  https://lhttp.qtfm.cn/live/1274/64k.mp3
+广东广播电视台文体广播
+  https://lhttp.qtfm.cn/live/471/64k.mp3
+广东交通之声
+  https://lhttp.qtfm.cn/live/1262/64k.mp3
+广州交通广播
+  https://lhttp.qtfm.cn/live/4955/64k.mp3
+梅州电台交通广播
+  https://lhttp.qtfm.cn/live/1258/64k.mp3
+珠海电台交通875
+  https://lhttp.qtfm.cn/live/1275/64k.mp3
+
+分组：香港
+RTHK Radio 1
+  http://stm.rthk.hk/radio1
+RTHK Radio 2
+  http://stm.rthk.hk/radio2
+RTHK Radio 3
+  http://stm.rthk.hk/radio3
+RTHK Radio 4
+  http://stm.rthk.hk/radio4
+RTHK Radio 5
+  http://stm.rthk.hk/radio5
+Fing Radio
+  https://bluesfan.stream.laut.fm/bluesfan?t302=2020-11-06_13-46-59&uuid=28a2f040-51e1-44fe-899f-3519cbd5d4e9
+RTHK radio 2
+  https://rthkaudio2-lh.akamaihd.net/i/radio2_1@355865/index_56_a-p.m3u8
+  别名：香港电台
+RTHK radio 3
+  https://rthkaudio3-lh.akamaihd.net/i/radio3_1@355866/index_56_a-p.m3u8
+  别名：香港电台
+RTHK Radio 8 央廣粵港澳大灣區之聲
+  https://rthkradiocmgrgb-live.akamaized.net/hls/live/2046112/radiocmgrgb/master.m3u8
+  别名：香港电台
+Originalradio
+  https://stream.zeno.fm/rzwzgu0dd8zuv
+
+分组：澳门
+Record FM 100.3 Macau
+  https://nl.digitalrm.pt:8028/stream
+RTP Macau - 97.1 FM
+  https://radiocast.rtp.pt/antena1madeira80a.mp3
+Lotus Macau Radio - 1062 AM
+  https://lhttp.qtfm.cn/live/20133/64k.mp3
+
+分组：台湾
+正聲廣播電台
+  https://flv.ccdntech.com/live/_definst_/mp4:vod117_Live/live1/chunklist_w872521607.m3u8
+中廣新聞網
+  https://n03.rcs.revma.com/78fm9wyy2tzuv
+Needs Radio 全球華語廣播網
+  https://cdn280.ccdntech.com/live-http/_definst_/vod280_Live/needs/chunklist.m3u8
+中廣音樂網
+  https://n03.rcs.revma.com/ndk05tyy2tzuv
+警察廣播電臺 - 全國治安交通網
+  https://stream.pbs.gov.tw/live/PBS/playlist.m3u8
+中廣流行網
+  https://n03.rcs.revma.com/aw9uqyxy2tzuv
+AsiaFM 亞洲電台
+  https://n13.rcs.revma.com/xpgtqc74hv8uv
+Stars RADIO星蹤之愛廣播網
+  https://cdn280.ccdntech.com/live-http/_definst_/vod280_Live/stars/playlist.m3u8
+飛碟聯播網 飛碟電台
+  https://n10.rcs.revma.com/em90w4aeewzuv
+警察廣播電臺 - 臺北分臺
+  https://stream.pbs.gov.tw/live/TPS/playlist.m3u8
+
+分组：浙江
+FM93浙江交通之声
+  https://lhttp.qtfm.cn/live/4522/64k.mp3
+  https://satellitepull.cnr.cn/live/wxzjjtgb/playlist.m3u8
+  http://ali-m-l.cztv.com/channels/lantian/fm93/128k.m3u8
+  频率：93.0
+  别名：浙江交通之声
+浙江城市之声
+  https://satellitepull.cnr.cn/live/wxzjcszs/playlist.m3u8
+浙江经济广播
+  https://lhttp.qtfm.cn/live/4519/64k.mp3
+  https://satellitepull.cnr.cn/live/wxzjjjgb/playlist.m3u8
+浙江女主播电台
+  https://satellitepull.cnr.cn/live/wxzj1045/playlist.m3u8
+  频率：104.5
+  别名：浙江女主播
+浙江民生资讯广播
+  https://satellitepull.cnr.cn/live/wxzjmsgb/playlist.m3u8
+  频率：99.6
+  别名：浙江民生广播
+浙江音乐调频·动听968
+  https://lhttp.qingting.fm/live/4866/64k.mp3
+  https://satellitepull.cnr.cn/live/wxzj968/playlist.m3u8
+  频率：96.8
+  别名：浙江动听968
+杭州新闻广播
+  https://live.xmcdn.com/live/646/64.m3u8
+  频率：89.0
+杭州交通广播
+  https://live.xmcdn.com/live/632/64.m3u8
+  频率：91.8
+浙江之声
+  http://ali-m-l.cztv.com/channels/lantian/fm88/128k.m3u8
+浙江新闻广播
+  http://ali-m-l.cztv.com/channels/lantian/fm988/128k.m3u8
+丽水龙泉广播
+  https://l.cztvcloud.com/channels/lantian/SXlongquanaud/128k.m3u8
+嵊泗广播
+  https://l.cztvcloud.com/channels/lantian/SXshengsiaud/128k.m3u8
+开化广播
+  https://l.cztvcloud.com/channels/lantian/SXkaihuaaud/128k.m3u8
+文成广播
+  https://l.cztvcloud.com/channels/lantian/SXwenchengaud/128k.m3u8
+普陀广播
+  https://l.cztvcloud.com/channels/lantian/SXputuoaud/128k.m3u8
+武义广播
+  https://l.cztvcloud.com/channels/lantian/SXwuyiaud/128k.m3u8
+  频率：87.7
+洞头广播
+  https://l.cztvcloud.com/channels/lantian/SXdongtouaud/128k.m3u8
+浙江之声中波
+  https://satellitepull.cnr.cn/live/wxzjzs/playlist.m3u8
+浙江音乐调频
+  https://lhttp.qtfm.cn/live/4866/64k.mp3
+  http://ali-m-l.cztv.com/channels/lantian/fm968/128k.m3u8
+苍南广播
+  https://l.cztvcloud.com/channels/lantian/SXcangnanaud/128k.m3u8
+萧山综合广播
+  https://l.cztvcloud.com/channels/lantian/SXxiaoshanaud1/128k.m3u8
+诸暨综合广播
+  https://l.cztvcloud.com/channels/lantian/SXzhujiaud/128k.m3u8
+遂昌综合广播
+  https://l.cztvcloud.com/channels/lantian/SXsuichangaud/128k.m3u8
+1022永嘉人民广播电台
+  https://lhttp.qtfm.cn/live/15318231/64k.mp3
+  别名：1022永嘉
+宁波经济广播
+  https://lhttp.qtfm.cn/live/1152/64k.mp3
+温州经济广播
+  https://lhttp.qtfm.cn/live/1157/64k.mp3
+1008可乐台
+  https://lhttp.qtfm.cn/live/1153/64k.mp3
+96.4临安人民广播电台
+  https://lhttp.qtfm.cn/live/20005/64k.mp3
+  别名：96.4临安
+FM89.8临海人民广播电台
+  https://lhttp.qtfm.cn/live/5022437/64k.mp3
+  频率：89.8
+  别名：FM89.8临海
+FM954龙游电台
+  https://lhttp.qtfm.cn/live/15318359/64k.mp3
+  别名：FM954龙游
+三门广播电台
+  https://lhttp.qtfm.cn/live/15318638/64k.mp3
+  别名：三门
+天台电台
+  https://lhttp.qtfm.cn/live/5022200/64k.mp3
+  频率：91.1
+  别名：天台
+慈溪经典车电台
+  https://lhttp.qtfm.cn/live/5021401/64k.mp3
+  别名：慈溪经典车
+新昌人民广播电台
+  https://lhttp.qtfm.cn/live/20212423/64k.mp3
+  别名：新昌
+瑞安人民广播
+  https://lhttp.qtfm.cn/live/1143/64k.mp3
+西湖之声
+  https://lhttp.qtfm.cn/live/1163/64k.mp3
+1052LoveRadio
+  https://lhttp.qtfm.cn/live/5022061/64k.mp3
+FM104.5旅游之声
+  https://lhttp.qtfm.cn/live/4524/64k.mp3
+  频率：104.5
+桐乡之声
+  https://lhttp.qtfm.cn/live/5021791/64k.mp3
+浙江
+  https://lhttp.qtfm.cn/live/4521/64k.mp3
+  频率：99.6
+1003温州音乐之声
+  https://lhttp.qtfm.cn/live/1149/64k.mp3
+1047 Nice FM
+  https://lhttp.qtfm.cn/live/20033/64k.mp3
+台州音乐广播
+  https://lhttp.qtfm.cn/live/1144/64k.mp3
+嘉兴音乐广播
+  https://lhttp.qtfm.cn/live/1136/64k.mp3
+宁波音乐广播私家车986
+  https://lhttp.qtfm.cn/live/1142/64k.mp3
+杭州
+  https://lhttp.qtfm.cn/live/15318146/64k.mp3
+  频率：90.7
+湖州交通文艺广播
+  https://lhttp.qtfm.cn/live/2811/64k.mp3
+FM105湖州之声
+  https://lhttp.qtfm.cn/live/2810/64k.mp3
+  频率：105.0
+FM989宁海新闻综合广播
+  https://lhttp.qtfm.cn/live/5022406/64k.mp3
+台州新闻综合
+  https://lhttp.qtfm.cn/live/1145/64k.mp3
+嘉兴综合广播
+  https://lhttp.qtfm.cn/live/1154/64k.mp3
+宁波新闻综合广播
+  https://lhttp.qtfm.cn/live/1138/64k.mp3
+温岭1036电台
+  https://lhttp.qtfm.cn/live/4567/64k.mp3
+  别名：温岭1036
+温州新闻广播
+  https://lhttp.qtfm.cn/live/1155/64k.mp3
+衢州新闻综合广播
+  https://lhttp.qtfm.cn/live/20444/64k.mp3
+诸暨人民广播电台
+  https://lhttp.qtfm.cn/live/5022482/64k.mp3
+  别名：诸暨
+FM101仙居融媒体广播
+  https://lhttp.qtfm.cn/live/5021908/64k.mp3
+  频率：101.0
+FM103.5湖州经济广播
+  https://lhttp.qtfm.cn/live/2812/64k.mp3
+  频率：103.5
+FM106.8柯桥人民广播电台
+  https://lhttp.qtfm.cn/live/2422/64k.mp3
+  频率：106.8
+  别名：FM106.8柯桥
+嘉兴交通广播
+  https://lhttp.qtfm.cn/live/1135/64k.mp3
+宁波交通广播
+  https://lhttp.qtfm.cn/live/1140/64k.mp3
+杭州交通91.8电台
+  https://lhttp.qtfm.cn/live/1133/64k.mp3
+  别名：杭州交通91.8
+温州交通广播
+  https://lhttp.qtfm.cn/live/1156/64k.mp3
+衢州交通音乐广播
+  https://lhttp.qtfm.cn/live/20442/64k.mp3
+
+分组：江苏
+江苏新闻综合广播
+  https://lhttp.qtfm.cn/live/5055/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32jsxwzhgb/playlist.m3u8
+  频率：93.7
+江苏交通广播网
+  https://lhttp.qtfm.cn/live/4054/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32jsjtgb/playlist.m3u8
+  频率：101.1
+  别名：江苏交通广播
+江苏音乐广播
+  https://lzlive.vojs.cn/jAmO6Ng/92/live.m3u8
+  https://satellitepull.cnr.cn/live/wx32jsyygb/playlist.m3u8
+  频率：89.7
+江苏经典流行音乐
+  https://lzlive.vojs.cn/2wtSfrS/92/live.m3u8
+  频率：97.5
+江苏财经广播
+  https://satellitepull.cnr.cn/live/wx32jscjgb/playlist.m3u8
+江苏新闻广播
+  https://lhttp.qtfm.cn/live/4944/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32jsxwgb/playlist.m3u8
+  https://lzlive.vojs.cn/5Fo8mMX/92/live.m3u8
+江苏故事广播
+  https://satellitepull.cnr.cn/live/wx32jsgsgb/playlist.m3u8
+江苏文艺广播
+  https://satellitepull.cnr.cn/live/wx32jswygb/playlist.m3u8
+南京音乐广播
+  http://hls.njgb.com/live_hls/4/playlist.m3u8
+南京新闻综合广播
+  http://hls.njgb.com/live_hls/1/playlist.m3u8
+南京交通广播
+  http://hls.njgb.com/live_hls/2/playlist.m3u8
+南京经济广播
+  http://hls.njgb.com/live_hls/6/playlist.m3u8
+江苏健康广播
+  https://satellitepull.cnr.cn/live/wx32jsjkgb/playlist.m3u8
+江苏经典流行音乐广播
+  https://satellitepull.cnr.cn/live/wx32jsjdlxyy/playlist.m3u8
+江苏金陵之声
+  https://satellitepull.cnr.cn/live/wx32jsqctp/playlist.m3u8
+灌南综合广播
+  https://live.ximalaya.com/radio-first-page-app/live/2722/64.m3u8?transcode=ts
+苏州儿童广播
+  https://lhttp.qtfm.cn/live/2807/64k.mp3
+苏州戏曲广播
+  https://lhttp.qtfm.cn/live/20211622/64k.mp3
+无锡经济广播
+  https://lhttp.qtfm.cn/live/2778/64k.mp3
+979丹阳之声
+  https://lhttp.qtfm.cn/live/20207749/64k.mp3
+仪征人民广播电台
+  https://lhttp.qtfm.cn/live/15318182/64k.mp3
+  频率：94.3
+  别名：仪征
+大丰
+  https://lhttp.qtfm.cn/live/20211708/64k.mp3
+  频率：95.1
+宁听
+  https://lhttp.qtfm.cn/live/20500075/64k.mp3
+徐州经典音乐
+  https://lhttp.qtfm.cn/live/15318160/64k.mp3
+无锡梁溪之声
+  https://lhttp.qtfm.cn/live/2782/64k.mp3
+滨海1029
+  https://lhttp.qtfm.cn/live/20207779/64k.mp3
+盱眙县融媒体中心综合广播
+  https://lhttp.qtfm.cn/live/20500051/64k.mp3
+邳州人民广播电台
+  https://lhttp.qtfm.cn/live/2809/64k.mp3
+  别名：邳州
+金湖人民广播电台
+  https://lhttp.qtfm.cn/live/15318464/64k.mp3
+  别名：金湖
+常州经济广播
+  https://lhttp.qtfm.cn/live/2794/64k.mp3
+苏州生活广播
+  https://lhttp.qtfm.cn/live/2801/64k.mp3
+常州音乐广播
+  https://lhttp.qtfm.cn/live/2799/64k.mp3
+徐州音乐广播
+  https://lhttp.qtfm.cn/live/4923/64k.mp3
+  频率：91.9
+扬州YES
+  https://lhttp.qtfm.cn/live/2805/64k.mp3
+无锡音乐广播
+  https://lhttp.qtfm.cn/live/2779/64k.mp3
+淮安
+  https://lhttp.qtfm.cn/live/4588/64k.mp3
+  频率：104.2
+盐城广播
+  https://lhttp.qtfm.cn/live/20332/64k.mp3
+  频率：88.2
+盐城音乐广播
+  https://lhttp.qtfm.cn/live/5022380/64k.mp3
+苏州音乐广播
+  https://lhttp.qtfm.cn/live/2803/64k.mp3
+AM1161无锡新闻综合广播
+  https://lhttp.qtfm.cn/live/2776/64k.mp3
+  https://lhttp.qtfm.cn/live/2777/64k.mp3
+  频率：93.7
+  别名：FM93.7无锡新闻综合广播
+FM98.8 盐城综合广播
+  https://lhttp.qtfm.cn/live/20330/64k.mp3
+  频率：98.8
+常州新闻广播
+  https://lhttp.qtfm.cn/live/2798/64k.mp3
+徐州新闻综合广播
+  https://lhttp.qtfm.cn/live/4922/64k.mp3
+扬州新闻广播
+  https://lhttp.qtfm.cn/live/5000/64k.mp3
+苏州新闻广播
+  https://lhttp.qtfm.cn/live/2808/64k.mp3
+宜兴交通台
+  https://lhttp.qtfm.cn/live/3982/64k.mp3
+宿迁交通广播
+  https://lhttp.qtfm.cn/live/5004/64k.mp3
+常州交通广播
+  https://lhttp.qtfm.cn/live/2796/64k.mp3
+徐州交通广播
+  https://lhttp.qtfm.cn/live/4924/64k.mp3
+扬州交通广播
+  https://lhttp.qtfm.cn/live/2804/64k.mp3
+无锡交通广播
+  https://lhttp.qtfm.cn/live/2780/64k.mp3
+淮安车生活广播
+  https://lhttp.qtfm.cn/live/5021970/64k.mp3
+澎湃907
+  https://lhttp.qtfm.cn/live/2789/64k.mp3
+盐城交通广播
+  https://lhttp.qtfm.cn/live/20326/64k.mp3
+苏州交通广播
+  https://lhttp.qtfm.cn/live/2806/64k.mp3
+
+分组：山东
+山东交通广播
+  https://satellitepull.cnr.cn/live/wxsdjtgb/playlist.m3u8
+  https://audiolive302.iqilu.com/sdradioJiaotong/sdradio05/playlist.m3u8
+  频率：101.1
+山东音乐广播
+  https://lhttp.qtfm.cn/live/1665/64k.mp3
+  https://satellitepull.cnr.cn/live/wxsdyygb/playlist.m3u8
+  https://audiolive302.iqilu.com/sdradioYinyue/sdradio07/playlist.m3u8
+  频率：99.1
+山东文艺广播
+  https://lhttp.qtfm.cn/live/20238/64k.mp3
+  https://satellitepull.cnr.cn/live/wxsdwyssgb/playlist.m3u8
+  频率：97.5
+经典105·山东经典音乐广播
+  https://lhttp.qtfm.cn/live/20240/64k.mp3
+  https://audiolive302.iqilu.com/sdradioShenghuo/sdradio04/playlist.m3u8
+  https://satellitepull.cnr.cn/live/wxsdshxxgb/playlist.m3u8
+  别名：山东经典音乐广播
+山东乡村广播
+  https://satellitepull.cnr.cn/live/wxsdxcgb/playlist.m3u8
+济南新闻广播
+  https://lhttp.qingting.fm/live/1667/64k.mp3
+  https://lhttp.qtfm.cn/live/1667/64k.mp3
+  频率：106.6
+济南交通广播
+  https://lhttp.qingting.fm/live/1669/64k.mp3
+  https://lhttp.qtfm.cn/live/1669/64k.mp3
+  频率：103.1
+山东-定陶人民广播电台
+  https://lhttp.qingting.fm/live/20211680/64k.mp3
+  别名：山东-定陶
+山东体育休闲广播
+  https://satellitepull.cnr.cn/live/wxsdtyxxgb/playlist.m3u8
+山东经济广播
+  https://lhttp.qtfm.cn/live/20236/64k.mp3
+  https://satellitepull.cnr.cn/live/wxsdjjgb/playlist.m3u8
+936私家车广播
+  https://lhttp.qtfm.cn/live/1670/64k.mp3
+FM95.2青岛故事广播
+  https://lhttp.qtfm.cn/live/4956/64k.mp3
+  频率：95.2
+济南故事广播
+  https://lhttp.qtfm.cn/live/1672/64k.mp3
+青岛文艺广播
+  https://lhttp.qtfm.cn/live/1675/64k.mp3
+东营综合广播
+  https://lhttp.qtfm.cn/live/20144/64k.mp3
+济南经济广播
+  https://lhttp.qtfm.cn/live/1668/64k.mp3
+青岛经济广播
+  https://lhttp.qtfm.cn/live/1674/64k.mp3
+FM96.1邹城之声
+  https://lhttp.qtfm.cn/live/20207732/64k.mp3
+  频率：96.1
+临淄人民广播电台
+  https://lhttp.qtfm.cn/live/20212204/64k.mp3
+  别名：临淄
+成武人民广播电台
+  https://lhttp.qtfm.cn/live/20211637/64k.mp3
+  别名：成武
+曹县融媒体中心综合广播
+  https://lhttp.qtfm.cn/live/5022340/64k.mp3
+  频率：93.3
+章丘之声
+  https://lhttp.qtfm.cn/live/20212207/64k.mp3
+蒙阴人民广播电台
+  https://lhttp.qtfm.cn/live/15318571/64k.mp3
+  别名：蒙阴
+阳信人民广播电台
+  https://lhttp.qtfm.cn/live/5021991/64k.mp3
+  别名：阳信
+高密955
+  https://lhttp.qtfm.cn/live/20212417/64k.mp3
+东营生活广播
+  https://lhttp.qtfm.cn/live/20211580/64k.mp3
+潍坊933经济广播
+  https://lhttp.qtfm.cn/live/20839/64k.mp3
+胶州875
+  https://lhttp.qtfm.cn/live/20211644/64k.mp3
+FM898汽车音乐广播
+  https://lhttp.qtfm.cn/live/5022382/64k.mp3
+  https://lhttp.qtfm.cn/live/1936/64k.mp3
+  别名：FM954汽车音乐广播
+FM90.7威海音乐广播
+  https://lhttp.qtfm.cn/live/15318612/64k.mp3
+  频率：90.7
+崂山921
+  https://lhttp.qtfm.cn/live/20212426/64k.mp3
+济南音乐广播
+  https://lhttp.qtfm.cn/live/1671/64k.mp3
+  频率：88.7
+潍坊982广播电台
+  https://lhttp.qtfm.cn/live/4865/64k.mp3
+  别名：潍坊982
+烟台音乐广播
+  https://lhttp.qtfm.cn/live/1683/64k.mp3
+  频率：105.9
+经典流行音乐动感904
+  https://lhttp.qtfm.cn/live/20211680/64k.mp3
+青岛音乐体育广播
+  https://lhttp.qtfm.cn/live/1677/64k.mp3
+即墨融媒综合广播
+  https://lhttp.qtfm.cn/live/20807/64k.mp3
+威海新闻电台
+  https://lhttp.qtfm.cn/live/20669/64k.mp3
+  别名：威海新闻
+烟台综合广播
+  https://lhttp.qtfm.cn/live/1682/64k.mp3
+  频率：101.0
+青岛新闻广播
+  https://lhttp.qtfm.cn/live/1673/64k.mp3
+FM107潍坊交通广播
+  https://lhttp.qtfm.cn/live/4014/64k.mp3
+  频率：107.0
+东营交通音乐广播
+  https://lhttp.qtfm.cn/live/20142/64k.mp3
+  频率：98.4
+威海交通广播
+  https://lhttp.qtfm.cn/live/20671/64k.mp3
+烟台交通广播
+  https://lhttp.qtfm.cn/live/1684/64k.mp3
+  频率：103.0
+青岛交通广播
+  https://lhttp.qtfm.cn/live/1676/64k.mp3
+
+分组：四川
+四川综合广播四川之声
+  https://satellitepull.cnr.cn/live/wxsczhgb/playlist.m3u8
+  频率：98.1
+  别名：四川综合广播
+四川交通广播
+  https://satellitepull.cnr.cn/live/wxscjtgb/playlist.m3u8
+  频率：101.7
+四川民族频率
+  https://satellitepull.cnr.cn/live/wxscmzgb/playlist.m3u8
+成都新闻广播
+  https://lhttp.qingting.fm/live/4897/64k.mp3
+  频率：99.8
+成都劲曲调频
+  https://lhttp.qingting.fm/live/15318703/64k.mp3
+  频率：88.7
+内江交通广播
+  https://www.scnj.tv/hls_njtv/live/jtgb.m3u8
+内江综合广播
+  https://www.scnj.tv/hls_njtv/live/zhgb.m3u8
+四川-成都交通文艺广播
+  http://livecdn.pull.cdbs.com.cn/live/fm914/playlist.m3u8
+四川-成都新闻广播
+  http://livecdn.pull.cdbs.com.cn/live/fm998/playlist.m3u8
+四川私家车广播
+  https://satellitepull.cnr.cn/live/wxsc925/playlist.m3u8
+大竹综合广播
+  https://lmt.dazhutv.cn/live3/live3.m3u8
+广元旅游广播
+  https://m3u8.channel.dzsm.com/nmip-media/audiolive/audio101760/playlist.m3u8
+广安综合广播
+  https://live1.gatv.com.cn:90/live/xwgb.m3u8
+成都故事广播
+  http://livecdn.pull.cdbs.com.cn/live/fm882/playlist.m3u8
+成都文化休闲广播
+  http://livecdn.pull.cdbs.com.cn/live/fm946/playlist.m3u8
+资阳综合广播
+  https://zbzy.zyrb.com.cn/sclivedt/zydt.m3u8
+雅安交通旅游广播
+  https://play.yunxya.com/audiolive/whsh.m3u8
+雅安综合广播
+  https://play.yunxya.com/audiolive/1047.m3u8
+黑水综合广播·猛河之声
+  http://live.schstv.com:90/live/mhzs.m3u8
+成都电台
+  https://lhttp.qtfm.cn/live/4892/64k.mp3
+  别名：成都
+欧美音乐88.7
+  https://lhttp.qtfm.cn/live/15318703/64k.mp3
+成都经济广播
+  https://lhttp.qtfm.cn/live/1121/64k.mp3
+成都龙泉人民广播电台
+  https://lhttp.qtfm.cn/live/20207769/64k.mp3
+  频率：93.3
+  别名：成都龙泉
+FM97.4广汉市广播电视台综合广播
+  https://lhttp.qtfm.cn/live/20212405/64k.mp3
+  频率：97.4
+亚洲音乐成都
+  https://lhttp.qtfm.cn/live/4581/64k.mp3
+  频率：96.5
+双流FM1009空港之声
+  https://lhttp.qtfm.cn/live/20211587/64k.mp3
+年代音乐1022
+  https://lhttp.qtfm.cn/live/20500066/64k.mp3
+成都年代音乐怀旧好声音
+  https://lhttp.qtfm.cn/live/20211686/64k.mp3
+绵阳新闻广播
+  https://lhttp.qtfm.cn/live/4024/64k.mp3
+西昌人民广播电台
+  https://lhttp.qtfm.cn/live/20211706/64k.mp3
+  别名：西昌
+绵阳交通广播
+  https://lhttp.qtfm.cn/live/4026/64k.mp3
+
+分组：湖南
+湖南新闻综合广播
+  https://satellitepull.cnr.cn/live/wx32hunxwgb/playlist.m3u8
+  频率：102.8
+  别名：湖南新闻广播
+湖南交通广播
+  https://satellitepull.cnr.cn/live/wx32hunjtgb/playlist.m3u8
+  频率：91.8
+湖南经济广播
+  https://satellitepull.cnr.cn/live/wx32hunjjgb/playlist.m3u8
+  频率：90.1
+潇湘之声
+  https://satellitepull.cnr.cn/live/wx32hunyygb/playlist.m3u8
+金鹰955·湖南金鹰之声
+  https://satellitepull.cnr.cn/live/wx32955/playlist.m3u8
+  别名：金鹰之声
+FM105.6 常德综合广播
+  https://lhttp.qtfm.cn/live/15318208/64k.mp3
+  https://live.ximalaya.com/radio-first-page-app/live/2650/64.m3u8?transcode=ts
+  频率：105.6
+  别名：常德综合广播
+湖南乡村之声
+  https://satellitepull.cnr.cn/live/wx32hunyygb/playlist.m3u8
+湘潭新闻综合广播
+  https://live.ximalaya.com/radio-first-page-app/live/2673/64.m3u8?transcode=ts
+  频率：88.2
+衡阳县综合广播 FM105.6汽车音乐电台
+  https://live.ximalaya.com/radio-first-page-app/live/1182/64.m3u8?transcode=ts
+  频率：105.6
+  别名：衡阳县综合广播 FM105.6汽车音乐
+龙山综合广播龙凤之声
+  https://liveplay-srs.voc.com.cn/hls/broadcast/146_80a15b.m3u8
+邵阳经济广播
+  https://lhttp.qtfm.cn/live/20500058/64k.mp3
+FM106.8常德鼎广电台
+  https://lhttp.qtfm.cn/live/5021860/64k.mp3
+  频率：106.8
+  别名：FM106.8常德鼎广
+娄底综合广播
+  https://lhttp.qtfm.cn/live/21213/64k.mp3
+永州新闻综合广播电台
+  https://lhttp.qtfm.cn/live/15318594/64k.mp3
+  别名：永州新闻综合
+湖南金鹰955电台
+  https://lhttp.qtfm.cn/live/4937/64k.mp3
+  别名：湖南金鹰955
+长沙925电台
+  https://lhttp.qtfm.cn/live/5022076/64k.mp3
+  别名：长沙925
+89.3芒果音乐台
+  https://lhttp.qtfm.cn/live/4979/64k.mp3
+Easy Fm
+  https://lhttp.qtfm.cn/live/5022391/64k.mp3
+FM102.2亲子智慧电台
+  https://lhttp.qtfm.cn/live/4930/64k.mp3
+  频率：102.2
+  别名：FM102.2亲子智慧
+FM88.6长沙音乐广播
+  https://lhttp.qtfm.cn/live/20847/64k.mp3
+  频率：88.6
+郴州综合广播
+  https://lhttp.qtfm.cn/live/20489/64k.mp3
+长沙FM101.7城市之声
+  https://lhttp.qtfm.cn/live/4237/64k.mp3
+  频率：101.7
+FM105.0长沙新闻广播
+  https://lhttp.qtfm.cn/live/4877/64k.mp3
+  频率：105.0
+岳阳新闻综合广播
+  https://lhttp.qtfm.cn/live/20989/64k.mp3
+1028郴州交通旅游广播
+  https://lhttp.qtfm.cn/live/20867/64k.mp3
+1061长沙交通广播
+  https://lhttp.qtfm.cn/live/3967/64k.mp3
+FM97.1常德交通广播
+  https://lhttp.qtfm.cn/live/15318209/64k.mp3
+  频率：97.1
+岳阳交通广播
+  https://lhttp.qtfm.cn/live/20987/64k.mp3
+株洲交通广播
+  https://lhttp.qtfm.cn/live/3971/64k.mp3
+湖南交通频道
+  https://lhttp.qtfm.cn/live/4879/64k.mp3
+邵阳综合广播
+  https://lhttp.qtfm.cn/live/20148/64k.mp3
+
+分组：湖北
+楚天交通广播
+  https://lhttp.qtfm.cn/live/1291/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32hubctjtgb/playlist.m3u8
+  频率：92.7
+湖北经济资讯广播
+  https://satellitepull.cnr.cn/live/wx32hubjjgb/playlist.m3u8
+  频率：99.8
+  别名：湖北经济广播
+金色音乐-湖北经典音乐广播
+  https://satellitepull.cnr.cn/live/wx32hubyygb/playlist.m3u8
+  频率：103.8
+  别名：湖北经典音乐广播
+宜昌交通广播
+  https://lhttp.qtfm.cn/live/20563/64k.mp3
+  https://liveplay.ycrmt.cn/fm/jtt.m3u8
+宜昌新闻综合广播
+  https://lhttp.qtfm.cn/live/20565/64k.mp3
+  https://liveplay.ycrmt.cn/fm/xwt.m3u8
+宜昌音乐生活广播
+  https://liveplay.ycrmt.cn/fm/qct.m3u8
+湖北之声中波
+  https://satellitepull.cnr.cn/live/wx32hubzsgb/playlist.m3u8
+武穴人民广播电台
+  https://lhttp.qtfm.cn/live/5022071/64k.mp3
+  别名：武穴
+鄂州广播电视台综合广播
+  https://lhttp.qtfm.cn/live/21025/64k.mp3
+宜昌音乐广播
+  https://lhttp.qtfm.cn/live/20567/64k.mp3
+武汉经典音乐广播
+  https://lhttp.qtfm.cn/live/1297/64k.mp3
+襄阳文化教育广播
+  https://lhttp.qtfm.cn/live/5057/64k.mp3
+公安人民广播电台
+  https://lhttp.qtfm.cn/live/5063/64k.mp3
+  别名：公安
+十堰综合广播
+  https://lhttp.qtfm.cn/live/20338/64k.mp3
+孝感新闻综合广播
+  https://lhttp.qtfm.cn/live/5022064/64k.mp3
+武汉新闻广播
+  https://lhttp.qtfm.cn/live/20198/64k.mp3
+襄阳之声
+  https://lhttp.qtfm.cn/live/1307/64k.mp3
+随州综合广播
+  https://lhttp.qtfm.cn/live/20853/64k.mp3
+十堰交通音乐广播
+  https://lhttp.qtfm.cn/live/20342/64k.mp3
+武汉交通广播
+  https://lhttp.qtfm.cn/live/4665/64k.mp3
+荆州广播电视台90.1汽车广播
+  https://lhttp.qtfm.cn/live/1312/64k.mp3
+襄阳交通音乐广播
+  https://lhttp.qtfm.cn/live/1308/64k.mp3
+随州交通经济广播
+  https://lhttp.qtfm.cn/live/21027/64k.mp3
+黄冈交通音乐广播
+  https://lhttp.qtfm.cn/live/20207776/64k.mp3
+
+分组：福建
+福建新闻广播
+  https://satellitepull.cnr.cn/live/wx32fjxwgb/playlist.m3u8
+福建交通广播
+  https://satellitepull.cnr.cn/live/wx32fjdnjtgb/playlist.m3u8
+  频率：100.7
+福建都市广播·私家车987
+  https://satellitepull.cnr.cn/live/wx32fjdndsgb/playlist.m3u8
+  频率：98.7
+  别名：福建都市广播
+福建东南广播
+  https://satellitepull.cnr.cn/live/wx32fjdngb/playlist.m3u8
+福建财经广播
+  https://satellitepull.cnr.cn/live/wx32fjdnjjgb/playlist.m3u8
+  频率：96.1
+福建音乐广播
+  https://live.xmcdn.com/live/791/64.m3u8
+  频率：91.3
+福建私家车广播
+  https://live.xmcdn.com/live/793/64.m3u8
+  频率：98.7
+海峡之声综合广播
+  https://live.xmcdn.com/live/191/64.m3u8
+  频率：97.9
+宁德交通旅游广播
+  https://live.0593tv.cn/live/1x71vlpybkk5.m3u8
+宁德综合广播
+  https://live.0593tv.cn/live/grhg5jjxnev6.m3u8
+晋江综合广播
+  https://live.ijjnews.com/jjrd/sd/live.m3u8
+石狮综合广播
+  https://live-new.chinashishi.net/SSradio/sd/live.m3u8
+福州新闻广播
+  https://lhttp.qtfm.cn/live/5025/64k.mp3
+  http://live.zohi.tv/audio/s10001-FM944/index.m3u8
+泉州刺桐之声
+  https://lhttp.qtfm.cn/live/5022360/64k.mp3
+福州人民广播电台左海之声
+  https://lhttp.qtfm.cn/live/3937/64k.mp3
+厦门交通旅游广播
+  https://lhttp.qtfm.cn/live/1738/64k.mp3
+泉州广播电视台889新闻综合广播
+  https://lhttp.qtfm.cn/live/15318346/64k.mp3
+漳州人民广播电台综合广播
+  https://lhttp.qtfm.cn/live/1742/64k.mp3
+漳浦广播电视台综合广播
+  https://lhttp.qtfm.cn/live/5022658/64k.mp3
+FM881南安广播电视台综合广播
+  https://lhttp.qtfm.cn/live/5021731/64k.mp3
+厦门音乐广播
+  https://lhttp.qtfm.cn/live/1739/64k.mp3
+厦门综合广播
+  https://lhttp.qtfm.cn/live/1737/64k.mp3
+安溪人民广播电台
+  https://lhttp.qtfm.cn/live/5022135/64k.mp3
+  别名：安溪
+海峡之声广播电台
+  https://lhttp.qtfm.cn/live/1744/64k.mp3
+  别名：海峡之声
+龙岩电台综合广播
+  https://lhttp.qtfm.cn/live/20709/64k.mp3
+尤溪1066
+  https://lhttp.qtfm.cn/live/5022498/64k.mp3
+泉州904交通之声
+  https://lhttp.qtfm.cn/live/15318189/64k.mp3
+漳州人民广播电台交通广播
+  https://lhttp.qtfm.cn/live/1743/64k.mp3
+福州交通之声
+  https://lhttp.qtfm.cn/live/5026/64k.mp3
+
+分组：陕西
+陕西新闻广播
+  https://satellitepull.cnr.cn/live/wxsxxxwgb/playlist.m3u8
+陕西音乐广播·快乐988
+  https://satellitepull.cnr.cn/live/wxsxxyygb/playlist.m3u8
+  频率：98.8
+  别名：陕西音乐广播
+陕西青少广播·好听1055
+  https://satellitepull.cnr.cn/live/wxsxxqcgb/playlist.m3u8
+  频率：105.5
+  别名：陕西青春广播
+陕西经济广播·896汽车调频
+  https://satellitepull.cnr.cn/live/wxsxxjjgb/playlist.m3u8
+  别名：陕西经济广播
+陕西交通广播
+  https://satellitepull.cnr.cn/live/wxsxxjtgb/playlist.m3u8
+MY FM 西安
+  https://live.xmcdn.com/live/870/64.m3u8
+  频率：105.5
+彬州市人民广播电台
+  https://live.ximalaya.com/radio-first-page-app/live/2675/64.m3u8?transcode=ts
+  别名：彬州市
+西安综艺广播
+  http://stream3.xiancity.cn/3/sd/live.m3u8
+  频率：102.4
+陕西农村广播
+  https://satellitepull.cnr.cn/live/wxsxxncgb/playlist.m3u8
+FM100.7咸阳人民广播电台
+  https://lhttp.qtfm.cn/live/5022397/64k.mp3
+  频率：100.7
+  别名：FM100.7咸阳
+安康交通广播
+  https://lhttp.qtfm.cn/live/5021862/64k.mp3
+西安音乐广播
+  https://lhttp.qtfm.cn/live/1612/64k.mp3
+安康综合广播
+  https://lhttp.qtfm.cn/live/5021861/64k.mp3
+宝鸡综合广播
+  https://lhttp.qtfm.cn/live/15318125/64k.mp3
+西安新闻广播
+  https://lhttp.qtfm.cn/live/1610/64k.mp3
+宝鸡交通旅游
+  https://lhttp.qtfm.cn/live/15318128/64k.mp3
+西安交通广播
+  https://lhttp.qtfm.cn/live/1611/64k.mp3
+
+分组：河南
+河南新闻广播
+  https://satellitepull.cnr.cn/live/wxhnxwgb/playlist.m3u8
+  https://stream.hndt.com/live/xinwen/playlist.m3u8
+河南交通广播
+  https://stream.hndt.com/live/jiaotong/playlist.m3u8
+  频率：104.7
+河南音乐广播
+  https://stream.hndt.com/live/yinyue/playlist.m3u8
+  频率：88.1
+河南经济广播
+  https://satellitepull.cnr.cn/live/wxhnjjgb/playlist.m3u8
+河南旅游广播
+  https://satellitepull.cnr.cn/live/wxhnlygb/playlist.m3u8
+  https://stream.hndt.com/live/jiaoyu/playlist.m3u8
+  别名：河南教育广播
+河南农村广播大象资讯台
+  https://satellitepull.cnr.cn/live/wxhnncgb/playlist.m3u8
+  别名：河南农村广播
+河南戏曲广播
+  https://satellitepull.cnr.cn/live/wxhnxqgb/playlist.m3u8
+河南信息广播
+  https://satellitepull.cnr.cn/live/wxhnxxgb/playlist.m3u8
+  https://stream.hndt.com/live/leling/playlist.m3u8
+河南影视广播
+  https://stream.hndt.com/live/yingshi/playlist.m3u8
+郑州新闻广播
+  https://lhttp.qtfm.cn/live/1220/64k.mp3
+  https://live.xmcdn.com/live/470/64.m3u8
+  频率：98.6
+郑州音乐广播
+  https://lhttp.qingting.fm/live/4921/64k.mp3
+  https://lhttp.qtfm.cn/live/4921/64k.mp3
+  频率：94.4
+河南古典音乐天籁广播
+  https://stream.hndt.com/live/gudian/chunklist_w1085892077.m3u8
+河南戏曲娱乐广播
+  https://stream.hndt.com/live/yule/chunklist_w1631891218.m3u8
+河南戏曲网络广播
+  https://stream.hndt.com/live/wangluoxiqu/playlist.m3u8
+河南网络星河音乐台
+  https://stream.hndt.com/live/1061/playlist.m3u8
+私家车999
+  https://stream.hndt.com/live/sijiache/playlist.m3u8
+FM91.8郑州私家车广播
+  https://lhttp.qtfm.cn/live/1222/64k.mp3
+  频率：91.8
+快乐903私家车广播
+  https://lhttp.qtfm.cn/live/5021919/64k.mp3
+郑州经济广播
+  https://lhttp.qtfm.cn/live/1221/64k.mp3
+开封综合广播
+  https://lhttp.qtfm.cn/live/5022653/64k.mp3
+漯河综合广播
+  https://lhttp.qtfm.cn/live/5022660/64k.mp3
+TOP Radio 安阳881
+  https://lhttp.qtfm.cn/live/20209339/64k.mp3
+开封私家车音乐广播
+  https://lhttp.qtfm.cn/live/4569/64k.mp3
+长垣综合广播
+  https://lhttp.qtfm.cn/live/15318663/64k.mp3
+  频率：95.7
+AI潮流音乐台
+  https://lhttp.qtfm.cn/live/15318300/64k.mp3
+怀旧好声音
+  https://lhttp.qtfm.cn/live/1223/64k.mp3
+濮阳好音乐1023
+  https://lhttp.qtfm.cn/live/5021461/64k.mp3
+FM99.6信阳交通广播
+  https://lhttp.qtfm.cn/live/15318156/64k.mp3
+  频率：99.6
+南阳好朋友892汽车音乐电台
+  https://lhttp.qtfm.cn/live/5022725/64k.mp3
+  别名：南阳好朋友892汽车音乐
+开封交通旅游广播
+  https://lhttp.qtfm.cn/live/1214/64k.mp3
+漯河交通广播
+  https://lhttp.qtfm.cn/live/5022452/64k.mp3
+郑州交通广播
+  https://lhttp.qtfm.cn/live/1211/64k.mp3
+
+分组：河北
+河北综合广播
+  https://satellitepull.cnr.cn/live/wxhebzhgb/playlist.m3u8
+  https://radio.pull.hebtv.com/live/hebzh.m3u8
+  频率：104.3
+河北交通广播
+  https://lhttp.qtfm.cn/live/1646/64k.mp3
+  https://satellitepull.cnr.cn/live/wxhebjtgb/playlist.m3u8
+  https://radio.pull.hebtv.com/live/hebjt.m3u8
+  频率：99.2
+河北音乐广播
+  https://lhttp.qtfm.cn/live/1649/64k.mp3
+  https://satellitepull.cnr.cn/live/wxhebyygb/playlist.m3u8
+河北生活广播
+  https://lhttp.qtfm.cn/live/4867/64k.mp3
+  https://satellitepull.cnr.cn/live/wxhebshgb/playlist.m3u8
+河北汽车音乐广播
+  https://radio.pull.hebtv.com/live/hebqcyy.m3u8
+  频率：102.9
+石家庄音乐广播
+  https://lhttp.qtfm.cn/live/1654/64k.mp3
+  https://live.xmcdn.com/live/504/64.m3u8
+  频率：106.7
+石家庄交通广播
+  https://lhttp.qtfm.cn/live/1655/64k.mp3
+  https://live.xmcdn.com/live/505/64.m3u8
+  频率：94.6
+石家庄新闻广播
+  https://lhttp.qingting.fm/live/1652/64k.mp3
+  https://lhttp.qtfm.cn/live/1652/64k.mp3
+  频率：88.2
+河北新闻广播
+  https://lhttp.qtfm.cn/live/1644/64k.mp3
+  https://radio.pull.hebtv.com/live/hebxw.m3u8
+三河综合广播
+  https://jwcdnqx.hebyun.com.cn/live/jiyunsanhe1/1500k/tzwj_video.m3u8
+丰宁综合广播
+  https://jwcdnqx.hebyun.com.cn/live/fengningguangbo/1500k/tzwj_video.m3u8
+任丘新闻综合广播
+  https://jwcdnqx.hebyun.com.cn/live/rqgb/1500k/tzwj_video.m3u8
+保定1058飞扬调频汽车音乐广播
+  https://lhttp.qtfm.cn/live/5021803/64k.mp3
+  https://jwcdnqx.hebyun.com.cn/live/fytp1058/1500k/tzwj_video.m3u8
+兴隆综合
+  https://jwcdnqx.hebyun.com.cn/live/xlzh/1500k/tzwj_video.m3u8
+平泉综合广播
+  https://jwcdnqx.hebyun.com.cn/live/pqgbdt/1500k/tzwj_video.m3u8
+昌黎广播
+  https://jwcdnqx.hebyun.com.cn/live/clxrmtzxzhgb/1500k/tzwj_video.m3u8
+  频率：97.8
+河北文艺广播
+  https://lhttp.qtfm.cn/live/4868/64k.mp3
+  https://satellitepull.cnr.cn/live/wxhebwygb/playlist.m3u8
+河北经济广播
+  https://satellitepull.cnr.cn/live/wxhebjjgb/playlist.m3u8
+滦平综合广播
+  https://jwplay.hebyun.com.cn/live/FM978/1500k/tzwj_video.m3u8
+肃宁综合广播
+  https://jwcdnqx.hebyun.com.cn/live/snrmgb01/1500k/tzwj_video.m3u8
+  频率：93.3
+邢台交通音乐广播
+  https://jwcdnqx.hebyun.com.cn/live/xtjtyygb/1500k/tzwj_video.m3u8
+邢台综合广播
+  https://lhttp.qtfm.cn/live/20211628/64k.mp3
+  https://jwcdnqx.hebyun.com.cn/live/xinxingtaiRD/1500k/tzwj_video.m3u8
+河北故事广播
+  https://lhttp.qtfm.cn/live/1645/64k.mp3
+任丘融媒体中心综合广播
+  https://lhttp.qtfm.cn/live/5022470/64k.mp3
+动听913（宣化区融媒体中心综合广播）
+  https://lhttp.qtfm.cn/live/15318538/64k.mp3
+承德综合广播
+  https://lhttp.qtfm.cn/live/20500052/64k.mp3
+河北农民广播
+  https://lhttp.qtfm.cn/live/1650/64k.mp3
+献县人民广播电台
+  https://lhttp.qtfm.cn/live/5022603/64k.mp3
+  别名：献县
+辛集融媒体中心综合广播
+  https://lhttp.qtfm.cn/live/5021959/64k.mp3
+邢台爱在104
+  https://lhttp.qtfm.cn/live/5022484/64k.mp3
+久久金曲
+  https://lhttp.qtfm.cn/live/20211694/64k.mp3
+  频率：99.9
+年代965经典音乐广播
+  https://lhttp.qtfm.cn/live/5022038/64k.mp3
+承德旅游生活广播
+  https://lhttp.qtfm.cn/live/15318158/64k.mp3
+欢乐调频
+  https://lhttp.qtfm.cn/live/15318317/64k.mp3
+河北旅游文化广播
+  https://lhttp.qtfm.cn/live/1651/64k.mp3
+经典音乐
+  https://lhttp.qtfm.cn/live/20212269/64k.mp3
+  频率：90.5
+邢台经济生活广播
+  https://lhttp.qtfm.cn/live/15318265/64k.mp3
+邯郸都市生活广播
+  https://lhttp.qtfm.cn/live/3951/64k.mp3
+青春调频
+  https://lhttp.qtfm.cn/live/20212203/64k.mp3
+  频率：105.4
+魏县鸭梨音乐广播
+  https://lhttp.qtfm.cn/live/20212412/64k.mp3
+FM93.0霸州汽车音乐广播
+  https://lhttp.qtfm.cn/live/20211658/64k.mp3
+  频率：93.0
+唐山音乐广播
+  https://lhttp.qtfm.cn/live/4871/64k.mp3
+廊坊飞扬105
+  https://lhttp.qtfm.cn/live/20211678/64k.mp3
+武安融媒综合广播
+  https://lhttp.qtfm.cn/live/5022474/64k.mp3
+沧州音乐广播
+  https://lhttp.qtfm.cn/live/5021902/64k.mp3
+  频率：103.6
+邯郸音乐广播
+  https://lhttp.qtfm.cn/live/4601/64k.mp3
+鹿泉融媒体中心综合广播
+  https://lhttp.qtfm.cn/live/20211668/64k.mp3
+沧州新闻广播
+  https://lhttp.qtfm.cn/live/5021901/64k.mp3
+邯郸新闻综合广播
+  https://lhttp.qtfm.cn/live/5072/64k.mp3
+976承德交通文艺广播
+  https://lhttp.qtfm.cn/live/15318216/64k.mp3
+唐山交通文艺
+  https://lhttp.qtfm.cn/live/1659/64k.mp3
+定州融媒体中心综合广播
+  https://lhttp.qtfm.cn/live/20211638/64k.mp3
+怀旧金曲964
+  https://lhttp.qtfm.cn/live/5021555/64k.mp3
+沧州1058汽车音乐广播
+  https://lhttp.qtfm.cn/live/5021914/64k.mp3
+沧州交通广播
+  https://lhttp.qtfm.cn/live/3954/64k.mp3
+畅行951
+  https://lhttp.qtfm.cn/live/3948/64k.mp3
+邯郸交通广播
+  https://lhttp.qtfm.cn/live/3950/64k.mp3
+
+分组：山西
+山西综合广播
+  https://lhttp.qtfm.cn/live/20491/64k.mp3
+  https://satellitepull.cnr.cn/live/wxssxxwgb/playlist.m3u8
+  http://radiolive.sxrtv.com/live/xinwen.m3u8
+山西音乐广播
+  https://lhttp.qingting.fm/live/4932/64k.mp3
+  https://lhttp.qtfm.cn/live/4932/64k.mp3
+FM1026太原音乐广播
+  https://lhttp.qingting.fm/live/1185/64k.mp3
+  https://lhttp.qtfm.cn/live/1185/64k.mp3
+  频率：102.6
+  别名：太原音乐广播
+FM107太原交通广播
+  https://lhttp.qingting.fm/live/4900/64k.mp3
+  https://lhttp.qtfm.cn/live/4900/64k.mp3
+  频率：107.0
+  别名：太原交通广播
+太谷综合广播
+  https://p2.vzan.com/slowlive/933376641866061786/live.m3u8
+FM101.5山西文艺广播
+  https://lhttp.qtfm.cn/live/20485/64k.mp3
+  http://radiolive.sxrtv.com/live/wenyi.m3u8
+  频率：101.5
+  别名：山西文艺广播
+运城文艺广播
+  https://live.0359tv.com/lsdream/p3e1Pzg/live.m3u8
+大同经济文艺广播
+  https://lhttp.qtfm.cn/live/20211689/64k.mp3
+山西农村广播
+  https://lhttp.qtfm.cn/live/1186/64k.mp3
+958电台山西经济广播
+  https://lhttp.qtfm.cn/live/20501/64k.mp3
+FM1044太原经济广播
+  https://lhttp.qtfm.cn/live/4018/64k.mp3
+FM104.1北岳之声
+  https://lhttp.qtfm.cn/live/20212209/64k.mp3
+  频率：104.1
+山西故事广播
+  https://lhttp.qtfm.cn/live/5022511/64k.mp3
+摩天102
+  https://lhttp.qtfm.cn/live/20212394/64k.mp3
+阳泉综合广播
+  https://lhttp.qtfm.cn/live/15318568/64k.mp3
+太原老年之声广播
+  https://lhttp.qtfm.cn/live/20211701/64k.mp3
+FM912太原综合广播
+  https://lhttp.qtfm.cn/live/20006/64k.mp3
+晋城新闻综合广播
+  https://lhttp.qtfm.cn/live/1188/64k.mp3
+长治综合广播
+  https://lhttp.qtfm.cn/live/5021874/64k.mp3
+880山西交通广播
+  https://lhttp.qtfm.cn/live/20007/64k.mp3
+大同交通广播
+  https://lhttp.qtfm.cn/live/5022396/64k.mp3
+晋城交通广播
+  https://lhttp.qtfm.cn/live/1189/64k.mp3
+阳泉交通广播
+  https://lhttp.qtfm.cn/live/15318165/64k.mp3
+
+分组：辽宁
+辽宁之声
+  https://satellitepull.cnr.cn/live/wxlnzhgb/playlist.m3u8
+辽宁交通广播
+  https://satellitepull.cnr.cn/live/wxlnjtgb/playlist.m3u8
+  频率：97.5
+辽宁经济广播
+  https://satellitepull.cnr.cn/live/wxlnjjtb/playlist.m3u8
+辽宁经典音乐广播
+  https://lhttp.qtfm.cn/live/20021/64k.mp3
+  https://satellitepull.cnr.cn/live/wxlnwygb/playlist.m3u8
+  频率：102.9
+沈阳音乐广播
+  https://live.xmcdn.com/live/329/64.m3u8
+  频率：98.6
+辽宁乡村广播
+  https://satellitepull.cnr.cn/live/wxlnxcgb/playlist.m3u8
+凌源综合广播
+  https://lhttp-hw.qtfm.cn/live/15318298/64k.mp3
+FM97.0庄河融媒广播
+  https://lhttp.qtfm.cn/live/5022473/64k.mp3
+  频率：97.0
+新民人民广播电台
+  https://lhttp.qtfm.cn/live/5022535/64k.mp3
+  别名：新民
+普兰店
+  https://lhttp.qtfm.cn/live/20212414/64k.mp3
+  频率：90.8
+朝阳县人民广播电台
+  https://lhttp.qtfm.cn/live/20212211/64k.mp3
+  频率：104.0
+  别名：朝阳县
+绥中综合广播
+  https://lhttp.qtfm.cn/live/20211705/64k.mp3
+辽宁资讯广播fm90.6大连分台
+  https://lhttp.qtfm.cn/live/5022018/64k.mp3
+  频率：90.6
+大连都市广播
+  https://lhttp.qtfm.cn/live/1086/64k.mp3
+沈阳生活广播
+  https://lhttp.qtfm.cn/live/1102/64k.mp3
+沈阳都市广播
+  https://lhttp.qtfm.cn/live/1099/64k.mp3
+大连1067
+  https://lhttp.qtfm.cn/live/1084/64k.mp3
+沈阳之声
+  https://lhttp.qtfm.cn/live/20024/64k.mp3
+大连体育广播
+  https://lhttp.qtfm.cn/live/1085/64k.mp3
+沈阳交通广播
+  https://lhttp.qtfm.cn/live/1101/64k.mp3
+  频率：98.6
+
+分组：吉林
+吉林新闻综合广播
+  https://lhttp.qtfm.cn/live/4953/64k.mp3
+  https://satellitepull.cnr.cn/live/wxjlxwzhgb/playlist.m3u8
+  https://live-jlr.jlntv.cn/live/am738.m3u8
+吉林交通广播
+  https://lhttp.qtfm.cn/live/4945/64k.mp3
+  https://satellitepull.cnr.cn/live/wxjljtgb/playlist.m3u8
+吉林经济广播FM95.3
+  https://lhttp.qtfm.cn/live/3976/64k.mp3
+  https://satellitepull.cnr.cn/live/wxjljjgb/playlist.m3u8
+  频率：95.3
+  别名：吉林经济广播
+吉林乡村广播
+  https://satellitepull.cnr.cn/live/wxjlxcgb/playlist.m3u8
+  https://live-jlr.jlntv.cn/live/fm976.m3u8
+长春都市音乐广播
+  https://lhttp.qingting.fm/live/4850/64k.mp3
+  频率：88.0
+长春交通之声
+  https://lhttp.qingting.fm/live/4967/64k.mp3
+  https://lhttp.qtfm.cn/live/4967/64k.mp3
+  频率：96.8
+长春新闻广播
+  https://lhttp.qingting.fm/live/5013/64k.mp3
+  https://lhttp.qtfm.cn/live/5013/64k.mp3
+东丰综合广播
+  http://stream3.jlntv.cn/dfgb/playlist.m3u8
+乾安综合广播
+  http://stream7.jlntv.cn/qagb/playlist.m3u8
+双辽综合广播
+  http://stream3.jlntv.cn/slgb/playlist.m3u8
+吉林健康娱乐广播 老歌听不够，经典永流传
+  https://live-jlr.jlntv.cn/live/fm1019.m3u8
+吉林旅游广播
+  https://live-jlr.jlntv.cn/live/fm1033.m3u8
+吉林经济广播 老年频率
+  https://live-jlr.jlntv.cn/live/fm953.m3u8
+吉林音乐广播 东北亚音乐台
+  https://live-jlr.jlntv.cn/live/fm927.m3u8
+延边文艺生活广播
+  https://satellitepull.cnr.cn/live/wxybwyshgb/playlist.m3u8
+敦化综合广播
+  http://stream9.jlntv.cn/dhgb/playlist.m3u8
+柳河综合广播
+  http://stream3.jlntv.cn/lhgb/playlist.m3u8
+梨树北方交通之声
+  http://stream3.jlntv.cn/lsgb/playlist.m3u8
+永吉县人民广播电台
+  http://stream9.jlntv.cn/yongjigb/playlist.m3u8
+  别名：永吉县
+珲春综合广播
+  http://stream9.jlntv.cn/hcgb/playlist.m3u8
+辽源交通文艺广播
+  http://stream9.jlntv.cn/lyjtgb/playlist.m3u8
+集安综合广播
+  http://stream3.jlntv.cn/jagb/playlist.m3u8
+靖宇县综合广播
+  http://stream9.jlntv.cn/jygb/playlist.m3u8
+901综合文艺广播
+  https://lhttp.qtfm.cn/live/20211585/64k.mp3
+魅力
+  https://lhttp.qtfm.cn/live/5021975/64k.mp3
+松原新闻综合广播
+  https://lhttp.qtfm.cn/live/5079/64k.mp3
+1046延边旅游生活广播
+  https://lhttp.qtfm.cn/live/5022438/64k.mp3
+1063城市生活广播
+  https://lhttp.qtfm.cn/live/4984/64k.mp3
+吉林市广播电视台经济广播
+  https://lhttp.qtfm.cn/live/1823/64k.mp3
+松原大众生活广播
+  https://lhttp.qtfm.cn/live/5082/64k.mp3
+吉林音乐广播
+  https://lhttp.qtfm.cn/live/1831/64k.mp3
+长春广播电视台
+  https://lhttp.qtfm.cn/live/4850/64k.mp3
+  频率：88.0
+  别名：长春
+延边新闻广播
+  https://lhttp.qtfm.cn/live/5022488/64k.mp3
+吉林市交通台
+  https://lhttp.qtfm.cn/live/1819/64k.mp3
+四平交通文艺台
+  https://lhttp.qtfm.cn/live/5022465/64k.mp3
+松原交通文艺广播
+  https://lhttp.qtfm.cn/live/20212256/64k.mp3
+
+分组：黑龙江
+黑龙江新闻广播
+  https://satellitepull.cnr.cn/live/wx32hljxwgb/playlist.m3u8
+  频率：94.6
+阿穆尔河-黑龙江交通广播
+  https://lhttp.qtfm.cn/live/4973/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32hljjtgb/playlist.m3u8
+  频率：99.8
+  别名：黑龙江交通广播
+黑龙江私家车广播
+  https://lhttp.qtfm.cn/live/4970/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32hljsjcgb/playlist.m3u8
+  别名：黑龙江生活广播
+黑龙江乡村广播
+  https://satellitepull.cnr.cn/live/wx32hljxcgb/playlist.m3u8
+黑龙江高校广播
+  https://lhttp.qtfm.cn/live/4976/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32hljgxgb/playlist.m3u8
+黑龙江都市女性广播
+  https://satellitepull.cnr.cn/live/wx32hljnxgb/playlist.m3u8
+  别名：黑龙江女性广播
+黑龙江老年少儿广播·爱家调频
+  https://satellitepull.cnr.cn/live/wx32hljajgb/playlist.m3u8
+  别名：黑龙江爱家调频
+黑龙江朝鲜语广播
+  https://satellitepull.cnr.cn/live/wx32hljcygb/playlist.m3u8
+龙广音乐台
+  https://satellitepull.cnr.cn/live/wx32hljyygb/playlist.m3u8
+  频率：95.8
+哈尔滨音乐广播
+  https://lhttp.qingting.fm/live/839/64k.mp3
+  https://lhttp.qtfm.cn/live/839/64k.mp3
+  http://stream.hrbtv.net/yypl/playlist.m3u8
+  频率：90.9
+哈尔滨古典音乐广播
+  https://lhttp.qingting.fm/live/5022338/64k.mp3
+哈尔滨交通广播
+  https://lhttp.qingting.fm/live/838/64k.mp3
+  https://lhttp.qtfm.cn/live/838/64k.mp3
+  http://stream.hrbtv.net/jtpl/playlist.m3u8
+哈尔滨新闻广播
+  https://lhttp.qingting.fm/live/20077/64k.mp3
+FM冰城102.6·哈尔滨古典音乐广播
+  http://stream.hrbtv.net/gdpl/playlist.m3u8
+哈尔滨文艺广播
+  https://lhttp.qtfm.cn/live/20083/64k.mp3
+  http://stream.hrbtv.net/wypl/playlist.m3u8
+哈尔滨经济广播
+  https://lhttp.qtfm.cn/live/837/64k.mp3
+  http://stream.hrbtv.net/876pl/playlist.m3u8
+哈尔滨综合广播
+  http://stream.hrbtv.net/xwpl/playlist.m3u8
+黑龙江音乐广播
+  https://lhttp.qtfm.cn/live/4969/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32hljyygb/playlist.m3u8
+黑龙江老年少儿广播
+  https://lhttp.qtfm.cn/live/4972/64k.mp3
+龙广都市女性台
+  https://lhttp.qtfm.cn/live/4968/64k.mp3
+冰城1026哈尔滨古典音乐广播
+  https://lhttp.qtfm.cn/live/5022338/64k.mp3
+哈尔滨广播电视台综合广播
+  https://lhttp.qtfm.cn/live/20077/64k.mp3
+牡丹江综合广播
+  https://lhttp.qtfm.cn/live/5022434/64k.mp3
+龙广新闻台
+  https://lhttp.qtfm.cn/live/4974/64k.mp3
+牡丹江交通广播
+  https://lhttp.qtfm.cn/live/5022354/64k.mp3
+
+分组：安徽
+安徽之声
+  https://satellitepull.cnr.cn/live/wxahxxgb/playlist.m3u8
+安徽交通广播
+  https://satellitepull.cnr.cn/live/wxahjtgb/playlist.m3u8
+  频率：90.8
+安徽经济广播
+  https://satellitepull.cnr.cn/live/wxahjjgb/playlist.m3u8
+安徽生活广播·城市之声
+  https://satellitepull.cnr.cn/live/wxahshgb/playlist.m3u8
+  别名：安徽生活广播
+安徽旅游广播·高速之声
+  https://satellitepull.cnr.cn/live/wxahlygb/playlist.m3u8
+  别名：安徽旅游广播
+安徽农村广播
+  https://satellitepull.cnr.cn/live/wxahncgb/playlist.m3u8
+安徽戏曲广播·动听995
+  https://satellitepull.cnr.cn/live/wxahxqgb/playlist.m3u8
+  别名：安徽戏曲广播
+安徽小说评书广播
+  https://satellitepull.cnr.cn/live/wxahxspsgb/playlist.m3u8
+安徽音乐广播
+  https://satellitepull.cnr.cn/live/wxahyygb/playlist.m3u8
+  频率：89.5
+合肥交通广播
+  https://lhttp.qingting.fm/live/1960/64k.mp3
+  https://lhttp.qtfm.cn/live/1960/64k.mp3
+亳州综合广播
+  http://zbbf2.ahbztv.com/live/41a.m3u8
+安徽综合广播
+  https://satellitepull.cnr.cn/live/wxahxxgb/playlist.m3u8
+广德综合广播
+  https://live.gdtv.ah.cn/live/FM893.m3u8
+  频率：89.3
+滁州旅游交通广播
+  https://live.ximalaya.com/radio-first-page-app/live/174/64.m3u8?transcode=ts
+滁州综合广播
+  https://live.ximalaya.com/radio-first-page-app/live/154/64.m3u8?transcode=ts
+合肥文旅广播
+  https://lhttp.qtfm.cn/live/1961/64k.mp3
+淮北综合广播
+  https://lhttp.qtfm.cn/live/20211648/64k.mp3
+颍上
+  https://lhttp.qtfm.cn/live/20500039/64k.mp3
+合肥文艺广播
+  https://lhttp.qtfm.cn/live/1975/64k.mp3
+FM963界首之声（界首新闻综合广播）
+  https://lhttp.qtfm.cn/live/20207785/64k.mp3
+合肥新闻综合广播
+  https://lhttp.qtfm.cn/live/20212380/64k.mp3
+黄山新闻综合广播
+  https://lhttp.qtfm.cn/live/1968/64k.mp3
+淮北交通广播
+  https://lhttp.qtfm.cn/live/20211647/64k.mp3
+黄山交通旅游广播
+  https://lhttp.qtfm.cn/live/1969/64k.mp3
+
+分组：江西
+江西综合新闻广播
+  https://lhttp.qtfm.cn/live/1809/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32jiangxxwgb/playlist.m3u8
+  别名：江西新闻广播
+江西音乐广播
+  https://lhttp.qtfm.cn/live/1802/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32jiangxyygb/playlist.m3u8
+宜春交通音乐广播
+  https://liveds-yc.newsyc.com/fmb/sd/live.m3u8
+  频率：87.9
+宜春新闻综合广播
+  https://liveds-yc.newsyc.com/fmmf/sd/live.m3u8
+  频率：101.1
+江西旅游广播
+  https://lhttp.qtfm.cn/live/20133/64k.mp3
+  https://fm-live-pull.jxtvcn.com.cn/live-jxrtv/fm974.m3u8
+  频率：97.4
+德兴之声国际广播 DeXing International
+  http://player4.juyun.tv/camera/158562106.m3u8
+江西财经广播（成功992）
+  https://lhttp.qtfm.cn/live/5021665/64k.mp3
+九江新闻综合900红调频
+  https://lhttp.qtfm.cn/live/5022729/64k.mp3
+高安电台942
+  https://lhttp.qtfm.cn/live/20500014/64k.mp3
+九江文化旅游广播
+  https://lhttp.qtfm.cn/live/20212210/64k.mp3
+FM94.5赣州交通音乐广播
+  https://lhttp.qtfm.cn/live/4942/64k.mp3
+  频率：94.5
+赣州综合广播
+  https://lhttp.qtfm.cn/live/20266/64k.mp3
+FM103.2鹰潭交通音乐广播
+  https://lhttp.qtfm.cn/live/5022036/64k.mp3
+  频率：103.2
+九江交通广播
+  https://lhttp.qtfm.cn/live/5021918/64k.mp3
+南昌交通广播
+  https://lhttp.qtfm.cn/live/1804/64k.mp3
+
+分组：云南
+云南新闻广播
+  https://lhttp.qtfm.cn/live/1926/64k.mp3
+  https://satellitepull.cnr.cn/live/wxynxwgb/playlist.m3u8
+  频率：91.8
+云南交通之声
+  https://lhttp.qtfm.cn/live/1928/64k.mp3
+  https://satellitepull.cnr.cn/live/wxynjtgb/playlist.m3u8
+  频率：91.8
+云南经济广播·私家车电台
+  https://satellitepull.cnr.cn/live/wxynjjgb/playlist.m3u8
+  别名：云南经济广播, 云南经济广播·私家车
+云南国际广播
+  https://satellitepull.cnr.cn/live/wxynsegb/playlist.m3u8
+云南音乐广播
+  https://lhttp.qtfm.cn/live/1929/64k.mp3
+  https://satellitepull.cnr.cn/live/wxynyygb/playlist.m3u8
+  https://gbw.ynradio.cn/radio/yygb.stream/playlist.m3u8
+昆明汽车广播
+  https://live.xmcdn.com/live/906/64.m3u8
+  频率：95.4
+云南民族广播
+  https://lhttp.qtfm.cn/live/1933/64k.mp3
+  https://satellitepull.cnr.cn/live/wxynmzgb/playlist.m3u8
+云南私家车电台
+  https://lhttp.qtfm.cn/live/1927/64k.mp3
+  别名：云南私家车
+FM1008新闻综合广播
+  https://lhttp.qtfm.cn/live/1934/64k.mp3
+保山广播电视台FM98.7综合广播
+  https://lhttp.qtfm.cn/live/5022446/64k.mp3
+  频率：98.7
+大理综合广播
+  https://lhttp.qtfm.cn/live/20207747/64k.mp3
+开远广播电视台综合广播
+  https://lhttp.qtfm.cn/live/5022383/64k.mp3
+弥勒广播电视台综合广播
+  https://lhttp.qtfm.cn/live/5022531/64k.mp3
+玉溪新闻综合广播
+  https://lhttp.qtfm.cn/live/5022031/64k.mp3
+  频率：102.4
+蒙自广播电视台综合广播
+  https://lhttp.qtfm.cn/live/5021599/64k.mp3
+巧家人民广播电台——白鹤之声
+  https://lhttp.qtfm.cn/live/20211704/64k.mp3
+普洱市广播电视台综合广播
+  https://lhttp.qtfm.cn/live/1938/64k.mp3
+普洱市广播电视台交通广播
+  https://lhttp.qtfm.cn/live/20212429/64k.mp3
+玉溪交通旅游广播
+  https://lhttp.qtfm.cn/live/20211563/64k.mp3
+  频率：87.7
+
+分组：贵州
+贵州综合广播
+  https://satellitepull.cnr.cn/live/wx32gzwxwzhgb/playlist.m3u8
+贵州音乐广播
+  https://satellitepull.cnr.cn/live/wx32gzyygb/playlist.m3u8
+  频率：95.2
+贵州经济广播
+  https://satellitepull.cnr.cn/live/wx32gzjjgb/playlist.m3u8
+  频率：98.9
+贵州旅游广播
+  https://satellitepull.cnr.cn/live/wx32gzlygb/playlist.m3u8
+贵州故事广播
+  https://satellitepull.cnr.cn/live/wx32gzgsgb/playlist.m3u8
+贵阳新闻广播
+  https://lhttp.qingting.fm/live/1773/64k.mp3
+  频率：88.9
+贵州都市广播
+  https://satellitepull.cnr.cn/live/wx32gzqcgb/playlist.m3u8
+七星关综合广播
+  https://lhttp.qtfm.cn/live/5021866/64k.mp3
+兴仁人民广播电台
+  https://lhttp.qtfm.cn/live/20500077/64k.mp3
+  别名：兴仁
+凯里人民广播电台
+  https://lhttp.qtfm.cn/live/5022045/64k.mp3
+  别名：凯里
+威宁阳光945
+  https://lhttp.qtfm.cn/live/5022342/64k.mp3
+安顺综合广播
+  https://lhttp.qtfm.cn/live/5022203/64k.mp3
+  频率：105.9
+六盘水广播电视台综合广播
+  https://lhttp.qtfm.cn/live/20211616/64k.mp3
+贵阳综合广播
+  https://lhttp.qtfm.cn/live/1773/64k.mp3
+贵州交通广播
+  https://lhttp.qtfm.cn/live/20057/64k.mp3
+遵义综合广播
+  https://lhttp.qtfm.cn/live/20741/64k.mp3
+黔东南综合广播
+  https://lhttp.qtfm.cn/live/5022285/64k.mp3
+  频率：89.8
+
+分组：广西
+广西人民广播
+  https://satellitepull.cnr.cn/live/wx32gxrmgb/playlist.m3u8
+  别名：广西综合广播
+广西交通广播
+  https://satellitepull.cnr.cn/live/wx32gxjtgb/playlist.m3u8
+  频率：100.3
+广西文艺广播
+  https://satellitepull.cnr.cn/live/wx32gxwygb/playlist.m3u8
+  https://stream.bbrtv.com:10443/hls/rCjJ4Y1MR/rCjJ4Y1MR_live.m3u8
+  频率：95.0
+  别名：广西音乐广播
+广西教育生活广播
+  https://satellitepull.cnr.cn/live/wx32gbjyshgb/playlist.m3u8
+  频率：93.0
+  别名：广西教育广播
+南宁交通音乐广播
+  https://lhttp.qtfm.cn/live/20767/64k.mp3
+南宁综合广播
+  https://lhttp.qtfm.cn/live/20358/64k.mp3
+广西北部湾之声
+  https://lhttp.qtfm.cn/live/1757/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32gxdwgb/playlist.m3u8
+广西经济广播
+  https://stream.bbrtv.com:10443/hls/wrr24LJGR/wrr24LJGR_live.m3u8
+广西经济广播·女主播电台
+  https://satellitepull.cnr.cn/live/wx32gxjjgb/playlist.m3u8
+  别名：广西经济广播·女主播
+百色综合广播
+  https://vod.bsyjrb.cn/live/9cb859019bb6.m3u8
+  频率：105.2
+百色音乐广播
+  https://vod.bsyjrb.cn/live/82c95bdd98f2.m3u8
+  频率：87.6
+广西970女主播电台
+  https://lhttp.qtfm.cn/live/1754/64k.mp3
+  别名：广西970女主播
+桂林飞扬调频
+  https://lhttp.qtfm.cn/live/1760/64k.mp3
+FM950广西音乐台
+  https://lhttp.qtfm.cn/live/4875/64k.mp3
+978玉林城市电台
+  https://lhttp.qtfm.cn/live/1762/64k.mp3
+  别名：978玉林城市
+北海新闻综合广播
+  https://lhttp.qtfm.cn/live/20861/64k.mp3
+广西电台新闻910
+  https://lhttp.qtfm.cn/live/1753/64k.mp3
+柳州综合广播
+  https://lhttp.qtfm.cn/live/21043/64k.mp3
+桂林新闻综合广播
+  https://lhttp.qtfm.cn/live/1759/64k.mp3
+畅听882（贺州广播电视台综合广播）
+  https://lhttp.qtfm.cn/live/5043/64k.mp3
+FM99.10柳州交通广播
+  https://lhttp.qtfm.cn/live/20571/64k.mp3
+  频率：99.1
+北海交通音乐广播
+  https://lhttp.qtfm.cn/live/20211621/64k.mp3
+广西交通台
+  https://lhttp.qtfm.cn/live/1758/64k.mp3
+广西私家车930
+  https://lhttp.qtfm.cn/live/1756/64k.mp3
+
+分组：海南
+海南新闻广播
+  https://lhttp.qtfm.cn/live/1861/64k.mp3
+  https://satellitepull.cnr.cn/live/wxhainxwgb/playlist.m3u8
+海南交通广播
+  https://lhttp.qtfm.cn/live/4911/64k.mp3
+  https://satellitepull.cnr.cn/live/wxhainjtgb/playlist.m3u8
+海南音乐广播
+  https://lhttp.qtfm.cn/live/4878/64k.mp3
+  https://satellitepull.cnr.cn/live/wxhainyygb/playlist.m3u8
+  频率：94.5
+FM101.8海口综合广播
+  https://lhttp.qingting.fm/live/5022015/64k.mp3
+  https://lhttp.qtfm.cn/live/5022015/64k.mp3
+  频率：101.8
+  别名：海口综合广播
+三亚天涯之声
+  https://lhttp.qtfm.cn/live/20450/64k.mp3
+三亚之声
+  https://lhttp.qtfm.cn/live/15318203/64k.mp3
+海南旅游广播•国际旅游岛之声
+  https://lhttp.qtfm.cn/live/1862/64k.mp3
+海南民生广播
+  https://lhttp.qtfm.cn/live/21243/64k.mp3
+海口音乐广播
+  https://lhttp.qtfm.cn/live/20010/64k.mp3
+交通954
+  https://lhttp.qtfm.cn/live/5022079/64k.mp3
+
+分组：甘肃
+甘肃新闻综合广播
+  https://lhttp.qtfm.cn/live/5022622/64k.mp3
+  https://satellitepull.cnr.cn/live/wxgsxwzhgb/playlist.m3u8
+甘肃交通广播
+  https://lhttp.qtfm.cn/live/3939/64k.mp3
+  https://satellitepull.cnr.cn/live/wxgsjtgb/playlist.m3u8
+  频率：104.8
+甘肃黄河之声
+  https://satellitepull.cnr.cn/live/wxgshhzs/playlist.m3u8
+甘肃都市调频
+  https://satellitepull.cnr.cn/live/wxgsdstb/playlist.m3u8
+甘肃青春调频
+  https://satellitepull.cnr.cn/live/wxgsqcgb/playlist.m3u8
+兰州新闻综合广播
+  https://liveplus.lzr.com.cn/aac_zhgb/HD/live.m3u8
+  频率：97.3
+  别名：兰州综合广播
+兰州交通音乐广播
+  https://liveplus.lzr.com.cn/aac_jtyy/HD/live.m3u8
+  频率：99.5
+兰州生活文艺广播
+  https://liveplus.lzr.com.cn/aac_shwy/HD/live.m3u8
+  频率：100.8
+FM106.6综合广播
+  https://lhttp.qtfm.cn/live/15318602/64k.mp3
+  https://lhttp.qtfm.cn/live/20176/64k.mp3
+  频率：106.6
+  别名：FM92.6 综合广播
+张掖新闻综合广播
+  https://lhttp.qtfm.cn/live/5022096/64k.mp3
+定西交通广播
+  https://lhttp.qtfm.cn/live/20212230/64k.mp3
+
+分组：青海
+青海经济广播
+  https://satellitepull.cnr.cn/live/wx32qhjjgb/playlist.m3u8
+青海交通音乐广播
+  https://satellitepull.cnr.cn/live/wx32qhjtyygb/playlist.m3u8
+  频率：97.2
+青海藏语广播
+  https://satellitepull.cnr.cn/live/wx32qhzygb/playlist.m3u8
+西宁新闻综合广播
+  https://lhttp.qingting.fm/live/5022282/64k.mp3
+  https://lhttp.qtfm.cn/live/5022282/64k.mp3
+FM104.3西宁交通文艺广播
+  https://lhttp.qingting.fm/live/5022283/64k.mp3
+  https://lhttp.qtfm.cn/live/5022283/64k.mp3
+  频率：104.3
+  别名：西宁交通文艺广播
+青海新闻综合广播 青海之声
+  https://satellitepull.cnr.cn/live/wx32qhwxzhgb/playlist.m3u8
+
+分组：宁夏
+宁夏新闻广播
+  https://satellitepull.cnr.cn/live/wxnxxwgb/playlist.m3u8
+宁夏音乐广播
+  https://lhttp.qtfm.cn/live/15318294/64k.mp3
+  https://satellitepull.cnr.cn/live/wxnxyygb/playlist.m3u8
+石嘴山综合广播
+  https://lhttp.qtfm.cn/live/5022563/64k.mp3
+宁夏交通广播
+  https://lhttp.qtfm.cn/live/1840/64k.mp3
+
+分组：新疆
+新疆汉语新闻广播
+  https://lhttp.qtfm.cn/live/1902/64k.mp3
+  https://satellitepull.cnr.cn/live/wxxjxwgb/playlist.m3u8
+  频率：96.1
+  别名：新疆新闻广播
+新疆私家车广播
+  https://satellitepull.cnr.cn/live/wxxjsjcgb/playlist.m3u8
+新疆维语综合广播
+  https://satellitepull.cnr.cn/live/wxxjwyzhgb/playlist.m3u8
+  别名：维语综合广播
+新疆哈语广播
+  https://satellitepull.cnr.cn/live/wxxjhygb/playlist.m3u8
+  别名：哈语广播
+柯尔克孜语广播
+  https://satellitepull.cnr.cn/live/wxxjkygb/playlist.m3u8
+  别名：新疆柯语广播
+新疆蒙语广播
+  https://satellitepull.cnr.cn/live/wxxjmygb/playlist.m3u8
+  https://live.ximalaya.com/radio-first-page-app/live/1835/64.m3u8?transcode=ts
+新疆汉语综合广播
+  https://satellitepull.cnr.cn/live/wxxjlsgb/playlist.m3u8
+  别名：新疆绿色广播
+维语交通文艺广播
+  https://satellitepull.cnr.cn/live/wxxjwyjtwygb/playlist.m3u8
+  别名：新疆维语文艺广播
+乌鲁木齐974交通广播
+  https://lhttp.qingting.fm/live/1919/64k.mp3
+  https://lhttp.qtfm.cn/live/1919/64k.mp3
+  频率：97.4
+克拉玛依汉语综合广播 FM92.6
+  https://live-news.kelamayi.com.cn/hls/k926/index.m3u8
+  频率：92.6
+兵团之声
+  https://live.ximalaya.com/radio-first-page-app/live/1838/64.m3u8?transcode=ts
+喀什综合广播
+  https://live.ximalaya.com/radio-first-page-app/live/2773/64.m3u8?transcode=ts
+新疆交通广播
+  https://lhttp.qtfm.cn/live/1910/64k.mp3
+  https://satellitepull.cnr.cn/live/wxxjjtgb/playlist.m3u8
+新疆文化旅游广播
+  https://live.ximalaya.com/radio-first-page-app/live/988/64.m3u8?transcode=ts
+新疆维语交通文艺广播
+  https://live.ximalaya.com/radio-first-page-app/live/1834/64.m3u8?transcode=ts
+乌鲁木齐维吾尔语广播
+  https://lhttp.qtfm.cn/live/1923/64k.mp3
+新疆哈萨克语广播
+  https://lhttp.qtfm.cn/live/1908/64k.mp3
+新疆蒙古语广播
+  https://lhttp.qtfm.cn/live/1903/64k.mp3
+伊犁之声
+  https://lhttp.qtfm.cn/live/20500054/64k.mp3
+  频率：89.7
+伊犁汉语综合广播
+  https://lhttp.qtfm.cn/live/20211711/64k.mp3
+兵团882综合广播
+  https://lhttp.qtfm.cn/live/5022410/64k.mp3
+新疆兵团第十三师调频广播
+  https://lhttp.qtfm.cn/live/5022506/64k.mp3
+阿克苏市1029
+  https://lhttp.qtfm.cn/live/20500041/64k.mp3
+新疆929文化旅游广播
+  https://lhttp.qtfm.cn/live/1909/64k.mp3
+乌鲁木齐旅游音乐
+  https://lhttp.qtfm.cn/live/1920/64k.mp3
+伊犁FM99.5察布查尔
+  https://lhttp.qtfm.cn/live/5022610/64k.mp3
+  频率：99.5
+乌鲁木齐新闻广播
+  https://lhttp.qtfm.cn/live/1918/64k.mp3
+伊犁哈萨克语综合广播
+  https://lhttp.qtfm.cn/live/5022692/64k.mp3
+伊犁维吾尔语综合广播
+  https://lhttp.qtfm.cn/live/5022688/64k.mp3
+巴音郭楞广播电视台1077交通文艺广播
+  https://lhttp.qtfm.cn/live/5022104/64k.mp3
+托峰明珠交通音乐
+  https://lhttp.qtfm.cn/live/20207780/64k.mp3
+
+分组：西藏
+西藏汉语广播
+  https://satellitepull.cnr.cn/live/wxxzhygb/playlist.m3u8
+西藏藏语广播
+  https://satellitepull.cnr.cn/live/wxxzzygb/playlist.m3u8
+西藏都市生活广播
+  https://satellitepull.cnr.cn/live/wxxzdsshgb/playlist.m3u8
+西藏藏语康巴方言
+  https://satellitepull.cnr.cn/live/wxxzzykbfy/playlist.m3u8
+西藏对外交通广播
+  https://satellitepull.cnr.cn/live/wxxzdwjtgb/playlist.m3u8
+拉萨综合广播
+  https://lhttp.qingting.fm/live/5022138/64k.mp3
+  频率：91.4
+日喀则综合广播
+  https://console.rkzrm.cn:20323/3.m3u8
+西藏康巴话广播
+  https://satellitepull.cnr.cn/live/wxxzzykbfy/playlist.m3u8
+
+分组：内蒙古
+内蒙古汉语广播
+  https://satellitepull.cnr.cn/live/wx32nmghyzhxwgb/playlist.m3u8
+  别名：内蒙古新闻广播
+内蒙古交通之声
+  https://lhttp.qtfm.cn/live/1884/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32nmgjtgb/playlist.m3u8
+内蒙古音乐之声
+  https://lhttp.qtfm.cn/live/1886/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32nmgyygb/playlist.m3u8
+内蒙古蒙语新闻综合广播
+  https://lhttp.qtfm.cn/live/1883/64k.mp3
+  https://satellitepull.cnr.cn/live/wx32nmgmygb/playlist.m3u8
+  别名：蒙古语广播, 内蒙古新闻综合广播
+内蒙古蒙语对外广播草原之声
+  https://satellitepull.cnr.cn/live/wx32nmgdwgb/playlist.m3u8
+  别名：内蒙古对外广播
+内蒙古农村牧区广播绿野之声
+  https://satellitepull.cnr.cn/live/wx32nmglyzs/playlist.m3u8
+  别名：绿野之声
+蒙古语综合广播
+  https://satellitepull.cnr.cn/live/wx32nmgmyxwgb/playlist.m3u8
+内蒙古-呼伦贝尔综合广播
+  https://satellitepull.cnr.cn/live/wx32nmghlbehygb/playlist.m3u8
+  别名：呼伦贝尔汉语广播
+呼伦贝尔蒙语广播
+  https://satellitepull.cnr.cn/live/wx32nmghlbemygb/playlist.m3u8
+内蒙古城乡生活广播
+  http://play1-qk.nmtv.cn/live/1902718general.m3u8
+通辽交通文艺广播
+  https://video.tongliaowang.com:2443/live/cid5.m3u8
+锡林郭勒综合广播
+  https://satellitepull.cnr.cn/live/wx32nmgxlglhygb/playlist.m3u8
+锡林郭勒蒙语广播
+  https://satellitepull.cnr.cn/live/wx32nmgxlglmygb/playlist.m3u8
+阿拉善汉语广播
+  https://satellitepull.cnr.cn/live/wx32nmgalshygb/playlist.m3u8
+阿拉善蒙语广播
+  https://satellitepull.cnr.cn/live/wx32nmgalsmygb/playlist.m3u8
+包头交通广播
+  https://lhttp.qtfm.cn/live/1890/64k.mp3
+赤峰1024
+  https://lhttp.qtfm.cn/live/1898/64k.mp3
+内蒙古草原之声广播
+  https://lhttp.qtfm.cn/live/20973/64k.mp3
+内蒙古绿野之声广播
+  https://lhttp.qtfm.cn/live/1888/64k.mp3
+内蒙古蒙古语广播
+  https://lhttp.qtfm.cn/live/1882/64k.mp3
+赤峰蒙古语综合广播
+  https://lhttp.qtfm.cn/live/1897/64k.mp3
+阿拉善综合广播
+  https://lhttp.qtfm.cn/live/5022521/64k.mp3
+阿拉善蒙语综合广播
+  https://lhttp.qtfm.cn/live/5022555/64k.mp3
+包头
+  https://lhttp.qtfm.cn/live/1891/64k.mp3
+  频率：105.9
+包头汽车音乐广播
+  https://lhttp.qtfm.cn/live/1892/64k.mp3
+FM896鄂尔多斯之声
+  https://lhttp.qtfm.cn/live/20350/64k.mp3
+FM94.9包头综合广播
+  https://lhttp.qtfm.cn/live/1889/64k.mp3
+  频率：94.9
+呼和浩特综合广播
+  https://lhttp.qtfm.cn/live/5021543/64k.mp3
+鄂尔多斯蒙语综合广播
+  https://lhttp.qtfm.cn/live/20348/64k.mp3
+鄂尔多斯交通文体广播
+  https://lhttp.qtfm.cn/live/20352/64k.mp3
+
+分组：国际 · 英国
+Heart 80s
+  https://media-ssl.musicradio.com/Heart80sMP3
+Heart 70s
+  https://media-ssl.musicradio.com/Heart70sMP3
+BBC World Service
+  https://stream.live.vc.bbcmedia.co.uk/bbc_world_service
+  别名：BBC国际广播
+Heart Dance
+  https://media-ssl.musicradio.com/HeartDanceMP3
+Heart 90s
+  https://media-ssl.musicradio.com/Heart90sMP3
+TalkSPORT
+  https://radio.talksport.com/stream
+  别名：体育谈话
+Capital Dance
+  https://icecast.thisisdax.com/CapitalDanceMP3
+Virgin Radio Chilled
+  https://radio.virginradio.co.uk/stream-chilled?aw_0_1st.platform=vr-web
+  别名：维珍电台
+Virgin Radio UK
+  https://radio.virginradio.co.uk/stream
+  别名：维珍电台
+LBC News
+  https://media-ssl.musicradio.com/LBCNewsUK
+Radio X Classic Rock
+  https://media-ice.musicradio.com/RadioXClassicRockMP3
+Classic FM Calm
+  https://media-ice.musicradio.com/ClassicFMCalmMP3
+  别名：经典FM
+Capital Chill
+  https://media-ssl.musicradio.com/CapitalChill
+Virgin Radio Anthems
+  https://radio.virginradio.co.uk/stream-anthems
+  别名：维珍电台
+Classic FM Movies
+  https://media-ice.musicradio.com/ClassicFMMoviesMP3
+  别名：经典FM
+BBC for Australasia
+  https://stream.live.vc.bbcmedia.co.uk/bbc_world_service_australasia
+Virgin Radio
+  https://radio.virginradio.co.uk/stream?aw_0_1st.platform=vr-web
+  别名：维珍电台
+BBC Arabic
+  https://stream.live.vc.bbcmedia.co.uk/bbc_arabic_radio
+
+分组：国际 · 美国
+SomaFM Groove Salad
+  https://ice6.somafm.com/groovesalad-128-mp3
+  别名：索玛FM
+SomaFM Secret Agent
+  https://ice5.somafm.com/secretagent-128-mp3
+  别名：索玛FM
+SomaFM Underground 80s
+  https://ice5.somafm.com/u80s-128-mp3
+  别名：索玛FM
+SomaFM Space Station Soma
+  https://ice5.somafm.com/spacestation-128-aac
+  别名：索玛FM
+SomaFM PopTron
+  https://ice6.somafm.com/poptron-128-mp3
+  别名：索玛FM
+SomaFM Indie Pop Rocks!
+  https://ice2.somafm.com/indiepop-128-aac
+  别名：索玛FM
+SomaFM Left Coast 70s
+  https://ice2.somafm.com/seventies-320-mp3
+  别名：索玛FM
+SomaFM Lush
+  https://ice6.somafm.com/lush-128-mp3
+  别名：索玛FM
+SomaFM Metal Detector
+  https://ice5.somafm.com/metal-128-aac
+  别名：索玛FM
+SomaFM Fluid
+  https://ice2.somafm.com/fluid-128-mp3
+  别名：索玛FM
+SomaFM Heavyweight Reggae
+  https://ice5.somafm.com/reggae-256-mp3
+  别名：索玛FM
+SomaFM Drone Zone
+  https://ice5.somafm.com/dronezone-128-mp3
+  别名：索玛FM
+Radio Paradise Rock Mix FLAC
+  https://stream.radioparadise.com/rock-flac
+  别名：天堂电台
+SomaFM Deep Space One
+  https://ice6.somafm.com/deepspaceone-32-aac
+  别名：索玛FM
+SomaFM Boot Liquor
+  https://ice5.somafm.com/bootliquor-320-mp3
+  别名：索玛FM
+SomaFM Sonic Universe
+  https://ice5.somafm.com/sonicuniverse-128-mp3
+  别名：索玛FM
+Radio Paradise Mellow Mix FLAC
+  https://stream.radioparadise.com/mellow-flac
+  别名：天堂电台
+SomaFM Suburbs of Goa
+  https://ice5.somafm.com/suburbsofgoa-128-aac
+  别名：索玛FM
+SomaFM Beat Blender
+  https://ice5.somafm.com/beatblender-128-mp3
+  别名：索玛FM
+181.FM - Classical Guitar
+  https://listen.181fm.com/181-classicalguitar_128k.mp3
+
+分组：国际 · 法国
+RMC FR
+  https://audio.bfmtv.com/rmcradio_128.mp3
+Europe 1
+  https://stream.europe1.fr/europe1.aac
+  别名：欧洲一台
+France Inter
+  https://stream.radiofrance.fr/franceinter/franceinter_hifi.m3u8?id=radiofrance
+  别名：法国国际广播
+RMC Info Talk Sport
+  https://audio.bfmtv.com/rmcradio_128.mp3?aw_0_1st.playerId=RMC_audio_web&aggregator=RMC_audio_web
+Skyrock Klassics
+  https://icecast.skyrock.net/s/klassiks_aac_64k?tvr_name=radiofr&tvr_section1=64aac
+RTL
+  https://live.m6radio.quortex.io/webM89Hc99XApzgfhXNX8ASN5/grouprtl/national/short/audio-64000/index.m3u8
+  别名：RTL
+📺 RFI Monde
+  https://rfiafrique64k.ice.infomaniak.ch/rfimonde-64.mp3
+Radio Classique
+  https://str0.creacast.com/classique1
+RFI Kiswahili
+  https://rfiswahili96k.ice.infomaniak.ch/rfiswahili-96k.mp3
+  别名：法国国际广播电台
+Skyrock Hits
+  https://icecast.skyrock.net/s/hit_skyrock_aac_64k?tvr_name=radiofr&tvr_section1=64aac
+FIP Pop
+  https://icecast.radiofrance.fr/fippop-hifi.aac
+  别名：巴黎FIP
+FIP (no pub)
+  https://stream.radiofrance.fr/fip/fip_hifi.m3u8
+  别名：巴黎FIP
+RADIO NOVA
+  https://novazz.ice.infomaniak.ch/novazz-128.mp3
+  别名：新星电台
+RTL France
+  https://live.m6radio.quortex.io/webpHJPXnXrN7B6J7Q8mcqmxP/grouprtl/national/long/audio-64000/index.m3u8
+  别名：RTL
+
+分组：国际 · 德国
+SWR3
+  https://liveradio.swr.de/sw282p3/swr3/play.mp3
+Deutschlandfunk
+  https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3?aggregator=web
+  别名：德国广播电台, DLF, MP3 128k
+Bayern 3
+  https://dispatcher.rndfnk.com/br/br3/live/mp3/mid
+NDR 2
+  https://icecast.ndr.de/ndr/ndr2/niedersachsen/mp3/128/stream.mp3
+SWR1 BW
+  https://liveradio.swr.de/sw282p3/swr1bw/play.mp3
+Rock Antenne Heavy Metal
+  https://mp3channels.webradio.rockantenne.de/heavy-metal
+Klassik Radio - Live
+  https://live.streams.klassikradio.de/klassikradio-deutschland/stream/mp3
+Deutschlandfunk Kultur
+  https://st02.sslstream.dlf.de/dlf/02/128/mp3/stream.mp3?aggregator=web
+  别名：德国广播电台, DLF, MP3 128k
+WDR4
+  https://wdr-wdr4-live.icecastssl.wdr.de/wdr/wdr4/live/mp3/128/stream.mp3
+OLDIE ANTENNE
+  https://s1-webradio.oldie-antenne.de/oldie-antenne?aw_0_1st.playerid=OldieAntenneWebPlayer
+Bayern 1 Oberbayern
+  https://dispatcher.rndfnk.com/br/br1/obb/mp3/mid
+Bayern 1 Franken
+  https://dispatcher.rndfnk.com/br/br1/franken/mp3/mid
+Deutschlandfunk Nova
+  https://st03.sslstream.dlf.de/dlf/03/128/mp3/stream.mp3?aggregator=web
+  别名：德国广播电台, DLF, MP3 128k
+
+分组：国际 · 日本
+NHKワールド・ラジオ日本
+  https://masterpl.hls.nhkworld.jp/hls/r1/live/master.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO 8
+  https://master.nhkworld.jp/nhkworld-radio/playlist/rs5/live.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO 11
+  https://master.nhkworld.jp/nhkworld-radio/playlist/gs2/live.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO 12
+  https://master.nhkworld.jp/nhkworld-radio/playlist/kai/live.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO 7
+  https://master.nhkworld.jp/nhkworld-radio/playlist/rs2/live.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO 9
+  https://master.nhkworld.jp/nhkworld-radio/playlist/rs4/live.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO 13
+  https://master.nhkworld.jp/nhkworld-radio/playlist/sin/live.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO
+  https://nhkworld-radio.nhkworld.jp/hls/live/nhkworld-radio-media2/index.m3u8
+  别名：日本放送协会
+NHK World Radio (Korean)
+  https://master.nhkworld.jp/nhkworld-radio/playlist/rs1/live.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO-2
+  https://nhkworld-radio.nhkworld.jp/hls/live/nhkworld-radio-media11/index.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO-3
+  https://nhkworld-radio.nhkworld.jp/hls/live/nhkworld-radio-media12/index.m3u8
+  别名：日本放送协会
+NHK WORLD RADIO-5
+  https://nhkworld-radio.nhkworld.jp/hls/live/nhkworld-radio-media3/index.m3u8
+  别名：日本放送协会
+
+分组：国际 · 韩国
+MBC FM4U
+  https://minimw.imbc.com/dmfm/_definst_/mfm.stream/playlist.m3u8?_lsu_sa_=66E14E1AF3BD3D44F143159239113D4015623615C20462C2304065aAB68D34463DaDA37D39B22F4CE0773AA10Fb6F19C571BC82E88E43AAAC94602FCACB374B3CEED7645D9FDFB520F9CA07C99FAF478DBE6249B605D8403EE267F373955056A8DC5A07D8521FC3FA11D9F57B2B5222C
+  别名：韩国文化广播
+MBC FM
+  https://minisw.imbc.com/dsfm/_definst_/sfm.stream/playlist.m3u8?_lsu_sa_=6441A81B233F37648D40550839314A45958935F58602027C3C1069aC862B3CC631aD33463162C74630FE3C117Fb7C138AB35A14B73C0F777212AFD9D3761E4C2CADF343B2A42B89748F6493EAF65E7A54355C666498A7BEBF6E3BD33371D992C67A75F2BC2C2709D6064E2C7A00D9022
+  别名：韩国文化广播
+MBC FM for you
+  https://minimw.imbc.com/dmfm/_definst_/mfm.stream/playlist.m3u8?_lsu_sa_=6581B71853153174294E25D23811E84885ED3ED5BA0442283FC00Fa6165C3EC6B3aC031538B2B14F20AB37817Eb1C1EB029D0C20F756C2A2F8D5B44C432FBE3AD092961C842E4D25153DB050FC1765C5308F36BB85302B53564CCC8FDE542FA0AEDB52563ADBF589541BDCFCDA9C5456
+  别名：韩国文化广播
+
+分组：国际 · 意大利
+Radio Italia Solo Musica Italiana
+  https://radioitaliasmi.akamaized.net/hls/live/2093120/RISMI/stream01/streamPlaylist.m3u8
+CLASSIC HITS RADIO Italia
+  https://classichitsradio.streamingmedia.it/play
+NEW HITS RADIO Italia
+  https://newhitsradio.streamingmedia.it/play
+RDS 100% Grandi Successi
+  https://stream.rds.radio/audio/rds.stream_aac64/chunklist.m3u8
+Radio Deejay
+  https://4c4b867c89244861ac216426883d1ad0.msvdn.net/radiodeejay/radiodeejay/master_ma.m3u8
+Virgin Radio Rockstar: Rolling Stones
+  https://icy.unitedradio.it/VirginSpecialEvent.mp3
+  别名：维珍电台
+Radio Capital
+  https://4c4b867c89244861ac216426883d1ad0.msvdn.net/radiocapital/radiocapital/master_ma.m3u8
+RDS Relax
+  https://stream.rds.radio/audio/rdsrelax.stream_aac/playlist.m3u8
+RADIO ITALIANA
+  https://radiorossini.stream.laut.fm/radiorossini
+Radio Capital IT
+  https://streamcdnr8-4c4b867c89244861ac216426883d1ad0.msvdn.net/radiocapital/radiocapital/play1.m3u8
+Radio Capital Funky Town
+  https://4c4b867c89244861ac216426883d1ad0.msvdn.net/radiocapitalfunkytown/radiocapitalfunkytown/master_ma.m3u8
+Virgin Radio Rockstar: Queen
+  https://icy.unitedradio.it/Virgin_05.mp3
+  别名：维珍电台
+
+分组：国际 · 西班牙
+LOS 40 Principales España
+  https://playerservices.streamtheworld.com/api/livestream-redirect/Los40.mp3
+  别名：四十强
+Los 40 Urban
+  https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40_URBAN.mp3
+  别名：四十强
+KISS FM
+  https://adhandler.kissfmradio.cires21.com/get_link?url=https://bbkissfm.kissfmradio.cires21.com/bbkissfm.mp3
+ONDA CERO (España)
+  https://atres-live.ondacero.es/live/ondacero/bitrate_1.m3u8
+Kiss FM
+  https://adhandler.kissfmradio.cires21.com/get_link?url=https://bbkissfm.kissfmradio.cires21.com/bbkissfm.mp3&lang=es
+EsRadio Principal
+  https://libertaddigital-radio-live1.flumotion.com/libertaddigital/ld-live1-low.mp3
+Onda Cero Gijón
+  https://atres-live.ondacero.es/live/delegaciones/oc/gijon/bitrate_1.m3u8
+LOS 40 DANCE
+  https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40_DANCE.mp3
+  别名：四十强
+Cadena SER - Ràdio Barcelona
+  https://playerservices.streamtheworld.com/api/livestream-redirect/SER_BARCELONA.mp3
+  别名：SER广播
+EsRadio (MP3 HQ)
+  https://libertaddigital-radio-live1.flumotion.com/libertaddigital/ld-live1-high.mp3
+
+分组：国际 · 荷兰
+Arrow Classic Rock
+  https://stream.player.arrow.nl/arrowcr
+NPO Radio 5
+  https://icecast.omroep.nl/radio5-bb-mp3
+Qmusic
+  https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_live_96.mp3
+Sky Radio Hits
+  https://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR01.mp3?dist=skyradio_web&ttag=talpa_consent:0&gdpr=1&gdpr_consent=BO2svb6O2svb6ADABANLDTAAAAAxKAAA
+Sky Radio
+  https://www.mp3streams.nl/zender/skyradio/stream/8-mp3-128
+NPO 3FM
+  https://icecast.omroep.nl/3fm-bb-mp3
+Qmusic Het Foute Uur
+  https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_fouteuur_96.mp3
+Radio Veronica
+  https://playerservices.streamtheworld.com/api/livestream-redirect/VERONICA
+QMUSIC NEDERLAND
+  https://stream.qmusic.nl/qmusic/mp3
+Qmusic Non-Stop
+  https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_nonstop_96.mp3
+Radio 10
+  https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO10.mp3?dist=radio10_web&amp;ttag=talpa_consent:0&amp;gdpr=1&amp;gdpr_consent=CPR8CQMPR8CRCADABCNLB7CgAAAAAEJAAAAAAAAMEgKgAVAAuACAAGQARAAmgBPADEAH4AQAAjABXADvAIQARYAjgBOwCsgIpAXmAwQAsJAJAAqACAAGQARAAmABPAHeARwBeY6AWABUAEAAMgAiABMACeAGIAd4BFgCOALzHAAwALgCuAIQUgFgAVABAADIAIgATAAngBiAHeARYAjgC8ygAIAC4BOyQAEAC5KAMAEQAJgAYgB3gEcAXmQgCABMADEAO8AjgYACAK4VADACYARwBeYyAGAEwAjgC8w.YAAAAAAAA4AA
+NPO Radio 2
+  https://icecast.omroep.nl/radio2-bb-aac
+  别名：荷兰二台
+
+分组：国际 · 瑞典
+Sveriges Radio - P1
+  https://live1.sr.se/p1-aac-320
+  别名：瑞典广播
+Sveriges Radio - P3
+  https://live1.sr.se/p3-aac-320
+  别名：瑞典广播
+Sveriges Radio - P4 Plus
+  https://live1.sr.se/p4plus-aac-320
+  别名：瑞典广播
+Sveriges Radio - P2
+  https://live1.sr.se/p2-aac-320
+  别名：瑞典广播
+Sveriges Radio P1
+  https://live1.sr.se/p1-aac-32
+  别名：瑞典广播
+Sveriges Radio P4 Göteborg
+  https://live1.sr.se/p4gbg-aac-320
+  别名：瑞典广播
+Sveriges Radio P2 flac
+  https://edge1.sr.se/p2-flac
+  别名：瑞典广播
+Sveriges Radio - Ekot sänder direkt
+  https://live1.sr.se/ekotdirekt-aac-320
+  别名：瑞典广播
+Sveiges Radio - P4 Malmöhus
+  https://sverigesradio.se/topsy/direkt/207-hi.mp3
+
+分组：国际 · 挪威
+P4 Norge (AAC HQ)
+  https://p4.p4groupaudio.com/P04_AH
+P12 Hitmix (MP3 128k)
+  https://nrj.p4groupaudio.com/NRJ_MM
+P6 Rock (MP3 128k)
+  https://p6.p4groupaudio.com/P06_MM
+P8 Pop (MP3 128k)
+  https://p8.p4groupaudio.com/P08_MM
+P10 Country (AAC HQ)
+  https://p10.p4groupaudio.com/P10_AH
+P24-7 Mix
+  https://live-bauerno.sharp-stream.com/p247mix_no_mp3
+P9 Retro (MP3 128k)
+  https://p9.p4groupaudio.com/P09_MH
+P4 Norge (MP3 128k)
+  https://p4.p4groupaudio.com/P04_MM
+
+分组：国际 · 丹麦
+DR P8 JAZZ (AAC)
+  https://drliveradio1.akamaized.net/hls/live/2097651/p8jazz/masterab.m3u8
+  别名：丹麦广播
+DR P3 (AAC)
+  https://drliveradio1.akamaized.net/hls/live/2097651/p3/masterab.m3u8
+  别名：丹麦广播
+DR P4 Østjylland (AAC)
+  https://drliveradio1.akamaized.net/hls/live/2097651/p4ostjylland/masterab.m3u8
+  别名：丹麦广播
+DR P4 København (AAC)
+  https://drliveradio1.akamaized.net/hls/live/2097651/p4kobenhavn/masterab.m3u8
+  别名：丹麦广播
+DR P5 København (AAC)
+  https://drliveradio1.akamaized.net/hls/live/2097651/p5kobenhavn/masterab.m3u8
+  别名：丹麦广播
+DR P1 (AAC)
+  https://drliveradio1.akamaized.net/hls/live/2097651/p1/masterab.m3u8
+  别名：丹麦广播
+DR P6 BEAT (AAC)
+  https://drliveradio1.akamaized.net/hls/live/2097651/p6beat/masterab.m3u8
+  别名：丹麦广播
+DR P2 (AAC)
+  https://drliveradio1.akamaized.net/hls/live/2097651/p2/masterab.m3u8
+  别名：丹麦广播
+
+分组：国际 · 芬兰
+YleX
+  https://icecast.live.yle.fi/radio/YleX/icecast.audio
+  别名：芬兰广播
+Yle Vega Österbotten
+  https://icecast.live.yle.fi/radio/YleVegaOsterbotten/icecast.audio
+  别名：芬兰广播
+YleRadioSuomiTampere
+  https://icecast.live.yle.fi/radio/YleTampere/icecast.audio
+  别名：芬兰广播
+YLE radio Suomi, Jyväskylä
+  https://icecast.live.yle.fi/radio/YleJKL/icecast.audio
+  别名：芬兰广播
+Yle Klassinen
+  https://icecast.live.yle.fi/radio/YleKlassinen/icecast.audio
+  别名：芬兰广播
+Yle Radio Suomi, Mikkeli
+  https://icecast.live.yle.fi/radio/YleMikkeli/icecast.audio
+  别名：芬兰广播
+YLE Radio Suomi Hämeenlinna
+  https://icecast.live.yle.fi/radio/YleHameenlinna/icecast.audio
+  别名：芬兰广播
+Radio SuomiPop
+  https://aud-stream-suomipop.nm-elemental.nelonenmedia.fi/playlist-256000.m3u8
+
+分组：国际 · 俄罗斯
+Radio Record - Russian Mix
+  https://radiorecord.hostingradio.ru/rus96.aacp
+Radio record - Main Channel
+  https://radiorecord.hostingradio.ru/rr_main96.aacp
+HIP HOP RADIO
+  https://tntradio.hostingradio.ru:8027/hhr128.mp3
+Radio Record Megamix
+  https://radiorecord.hostingradio.ru/mix96.aacp
+Radio Record Hardstyle
+  https://radiorecord.hostingradio.ru/teo96.aacp
+Musical Decadence Radio
+  https://stream.musicaldecadence.ru/live
+Radio Maximum - Metallica
+  https://metallica.hostingradio.ru/metallica96.aacp
+Radio Record BREAKS AAC
+  https://radiorecord.hostingradio.ru/brks96.aacp
+Radio Record - Russian Gold
+  https://radiorecord.hostingradio.ru/russiangold96.aacp
+Radio Maximum - Rammstein
+  https://maximum-rammstein.hostingradio.ru/rammstein96.aacp
+Radio Record 00's
+  https://radiorecord.hostingradio.ru/200096.aacp
+BigTunesRadio - House
+  https://bigtunesradio.com:8003/house.mp3?1712236225331
+
+分组：国际 · 澳大利亚
+KIIS 106.5
+  https://ais-arn.streamguys1.com/au_007_icy
+ABC Radio Sydney
+  https://mediaserviceslive.akamaized.net/hls/live/2038302/localsydney/masterhq.m3u8
+  别名：澳大利亚广播
+KIIS 101.1
+  https://ais-arn.streamguys1.com/au_001_icy
+SBS PopAsia
+  https://sbs-ice.streamguys1.com/sbs-popasia-sbs-web
+  别名：首尔广播
+Nova 91.9
+  https://playerservices.streamtheworld.com/api/livestream-redirect/NOVA_919_AAC48.aac
+ABC Radio Australia
+  https://mediaserviceslive.akamaized.net/hls/live/2038266/ramulti/masterhq.m3u8
+  别名：澳大利亚广播
+ABC Country HLS
+  https://mediaserviceslive.akamaized.net/hls/live/2038322/abccountry/index.m3u8
+  别名：澳大利亚广播
+3AW 693 Melbourne, VIC, Australia Talk
+  https://playerservices.streamtheworld.com/api/livestream-redirect/3AW.mp3
+澳大利亚SBS Radio 1
+  https://sbs-ice.streamguys1.com/sbs1-sbs-web
+ABC Jazz HLS
+  https://mediaserviceslive.akamaized.net/hls/live/2038319/abcjazz/index.m3u8
+  别名：澳大利亚广播
+ABC Classic 2 HLS
+  https://mediaserviceslive.akamaized.net/hls/live/2038317/classic2/index.m3u8
+  别名：澳大利亚广播
+ABC Radio Melbourne
+  https://mediaserviceslive.akamaized.net/hls/live/2038300/localmelbourne/masterhq.m3u8
+  别名：澳大利亚广播
+
+分组：国际 · 加拿大
+680 News Toronto
+  https://rogers-hls.leanstream.co/rogers/tor680.stream/playlist.m3u8
+CBC Radio 1 Toronto
+  https://cbcradiolive.akamaized.net/hls/live/2041036/ES_R1ETR/master.m3u8
+  别名：加拿大广播
+ICI Radio-Canada Première Montréal
+  https://rcavliveaudio.akamaized.net/hls/live/2006635/P-2QMTL0_MTL/playlist.m3u8
+Radio Canada Ici Première - Montréal, QC
+  https://rcavliveaudio.akamaized.net/hls/live/2006635/P-2QMTL0_MTL/master.m3u8
+CFIQ 640 'Global News Radio' Toronto, ON
+  https://corus.leanstream.co/CFIQAM-MP3
+CBC Radio 1 Toronto 99.1 FM
+  https://cbcradiolive.akamaized.net/hls/live/2041036/ES_R1ETR/adaptive_128/chunklist_ao.m3u8
+  别名：加拿大广播
+CBC Radio 1 Vancouver
+  https://cbcradiolive.akamaized.net/hls/live/2041050/ES_R1PVC/master.m3u8
+  别名：加拿大广播
+CityNews Toronto
+  https://rogers-hls.leanstream.co/rogers/tor680.stream/icy?environment=tunein&args=tunein_01
+Radio Pakistan Toronto
+  https://s3.radio.co/s3b10a57ef/listen
+CBC Radio One Montréal
+  https://cbcradiolive.akamaized.net/hls/live/2041030/ES_R1EMT/master.m3u8
+  别名：加拿大广播
+CJRK-FM 102.7 'East FM' Toronto, ON
+  https://centova.radioservers.biz/proxy/eastfmc1/stream
+Toronto Global Radio - Freestyle
+  https://london-dedicated.myautodj.com:3199/proxy/freestyle/stream
+
+分组：国际 · 新加坡
+987FM
+  https://22393.live.streamtheworld.com/987FM_PREM.aac
+LOVE 972
+  https://playerservices.streamtheworld.com/api/livestream-redirect/LOVE972FM_PREM.aac
+Yes 933
+  https://playerservices.streamtheworld.com/api/livestream-redirect/YES933AAC_SC
+CNA 938
+  https://22893.live.streamtheworld.com/938NOW_SC
+YES 933
+  https://playerservices.streamtheworld.com/api/livestream-redirect/YES933_PREM.aac
+987
+  https://14033.live.streamtheworld.com/987FM_SC
+CLASS 95
+  https://playerservices.streamtheworld.com/api/livestream-redirect/CLASS95_PREM.aac
+kiss92
+  https://playerservices.streamtheworld.com/api/livestream-redirect/KISS_92_SC
+
+分组：国际 · 马来西亚
+Jei FM Klang Tamil Radio
+  https://usa3.fastcast4u.com/proxy/jeifm?mp=/1
+Radio Rosak
+  https://radiorosak.radioca.st/stream
+TraXXFM [90.3 / 100.1]
+  https://playerservices.streamtheworld.com/api/livestream-redirect/TRAXX_FMAAC_SC
+LITE FM Malaysia
+  https://stream.rcs.revma.com/bn4ex8sbv4uvv
+PBN Radio Nurani
+  https://stream.zeno.fm/2uyfsr25sm0uv
+MIB radio
+  https://stream.zeno.fm/bm557kzmr18uv
+LTR FM Radio Music
+  https://stream.zeno.fm/p1ddt1trwchvv
+Fly FM
+  https://stream.rcs.revma.com/q17aka9mtd3vv
+
+分组：国际 · 泰国
+ไทยลานนาเรดิโอ FM 106.5 จังหวัดตาก
+  https://inter.lannaradio.com/radio/8000/radio.mp3
+BKK.FM
+  https://rsas.bkk.fm/radio
+106 Family News Radio
+  https://radio11.plathong.net/7138/;stream.mp3
+Best Radio FM. 89.0 MHz.
+  https://80sv2.hostpleng.com/?url=http://112.121.150.133:8198/;
+Chili Radio Thailand
+  https://stream.chiliradio.app/chiliclassics
+talay 90.25FM
+  https://stream.talay.asia/talay
+ThaiRadio 96.5 thinking
+  https://live-org-01-cdn.mcot.net/radiocdn_edge/fm965.stream_aac/chunklist.m3u8
+FM 93.50 MHz บ้านใหม่ เรดิโอ
+  https://radio10.plathong.net/7590/;stream.mp3
+
+分组：国际 · 印度
+Radio Mirchi Hindi
+  https://eu8.fastcast4u.com/proxy/clyedupq/stream
+AIR Fm Gold Delhi
+  https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio005/hlspbaudio00564kbps.m3u8
+All India Radio AIR Punjabi
+  https://air.pc.cdn.bitgravity.com/air/live/pbaudio138/chunklist.m3u8
+  别名：全印广播
+All India Radio News 24X7
+  https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio002/hlspbaudio002_Auto.m3u8
+  别名：全印广播
+AIR FM Rainbow Mumbai
+  https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio008/hlspbaudio008_Auto.m3u8
+AIR Kolkata Geetanjali
+  https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio055/hlspbaudio05564kbps.m3u8
+AIR Akashvani Maitree Kolkata
+  https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio245/hlspbaudio24564kbps.m3u8
+Radio Mirchi USA
+  https://streams.radio.co/s8d06d0298/listen
+Air Tamil
+  https://air.pc.cdn.bitgravity.com/air/live/pbaudio025/playlist.m3u8
+AIR Delhi FM Gold
+  https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio005/hlspbaudio005_Auto.m3u8
+
+分组：国际 · 巴西
+89 A Radio Rock
+  https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_89FM_ADP.aac?dist=site-89fm
+Rádio Bandeirantes - São Paulo
+  https://playerservices.streamtheworld.com/api/livestream-redirect/RadioBandeirantesAAC.m3u8
+Super Radio Tupi 96.5
+  https://8923.brasilstream.com.br/stream
+bandnews fm sp
+  https://playerservices.streamtheworld.com/api/livestream-redirect/BANDNEWSFM_SPAAC.m3u8
+Rádio Band FM 96.1 FM
+  https://playerservices.streamtheworld.com/api/livestream-redirect/BANDFM_SPAAC
+Radio Mix FM
+  https://playerservices.streamtheworld.com/api/livestream-redirect/MIXFM_SAOPAULOAAC.aac
+CBN São Paulo
+  https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_SPAAC.aac
+Rádio Transamérica 100.1 FM
+  https://playerservices.streamtheworld.com/api/livestream-redirect/RT_SPAAC.aac
+Rádio Metropolitana 98.5 FM Sertanejo
+  https://ice.fabricahost.com.br/metrospsertanejo
+Kiss FM São Paulo
+  https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_KISSFMAAC.aac?1655609055880
+
+分组：国际 · 墨西哥
+Radio Metrópoli – XEAD-AM
+  https://s2.yesstreaming.net:9088/stream
+BOLLOCKS Rock & Metal Radio
+  https://s44.myradiostream.com/6588/;?type=http&nocache=1571393528?0.9592127816686777
+Radio Metrópoli 1150 AM Guadalajara
+  https://s2.yesstreaming.net:9088/stream?1730862902633
+
+分组：国际 · 波兰
+Antyradio
+  https://n-4-2.dcs.redcdn.pl/sc/o2/Eurozet/live/antyradio.livx?audio=5
+Radio RMF MAXXX
+  https://rs9-krk2-cyfronet.rmfstream.pl/RMFMAXXX48
+Radio ZET
+  https://r.dcs.redcdn.pl/sc/o2/Eurozet/live/audio.livx?audio=5
+TOK FM
+  https://radiostream.pl/tuba10-1.mp3#TOK_FM
+ESKA ROCK
+  https://ic2.smcdn.pl/5380-1.mp3#ESKA_ROCK
+Radio RMF24.pl
+  https://rs202-krk-cyfronet.rmfstream.pl/RMF24?aw_0_req.gdpr=false&aw_0_req.userConsentV2=&aw_0_1st.playerid=RMF_Player_JS_P&aw_0_1st.rmf_disable_preroll=true
+Radio RMF24.PL
+  https://rs201-krk.rmfstream.pl/RMF24
+
+分组：国际 · 葡萄牙
+RFM
+  https://23603.live.streamtheworld.com/RFMAAC.aac
+Antena 1 (Portugal)
+  https://streaming-live.rtp.pt/liveradio/antena180a/playlist.m3u8
+Rádio Comercial
+  https://stream-hls.bauermedia.pt/comercial.aac/playlist.m3u8
+Radio Comercial Portugal
+  https://stream-icy.bauermedia.pt/comercial.mp3
+RDP Internacional (Portugal)
+  https://streaming-live.rtp.pt/liveradio/rdpint80a/playlist.m3u8
+Smooth Jazz Portugal
+  https://stream-hls.bauermedia.pt/smojazz.aac/playlist.m3u8
+Smooth FM (AAC)
+  https://stream-icy.bauermedia.pt/smooth.aac
+
+分组：国际 · 奥地利
+FM4
+  https://orf-live.ors-shoutcast.at/fm4-q1a
+  别名：ORF
+ORF Hitradio Ö3
+  https://orf-live.ors-shoutcast.at/oe3-q2a
+  别名：奥地利广播, HQ
+Antenne Vorarlberg Oldies but Goldies
+  https://web.radio.antennevorarlberg.at/av-oldies
+Antenne Vorarlberg Partymix
+  https://web.radio.antennevorarlberg.at/av-partymix
+Antenne Vorarlberg
+  https://web.radio.antennevorarlberg.at/av-live?aggregator=Radioplayer
+Antenne Vorarlberg Classic Rock
+  https://web.radio.antennevorarlberg.at/av-classicrock/stream/mp3
+Antenne Vorarlberg Dance Radio
+  https://web.radio.antennevorarlberg.at/av-dance
+Antenne Vorarlberg 70er Hits
+  https://web.radio.antennevorarlberg.at/av-70er
+
+分组：国际 · 瑞士
+Radio SRF 3
+  https://stream.srg-ssr.ch/m/drs3/aacp_32
+Energy Basel (NRJ)
+  https://energybasel.ice.infomaniak.ch/energybasel-high.mp3
+Radio Pilatus
+  https://stream.streambase.ch/radiopilatus/mp3-192/chmedia/
+Radio SRF 4 News
+  https://stream.srg-ssr.ch/m/drs4news/aacp_32
+Radio Zürisee
+  https://mp3.radio.ch/radiozuerisee256k
+Radio SRF 2 Kultur
+  https://stream.srg-ssr.ch/m/drs2/aacp_32
+Energy Bern
+  https://energybern.ice.infomaniak.ch/energybern-high.mp3
+
+分组：国际 · 比利时
+RTBF La Première
+  https://radios.rtbf.be/laprem1ere-64.aac
+RTBF Classic 21
+  https://radios.rtbf.be/classic21-128.mp3
+NRJ België
+  https://playerservices.streamtheworld.com/api/livestream-redirect/NRJBELGIE.mp3?dist=radiobrowser
+RTBF VivaCité Bruxelles
+  https://radios.rtbf.be/vivabxl-64.aac
+RTBF Classic 21 - 60's
+  https://radios.rtbf.be/wr-c21-60-128.mp3
+RTBF Classic 21 - Route 66
+  https://radios.rtbf.be/wr-c21-route66-128.mp3
+RTBF Classic 21 - 80's
+  https://radios.rtbf.be/wr-c21-80-128.mp3
+
+分组：国际 · 爱尔兰
+Newstalk
+  https://edge.audioxi.com/NT
+Today FM
+  https://stream.audioxi.com/TD
+RTÉ Radio 1
+  https://liveaudio.rte.ie/hls-radio/radio1/chunklist.m3u8
+  别名：爱尔兰广播
+RTÉ Gold
+  https://liveaudio.rte.ie/hls-radio/gold/chunklist.m3u8
+  别名：爱尔兰广播
+RTE 2 FM
+  https://icecast.rte.ie/2fm
+  别名：爱尔兰广播
+RTÉ 2FM
+  https://liveaudio.rte.ie/hls-radio/2fm/chunklist.m3u8
+  别名：爱尔兰广播
+RTÉ Raidió na Gaeltachta
+  https://liveaudio.rte.ie/hls-radio/rnag/chunklist.m3u8
+  别名：爱尔兰广播
+Today FM 80's
+  https://edge3.audioxi.com/T80
+
+分组：国际 · 新西兰
+The Breeze 93.4
+  https://mediaworks.streamguys1.com/breeze-akl-high_icy
+Newstalk ZB
+  https://playerservices.streamtheworld.com/api/livestream-redirect/NZME_01AAC.m3u8?aw_0_1st.playerid=iHeartRadioWebPlayer&aw_0_1st.skey=9631949606&clientType=web&companionAds=false&deviceName=web-desktop&dist=iheart&host=webapp.NZ&listenerId=&playedFrom=157&pname=live_profile&profileId=9631949606&stationid=6187&terminalId=162&territory=NZ
+Coast FM
+  https://playerservices.streamtheworld.com/api/livestream-redirect/NZME_07AAC.m3u8?aw_0_1st.playerid=iHeartRadioWebPlayer&aw_0_1st.skey=9774168307&clientType=web&companionAds=false&deviceName=web-desktop&dist=iheart&host=webapp.NZ&listenerId=&playedFrom=157&pname=live_profile&profileId=9774168307&stationid=6193&terminalId=162&territory=NZ
+ZM Wellington (new)
+  https://playerservices.streamtheworld.com/api/livestream-redirect/NZME_33AAC.m3u8
+Coast Access Radio
+  https://live.accessmedia.nz/Coast.stream_aac/playlist.m3u8
+More FM - Nelson
+  https://mediaworks.streamguys1.com/more-nsn-high_icy
+Coast Access Radio MP3
+  https://live.accessmedia.nz/Coast.stream/playlist.m3u8
+
+分组：国际 · 南非
+Jacaranda FM
+  https://edge.iono.fm/xice/jacarandafm_live_medium.aac
+Kaya FM
+  https://edge.iono.fm/xice/82_medium.aac
+Talk Radio 702
+  https://playerservices.streamtheworld.com/api/livestream-redirect/FM702_192AAC.aac
+jacaranda_high
+  https://edge.iono.fm/xice/jacarandafm_live_high.aac
+5FM
+  https://playerservices.streamtheworld.com/api/livestream-redirect/5FMAAC.aac
+Metro FM
+  https://playerservices.streamtheworld.com/api/livestream-redirect/METROFMAAC.aac
+
+分组：国际 · 希腊
+Vanilla Radio Smooth Flavors
+  https://smooth.vanillaradio.com:8032/live
+Radio Art - Cuban
+  https://live.radioart.com/fCuban_lounge.mp3
+Vanilla Radio.com - Fresh Flavours Stream
+  https://fresh.vanillaradio.com:8028/live
+Athens Rock 96.9
+  https://az10.yesstreaming.net/radio/8060/radio.mp3
+Zucca Radio
+  https://stream.zuccaradio.com/stream
+Vanilla Radio Deep Flavors
+  https://stream.vanillaradio.com:8003/live
+
+分组：国际 · 土耳其
+Radyo Şiran
+  https://live.radyositesihazir.com/8078/stream
+Power POP
+  https://listen.powerapp.com.tr/powerpop/128/chunks.m3u8
+KRAL TÜRK FM
+  https://live.radyositesihazir.com/8032/stream
+Radyo Fenomen
+  https://live.radyofenomen.com/fenomen/128/icecast.audio
+Radyo Seymen
+  https://yayin.radyoseymen.com.tr:1070/stream
+Slow Turk
+  https://radyo.duhnet.tv/ak_dtvh_slowturk
+
+分组：国际 · 乌克兰
+Kiss FM Ukrainian
+  https://online.kissfm.ua/KissFM_Ukr
+TRANCE IS STAR RADIO
+  https://myradio24.org/tisradio
+Kiss FM Digital HD
+  https://online.kissfm.ua/KissFM_Digital_HD
+Kiss FM Ukraine HD
+  https://online.kissfm.ua/KissFM_Ukr_HD
+RadioRelax_Instrumental_HD
+  https://online.radiorelax.ua/RadioRelax_Instrumental_HD
+Kiss FM
+  https://online.kissfm.ua/KissFM_HD
+
+分组：国际 · 捷克
+Evropa 2 - Radio
+  https://ice.actve.net/fm-evropa2-128
+CRo Radiozurnal
+  https://rozhlas.stream/radiozurnal_aac_128.aac
+Český rozhlas Brno
+  https://rozhlas.stream/brno.mp3
+  别名：捷克广播
+FREKVENCE 1
+  https://playerservices.streamtheworld.com/api/livestream-redirect/FREKVENCE1.mp3
+Čro Vltava Flac
+  https://amp.cesnet.cz:8443/cro3.flac
+Evropa 2 - mp3
+  https://playerservices.streamtheworld.com/api/livestream-redirect/EVROPA2.mp3
+
+分组：国际 · 匈牙利
+Dance Wave Retro!
+  https://dancewave.online/retrodance.mp3
+Retro Rádió
+  https://icast.connectmedia.hu/5001/live.mp3
+Oxygen Magyar Zene
+  https://oxygenmusic.hu:8443/oxygenmagyarzene
+Kossuth
+  https://icast.connectmedia.hu/4736/mr1.mp3
+Petőfi Rádió
+  https://icast.connectmedia.hu/4738/mr2.mp3
+
+分组：国际 · 罗马尼亚
+Kiss Fm Ro
+  https://live.kissfm.ro/kissfm.aacp
+Europa FM Romania
+  https://astreaming.edi.ro:8443/EuropaFM_aac
+Radio România Actualități
+  https://stream4.srr.ro:8443/romania-actualitati
+Radio ZU
+  https://live7digi.antenaplay.ro/radiozu/radiozu-48000.m3u8
+Magic FM Romania
+  https://live.magicfm.ro/magicfm.aacp
+Digi FM
+  https://edge76.rcs-rds.ro/digifm/digifm.mp3
+
+分组：国际 · 以色列
+Radio 103FM
+  https://cdn.cybercdn.live/103FM/Live/icecast.audio
+Galgalatz 91.8 FM
+  https://glzicylv01.bynetcdn.com/glglz_mp3
+גלי ישראל Galey Yisrael
+  https://cdn.cybercdn.live/Galei_Israel/Live/icecast.audio
+Israeli voice radio
+  https://icecast.live/ivr
+
+分组：国际 · 阿根廷
+Radio Rivadavia
+  https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIA.mp3
+Radio Rivadavia AM 630. Ciudad de Buenos Aires
+  https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIAAAC.aac
+Cadena 3 Cordoba
+  https://liveradio.mediainbox.net/radio3.mp3
+
+分组：国际 · 智利
+RADIO COOPERATIVA
+  https://unlimited3-cl.dps.live/cooperativafm/mp3/icecast.audio
+ADN
+  https://27413.live.streamtheworld.com/ADNAAC.aac
+Radio Futuro
+  https://playerservices.streamtheworld.com/api/livestream-redirect/FUTURO_SC.mp3
+ADN Radio
+  https://playerservices.streamtheworld.com/api/livestream-redirect/ADNAAC.aac
+Radio Agricultura
+  https://unlimited4-us.dps.live/agricultura/gotardis/audio/now/livestream1.m3u8
+Radio Concierto Chile
+  https://playerservices.streamtheworld.com/api/livestream-redirect/CONCIERTOAAC.aac
+
+分组：国际 · 印尼
+elshinta jakarta
+  https://stream-ssl.arenastreaming.com:8000/jakarta
+89.2 FM Jakarta, Campur sari
+  https://a8.siar.us/listen/campursari/stream
+TraxFM Jakarta
+  https://stream.radiojar.com/rrqf78p3bnzuv.mp3
+RRI Pro 3 KBRN
+  https://stream-node0.rri.co.id/streaming/14/9014/kbrn.mp3
+  别名：印尼广播
+101.4 FM I-Radio JAKARTA
+  https://stream.radiojar.com/4ywdgup3bnzuv?1739561339
+Campursari FM Jakarta
+  https://streaming.campursarifm.com/listen/campursari/campursari892
+
+分组：国际 · 菲律宾
+Star FM Manila
+  https://stream-13.zeno.fm/g1pmt17nz9duv
+Win Radio Manila
+  https://stream-31.zeno.fm/2ss1hgnu6hhvv
+98.3 Love Radio Dagupan
+  https://loveradiodagupan.radioca.st/
+100.7 Love Radio Lucena
+  https://loveradiolucena.radioca.st/
+DZRH
+  https://azura.dzrh.com.ph/listen/dzrh_manila/radio.mp3
+
+分组：国际 · 越南
+VOV1
+  https://str.vov.gov.vn/vovlive/vov1vov5Vietnamese.sdp_aac/playlist.m3u8
+  别名：越南之声
+VOV Giao thông Hà Nội
+  https://play.vovgiaothong.vn/live/gthn/playlist.m3u8
+  别名：越南之声
+CHẠM RADIO
+  https://vnno-ne-2-tf-multi-playlist-zmp3.zmdcdn.me/j20SDlO5EQk/zhls/playback-realtime/audio/59a2ee0ed24b3b15625a/audio.m3u8
+
+分组：音乐 · 爵士
+SomaFM Secret Agent
+  https://ice5.somafm.com/secretagent-128-mp3
+  别名：索玛FM
+Спокойное радио
+  https://listen9.myradio24.com/6262
+Anon.FM
+  https://icecast.anon.fm/radio
+Bossa Jazz Brasil
+  https://centova5.transmissaodigital.com:20104/live
+Instrumental Jazz
+  https://jfm1.hostingradio.ru:14536/ijstream.mp3
+0 N - Smooth Jazz on Radio
+  https://0n-smoothjazz.radionetz.de/0n-smoothjazz.aac
+Smooth Jazz Lounge
+  https://radio4.vip-radios.fm:18060/stream-128kmp3-SmoothJazzLounge
+Alternative Radio
+  https://www.radioking.com/play/alternative-radio-1
+Easy FM
+  https://netradio.ziniur.lt/easyfm.mp3
+Jazzradio.fr Jazz & Classique
+  https://jazz-wr17.ice.infomaniak.ch/jazz-wr17-128.mp3
+SomaFM Sonic Universe
+  https://ice5.somafm.com/sonicuniverse-128-mp3
+  别名：索玛FM
+
+分组：音乐 · 古典
+WALM 2 HD
+  https://icecast.walmradio.com:8443/walm2
+WALM 2 HD Opus
+  https://icecast.walmradio.com:8443/walm2_opus
+Mosaique FM
+  https://radio.mosaiquefm.net/mosalive
+Новое радио
+  https://live.novoeradio.by:444/live/novoeradio_aac128/icecast.audio
+Vivid Bharti
+  https://air.pc.cdn.bitgravity.com/air/live/pbaudio001/playlist.m3u8
+Radio Marca
+  https://sonic.mediatelekom.net/9316/stream
+. quran
+  https://backup.qurango.net/radio/ahmad_khader_altarabulsi
+إذاعة القرآن الكريم
+  https://n0a.radiojar.com/0tpy1h0kxtzuv?rj-ttl=5&rj-tok=AAABhdgGORQA-2acfyF3_4WY2g
+RadioSimorgh Authentic Iranian music
+  https://stream.zeno.fm/9svfnobkrxrvv
+..mohammed_ayyub
+  https://qurango.net/radio/mohammed_ayyub
+MA:-Hit Radio Maroc
+  https://stream.zeno.fm/une3a02mb
+تفسير بن عثيمين رحمه الله
+  https://qurango.net/radio/tafseer
+
+分组：音乐 · 氛围
+SomaFM Groove Salad
+  https://ice6.somafm.com/groovesalad-128-mp3
+  别名：索玛FM
+SomaFM Secret Agent
+  https://ice5.somafm.com/secretagent-128-mp3
+  别名：索玛FM
+Спокойное радио
+  https://listen9.myradio24.com/6262
+SomaFM Space Station Soma
+  https://ice5.somafm.com/spacestation-128-aac
+  别名：索玛FM
+0 N - Chillout on Radio
+  https://0n-chillout.radionetz.de/0n-chillout.aac
+SomaFM Drone Zone
+  https://ice5.somafm.com/dronezone-128-mp3
+  别名：索玛FM
+Nature Radio Rain
+  https://maggie.torontocast.com:2020/stream/natureradiorain
+SomaFM Deep Space One
+  https://ice6.somafm.com/deepspaceone-32-aac
+  别名：索玛FM
+雨声轻音乐
+  https://stream.zeno.fm/689zc32y4x8uv
+AIRPORT LOUNGE RADIO
+  https://az1.mediacp.eu/listen/airport-lounge-radio/radio.mp3
+
+分组：音乐 · 弛放
+Спокойное радио
+  https://listen9.myradio24.com/6262
+REGGAE CHILL CAFE
+  https://maggie.torontocast.com:2020/stream/reggaechillcafe
+Nature Radio Rain
+  https://maggie.torontocast.com:2020/stream/natureradiorain
+Chillout Ibiza FM
+  https://edge3.peta.live365.net/b05055_128mp3
+Relax FM Chillout
+  https://pub0201.101.ru/stream/trust/mp3/128/24?
+雨声轻音乐
+  https://stream.zeno.fm/689zc32y4x8uv
+AIRPORT LOUNGE RADIO
+  https://az1.mediacp.eu/listen/airport-lounge-radio/radio.mp3
+EPIC CLASSICAL - Classical Music For Sleep
+  https://stream.epic-classical.com/classical-music-for-sleep
+Epic Lounge - SLEEP & MEDITATION
+  https://stream.epic-lounge.com/sleep-meditation?ref=radiobrowser
+RDS Relax
+  https://stream.rds.radio/audio/rdsrelax.stream_aac/playlist.m3u8
+SomaFM DEF CON Radio
+  https://ice5.somafm.com/defcon-128-aac
+  别名：索玛FM
+Antenne Bayern - CoffeeMusic
+  https://mp3channels.webradio.de/coffee
+
+分组：音乐 · 电子
+Intense Radio - We love Dance 256K
+  https://secure.live-streams.nl/main
+SomaFM Space Station Soma
+  https://ice5.somafm.com/spacestation-128-aac
+  别名：索玛FM
+Mixadance FM
+  https://stream.mixadance.fm/mixadance
+SomaFM Lush
+  https://ice6.somafm.com/lush-128-mp3
+  别名：索玛FM
+TMM 2
+  https://listen-msmn.sharp-stream.com/nme2.mp3
+__TRANCE__ by rautemusik (rm.fm)
+  https://trance-high.rautemusik.fm/?ref=radiobrowser
+Technolovers DEEP HOUSE
+  https://stream.technolovers.fm/deep-house?ref=radiobrowser
+0 N - Indie on Radio
+  https://0n-indie.radionetz.de/0n-indie.mp3
+0 N - Chillout on Radio
+  https://0n-chillout.radionetz.de/0n-chillout.aac
+Technolovers EDM
+  https://stream.technolovers.fm/edm?ref=radiobrowser
+TechnoBase.FM
+  https://listener3.mp3.tb-group.fm/tb.mp3
+Russian Dance Radio
+  https://lux-radio.com:8015/stream
+
+分组：音乐 · 沙发音乐
+SomaFM Groove Salad
+  https://ice6.somafm.com/groovesalad-128-mp3
+  别名：索玛FM
+SomaFM Secret Agent
+  https://ice5.somafm.com/secretagent-128-mp3
+  别名：索玛FM
+Спокойное радио
+  https://listen9.myradio24.com/6262
+SomaFM Lush
+  https://ice6.somafm.com/lush-128-mp3
+  别名：索玛FM
+Café del Mar
+  https://streams.radio.co/se1a320b47/listen
+Easy FM
+  https://netradio.ziniur.lt/easyfm.mp3
+AIRPORT LOUNGE RADIO
+  https://az1.mediacp.eu/listen/airport-lounge-radio/radio.mp3
+Lounge.FM - 100% Austria
+  https://s35.derstream.net/100austria.mp3
+Epic Lounge - IBIZA CHILLOUT LOUNGE
+  https://stream.epic-lounge.com/ibiza-chillout-lounge?ref=radiobrowser
+SomaFM Groove Salad (HLS FLAC)
+  https://hls.somafm.com/hls/groovesalad/FLAC/program.m3u8
+  别名：索玛FM
+
+分组：音乐 · 柔爵士
+SmoothJazz.com 128k mp3
+  https://smoothjazz.cdnstream1.com/2585_128.mp3
+Smooth Jazz Lounge
+  https://radio4.vip-radios.fm:18060/stream-128kmp3-SmoothJazzLounge
+Easy FM
+  https://netradio.ziniur.lt/easyfm.mp3
+SmoothJazz.com.pl 320k MP3
+  https://bcast.vigormultimedia.com:48888/sjcompl320mp3
+AIRPORT LOUNGE RADIO
+  https://az1.mediacp.eu/listen/airport-lounge-radio/radio.mp3
+Lounge.FM - 100% Austria
+  https://s35.derstream.net/100austria.mp3
+Costa Del Mar Smooth Jazz
+  https://radio4.cdm-radio.com:18024/stream-mp3-Smooth
+PerfectMoods – 24/7 Quality Lounge
+  https://www.radioking.com/play/perfectmoods/104227
+Smooth Jazz Portugal
+  https://stream-hls.bauermedia.pt/smojazz.aac/playlist.m3u8
+Tropical Smooth Jazz
+  https://servidor32-3.brlogic.com:8230/live
+Kosmos Jazz GR
+  https://radiostreaming.ert.gr/ert-webjazz
+181.FM - Christmas Smooth Jazz
+  https://listen.181fm.com/181-xsmooth_128k.mp3
+
+分组：音乐 · 世界音乐
+Radio FM
+  https://icecast.stv.livebox.sk/fm_128.mp3
+Alternative Radio
+  https://www.radioking.com/play/alternative-radio-1
+Yabiladi Chaabi Maroc
+  https://radio.yabiladi.com:8102/;stream.mp3
+ByteFM
+  https://bytefm.cast.addradio.de/bytefm/main/high/stream
+Radio IN Beograd
+  https://radio3-64ssl.streaming.rs:9212/;*.mp3
+Times Radio
+  https://timesradio.wireless.radio/stream
+Radio Paradise World/Etc Mix 320k AAC
+  https://stream.radioparadise.com/world-etc-320
+  别名：天堂电台
+Le Bon Mix HiFi Flac 1411 Kbps
+  https://stream10.xdevel.com/audio17s976748-2218/stream/icecast.audio
+Radio Paradise World/Etc Mix FLAC
+  https://stream.radioparadise.com/world-etc-flac
+  别名：天堂电台
+RADIO NOVA
+  https://novazz.ice.infomaniak.ch/novazz-128.mp3
+  别名：新星电台
+Galgalatz 91.8 FM
+  https://glzicylv01.bynetcdn.com/glglz_mp3
+Yabiladi Radio
+  https://radio.yabiladi.com:8002/;stream.mp3
+
+分组：资讯 · 国际新闻
+Iran International
+  https://radio.iraninternational.app/iintl_c
+الجزيرة صوت
+  https://live-hls-audio-web-aja.getaj.net/VOICE-AJA/01.m3u8
+Sud Radio
+  https://ice.creacast.com/sudradio
+BFM radio
+  https://audio.bfmtv.com/bfmradio_128.mp3
+Europe 1
+  https://stream.europe1.fr/europe1.aac
+  别名：欧洲一台
+Radio record - Main Channel
+  https://radiorecord.hostingradio.ru/rr_main96.aacp
+SWR3
+  https://liveradio.swr.de/sw282p3/swr3/play.mp3
+Radio Marti
+  https://ocb01.akacast.akamaistream.net/7/365/437903/v1/ibb.akacast.akamaistream.net/ocb01
+CNN
+  https://tunein.cdnstream1.com/2868_96.mp3
+Radio Plus Mauritius
+  https://stream.radioplus.mu:8000/radio.mp3
+Соловьёв FM
+  https://solovievfm.hostingradio.ru/solovievfm32.aacp
+Deutschlandfunk
+  https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3?aggregator=web
+  别名：德国广播电台, DLF, MP3 128k
+
+分组：资讯 · 谈话
+WALM 2 HD
+  https://icecast.walmradio.com:8443/walm2
+RMC FR
+  https://audio.bfmtv.com/rmcradio_128.mp3
+WALM 2 HD Opus
+  https://icecast.walmradio.com:8443/walm2_opus
+Sud Radio
+  https://ice.creacast.com/sudradio
+Europe 1
+  https://stream.europe1.fr/europe1.aac
+  别名：欧洲一台
+Соловьёв FM
+  https://solovievfm.hostingradio.ru/solovievfm32.aacp
+Antena 1 (Portugal)
+  https://streaming-live.rtp.pt/liveradio/antena180a/playlist.m3u8
+Комсомольская правда
+  https://kpradio.hostingradio.ru:8000/64
+Samaa
+  https://samaakhi107-itelservices.radioca.st/stream
+Radio Liban Libre
+  https://edge.mixlr.com/channel/qtqeb
+Радіо НВ 96.0
+  https://online-radio.nv.ua/radionv.mp3
+Radio HRN La Voz de Honduras
+  https://ice42.securenetsystems.net/HRN
+
+分组：音乐 · 怀旧
+Radio Armisa
+  https://onair.armisa.it/listen/armisa/radio.mp3
+Gold
+  https://media-ssl.musicradio.com/GoldMP3
+0 N - 70s on Radio
+  https://0n-70s.radionetz.de/0n-70s.mp3
+Goldy Mukesh
+  https://stream.zeno.fm/t39watus1p8uv
+0 N - 80s on Radio
+  https://0n-80s.radionetz.de/0n-80s.mp3
+0 N - 90s on Radio
+  https://0n-90s.radionetz.de/0n-90s.mp3
+500首华语经典
+  https://lhttp.qtfm.cn/live/5022308/64k.mp3
+Roca Fm Clasicos Mexico
+  https://xxdelgado.radioca.st/
+181.FM - Beatles
+  https://listen.181fm.com/181-beatles_128k.mp3
+0 N - 60s on Radio
+  https://0n-60s.radionetz.de/0n-60s.mp3
+WDR4
+  https://wdr-wdr4-live.icecastssl.wdr.de/wdr/wdr4/live/mp3/128/stream.mp3
+Oxygen Oldies
+  https://oxygenmusic.hu:8443/oxygenoldies
+
+分组：音乐 · 蓝调
+181.FM - True Blues
+  https://listen.181fm.com/181-blues_128k.mp3
+70 80 90 Vibrazioni Rock Radio
+  https://maggie.torontocast.com:2020/stream/vibrazionirockradio
+Grolloo Radio
+  https://uk1.streamingpulse.com/ssl/grollooradio
+Pinguin Blues
+  https://samcloud.spacial.com/api/listen?sid=93462&m=sc&rid=168006
+Радио Монте Карло - Wonderful Blues
+  https://mc-blues.hostingradio.ru/blues96.aacp
+Suite Jazz Radio
+  https://jenny.torontocast.com:2000/stream/suitejazzradio
+A MISSISSIPPI BLUES
+  https://cast1.torontocast.com:4450/;?type=http&nocache=1745625391
+Radio SAR - Studencka Agencja Radiowa
+  https://stream.radiosar.pl/hdmain.mp3
+Just Music Radio
+  https://radiostream.neotel.mk/justmusicradio
+Radio Art Acoustic Blues
+  https://live.radioart.com/fAcoustic_blues.mp3
+Rock & Folk (rock n folk)
+  https://rockfolk.ice.infomaniak.ch/rockfolk.mp3
+WXPN 88.5 Philadelphia, PA
+  https://wxpnhi.xpn.org/xpnhi
+
+分组：音乐 · 雷鬼
+REGGAE CHILL CAFE
+  https://maggie.torontocast.com:2020/stream/reggaechillcafe
+SomaFM Heavyweight Reggae
+  https://ice5.somafm.com/reggae-256-mp3
+  别名：索玛FM
+181.FM - Reggae Roots
+  https://listen.181fm.com/181-reggae_128k.mp3
+Reggae.fr
+  https://listen.radioking.com/radio/50473/stream/87415
+UbuntuFM
+  https://streaming.coollective.nl:8443/UbuntuFM
+RADIO NOVA
+  https://novazz.ice.infomaniak.ch/novazz-128.mp3
+  别名：新星电台
+Radio Reggae Brasil
+  https://casthttps.suaradionanet.net/13805/stream
+Star
+  https://starchild.radioca.st/
+Mountain Reggae Radio
+  https://mountainreggaeradio.stream.laut.fm/mountainreggaeradio
+Wee FM 93.3/93.9 - Grenada
+  https://usa8.fastcast4u.com/proxy/weefm2?mp=/1
+RTBF Classic 21 - Reggae
+  https://radios.rtbf.be/wr-eventradio-128.mp3
+Intamixx 80s 90s Radio UK
+  https://radio.intamixx.uk:8443/radio2
+
+分组：音乐 · 拉丁
+Radio Cumbia 90s
+  https://emiteradio.com/proxy/cumbia90s?mp=/stream
+Roca Fm Clasicos Mexico
+  https://xxdelgado.radioca.st/
+Convoy en vivo
+  https://live.convoynetwork.com/stream
+Flaix FM
+  https://stream.flaixfm.cat/icecast
+Radio Onda Positiva 94.1 FM
+  https://streamingecuador.net:8011/radioondapositiva
+Radio Amor 95.9FM
+  https://copaco.desdeparaguay.net/movamor/movamor.stream/playlist.m3u8
+UbuntuFM
+  https://streaming.coollective.nl:8443/UbuntuFM
+Tropicalia 93.9FM
+  https://rds3.desdeparaguay.net/movtropicalia/movtropicalia.stream/playlist.m3u8
+Olimpica Stereo 101.5 Fm Sincelejo
+  https://playerservices.streamtheworld.com/api/livestream-redirect/OLP_SINCELEJOAAC.aac?1715700010
+Radio del Amor
+  https://stream.zeno.fm/z7re4u64gd0uv
